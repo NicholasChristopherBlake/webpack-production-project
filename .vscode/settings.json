@@ -2,6 +2,17 @@
   "i18n-ally.localesPaths": ["public/locales", "src/shared/config/i18n"],
   "i18n-ally.keystyle": "flat",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  }
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": true
+  },
+  // "[css]": {
+  //   "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  // },
+  // "[scss]": {
+  //   "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  // },
+  "stylelint.enable": true,
+  "css.validate": true,
+  "scss.validate": true,
+  "stylelint.validate": ["css", "scss"]
 }
