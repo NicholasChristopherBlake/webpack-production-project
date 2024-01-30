@@ -7,5 +7,8 @@
   "Toggle": "Toggle",
   "Main": "Main",
   "About": "About",
-  "Страница не найдена": "Page Not Found"
+  "Страница не найдена": "Page Not Found",
+  "Произошла непредвиденная ошибка": "Unexpected error happened",
+  "Обновить страницу": "Reload page",
+  "throw error": "throw error"
 }
