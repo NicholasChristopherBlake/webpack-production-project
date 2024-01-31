@@ -20,12 +20,6 @@ const preview: Preview = {
   decorators: [
     (Story) => (RouteDecorator()(Story)),
     (Story) => (ThemeDecorator(Theme.LIGHT)(Story)),
-
-    // (Story) => (
-    //   <ThemeDecorator theme={Theme.LIGHT}>
-    //     <Story />
-    //   </ThemeDecorator>
-    // ),
   ],
 };
 
