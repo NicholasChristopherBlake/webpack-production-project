@@ -2,11 +2,13 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCSSExtractPlugin from 'mini-css-extract-plugin';
 import webpack from 'webpack';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { BuildOptions } from './types/config';
 
 export function buildPlugins({
   paths,
   isDev,
+  analyze,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
   return [
     new HtmlWebpackPlugin({
@@ -21,5 +23,8 @@ export function buildPlugins({
       __IS_DEV__: JSON.stringify(isDev),
     }),
     isDev && new ReactRefreshWebpackPlugin({ overlay: false }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: analyze ? 'server' : 'disabled',
+    }),
   ].filter(Boolean);
 }
