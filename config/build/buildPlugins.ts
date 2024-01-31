@@ -10,7 +10,7 @@ export function buildPlugins({
   isDev,
   analyze,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
-  return [
+  const plugins = [
     new HtmlWebpackPlugin({
       template: paths.html,
     }),
@@ -22,9 +22,14 @@ export function buildPlugins({
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
     }),
-    isDev && new ReactRefreshWebpackPlugin({ overlay: false }),
-    new BundleAnalyzerPlugin({
-      analyzerMode: analyze ? 'server' : 'disabled',
-    }),
   ].filter(Boolean);
+
+  if (isDev) {
+    plugins.push(new ReactRefreshWebpackPlugin({ overlay: false }));
+    plugins.push(new BundleAnalyzerPlugin({
+      analyzerMode: analyze ? 'server' : 'disabled',
+    }));
+  }
+
+  return plugins;
 }
