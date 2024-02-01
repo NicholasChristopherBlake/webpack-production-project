@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Button, ThemeButton } from './Button';
+import { Button, ButtonSize, ButtonTheme } from './Button';
 
 const meta: Meta<typeof Button> = {
   title: 'shared/Button',
@@ -18,20 +18,69 @@ export const Primary: Story = {};
 
 export const Clear: Story = {
   args: {
-    theme: ThemeButton.CLEAR,
+    theme: ButtonTheme.CLEAR,
   },
 };
 
 export const Outlined: Story = {
   args: {
-    theme: ThemeButton.OUTLINE,
+    theme: ButtonTheme.OUTLINE,
+  },
+};
+
+export const Background: Story = {
+  args: {
+    theme: ButtonTheme.BACKGROUND,
+  },
+};
+
+export const backgroundInverted: Story = {
+  args: {
+    theme: ButtonTheme.BACKGROUND_INVERTED,
   },
 };
 
 export const OutlinedDark: Story = {
   args: {
-    theme: ThemeButton.OUTLINE,
+    theme: ButtonTheme.OUTLINE,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
 
+export const SquareSizeM: Story = {
+  args: {
+    theme: ButtonTheme.BACKGROUND,
+    square: true,
+    size: ButtonSize.M,
+  },
+};
+
+export const SquareSizeL: Story = {
+  args: {
+    theme: ButtonTheme.BACKGROUND,
+    square: true,
+    size: ButtonSize.L,
+  },
+};
+
+export const SquareSizeXL: Story = {
+  args: {
+    theme: ButtonTheme.BACKGROUND,
+    square: true,
+    size: ButtonSize.XL,
+  },
+};
+
+export const OutlinedSizeL: Story = {
+  args: {
+    theme: ButtonTheme.OUTLINE,
+    size: ButtonSize.L,
+  },
+};
+
+export const OutlinedSizeXL: Story = {
+  args: {
+    theme: ButtonTheme.OUTLINE,
+    size: ButtonSize.XL,
+  },
+};

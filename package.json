@@ -30,7 +30,6 @@
     "@babel/preset-typescript": "^7.16.7",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.5",
     "@storybook/addon-actions": "^7.6.11",
-    "@storybook/addon-docs": "^7.6.11",
     "@storybook/addon-essentials": "^7.6.11",
     "@storybook/addon-interactions": "^7.6.11",
     "@storybook/addon-links": "^7.6.11",
