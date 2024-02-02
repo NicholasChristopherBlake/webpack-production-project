@@ -15,6 +15,6 @@ module.exports = {
   },
 
   docs: {
-    autodocs: true,
+    // autodocs: true,
   },
 };
