@@ -15,7 +15,7 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "i18next"],
+  plugins: ["react", "i18next", 'react-hooks'],
   rules: {
     "react/jsx-filename-extension": [
       2,
@@ -40,6 +40,11 @@ module.exports = {
       }],
     "max-len": ['error', { ignoreComments: true, code: 100 }],
     quotes: "off",
+    // Temporarily!
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/click-events-have-key-events": 'off',
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
   },
   globals: {
     __IS_DEV__: true,
