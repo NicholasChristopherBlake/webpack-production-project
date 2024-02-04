@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Theme } from "app/providers/ThemeProvider";
+import { Theme, ThemeProvider } from "app/providers/ThemeProvider";
 import { StoryFn } from "@storybook/react";
 
 // interface Props {
@@ -12,7 +12,9 @@ import { StoryFn } from "@storybook/react";
 
 // Second variant as a function
 export const ThemeDecorator = (theme: Theme) => (Story: StoryFn) => (
-  <div className={`app ${theme}`}>
-    <Story />
-  </div>
+  <ThemeProvider initialTheme={theme}>
+    <div className={`app ${theme}`}>
+      <Story />
+    </div>
+  </ThemeProvider>
 );
