@@ -1,7 +1,8 @@
 import React, {
-  FC, ReactNode, useCallback, useEffect, useState,
+  FC, ReactNode, useCallback, useEffect,
 } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
+import { useTheme } from "app/providers/ThemeProvider";
 import cls from "./Modal.module.scss";
 import { Portal } from "../Portal/Portal";
 
@@ -48,7 +49,7 @@ export const Modal: FC<ModalProps> = (props: ModalProps) => {
 
   // if (!isOpen) return null;
   return (
-    <Portal element={document.querySelector('.app') ?? document.body}>
+    <Portal>
       <div className={classNames(cls.modal, mods, [className])}>
         <div className={cls.overlay} onClick={onCloseHandler}>
           <div className={cls.content} onClick={onContentClickHandler}>
