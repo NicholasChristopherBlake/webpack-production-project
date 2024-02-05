@@ -17,7 +17,6 @@ export const Input: FC<InputProps> = (props) => {
   const {
     className, value, onChange, placeholder, autofocus, ...otherProps
   } = props;
-  const [isFocused, setIsFocused] = useState(false);
   const ref = useRef<HTMLInputElement>();
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,10 +25,9 @@ export const Input: FC<InputProps> = (props) => {
 
   useEffect(() => {
     if (autofocus) {
-      setIsFocused(true);
       ref.current?.focus();
     }
-  }, [autofocus, isFocused]);
+  }, [autofocus]);
 
   return (
     <div className={classNames(cls.inputWrapper, {}, [className])}>
@@ -42,6 +40,7 @@ export const Input: FC<InputProps> = (props) => {
         ref={ref}
         className={cls.input}
         value={value}
+        autoFocus={autofocus}
         onChange={onChangeHandler}
         {...otherProps}
       />

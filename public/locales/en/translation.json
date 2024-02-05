@@ -17,5 +17,8 @@
   "increment": "increment",
   "Enter text": "Enter text",
   "Enter username": "Enter username",
-  "Enter password": "Enter password"
+  "Enter password": "Enter password",
+  "Authorization form": "Authorization form",
+  "Wrong login or password": "You entered wrong login or password",
+  "Sign Out": "Sign Out"
 }

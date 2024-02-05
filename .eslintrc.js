@@ -48,6 +48,9 @@ module.exports = {
 
     // For RTK (immerJS)
     "no-param-reassign": "off",
+
+    // My
+    "jsx-a11y/no-autofocus": "warn",
   },
   globals: {
     __IS_DEV__: true,
