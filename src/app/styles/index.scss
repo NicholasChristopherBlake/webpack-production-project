@@ -10,11 +10,13 @@ body {
 
 .app {
   min-height: 100vh;
+  color: var(--primary-color);
   background-color: var(--bg-color);
 }
 
 .content-page {
   display: flex;
+  color: var(--primary-color);
 }
 
 .page-wrapper {

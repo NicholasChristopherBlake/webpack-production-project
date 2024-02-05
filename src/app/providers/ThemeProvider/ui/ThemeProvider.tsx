@@ -27,7 +27,13 @@ const ThemeProvider: FC<ThemeProviderProps> = (props) => {
   );
 
   useEffect(() => {
-    document.body.className = theme;
+    if (theme === Theme.DARK) {
+      document.body.classList.remove(Theme.LIGHT);
+      document.body.classList.add(theme);
+    } else if (theme === Theme.LIGHT) {
+      document.body.classList.remove(Theme.DARK);
+      document.body.classList.add(theme);
+    }
   }, [theme]);
 
   return (
