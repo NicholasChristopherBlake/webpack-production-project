@@ -18,6 +18,8 @@ export const Modal: FC<ModalProps> = (props: ModalProps) => {
     children, className, isOpen, onClose,
   } = props;
 
+  const { theme } = useTheme();
+
   const mods: Record<string, boolean> = {
     [cls.opened]: isOpen,
   };
@@ -50,7 +52,7 @@ export const Modal: FC<ModalProps> = (props: ModalProps) => {
   // if (!isOpen) return null;
   return (
     <Portal>
-      <div className={classNames(cls.modal, mods, [className])}>
+      <div className={classNames(cls.modal, mods, [className, theme])}>
         <div className={cls.overlay} onClick={onCloseHandler}>
           <div className={cls.content} onClick={onContentClickHandler}>
             {children}
