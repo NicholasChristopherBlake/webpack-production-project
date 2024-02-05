@@ -5,7 +5,9 @@ import { ThemeDecorator } from
   '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { RouteDecorator } from
   '../../src/shared/config/storybook/RouteDecorator/RouteDecorator';
-import { Theme } from "../../src/app/providers/ThemeProvider";
+import { StoreDecorator } from
+  '../../src/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Theme } from '../../src/shared/lib/ThemeProvider/ThemeContext';
 
 const preview: Preview = {
   parameters: {
@@ -18,6 +20,7 @@ const preview: Preview = {
     },
   },
   decorators: [
+    (Story) => (StoreDecorator()(Story)),
     (Story) => (RouteDecorator()(Story)),
     (Story) => (ThemeDecorator(Theme.LIGHT)(Story)),
   ],
