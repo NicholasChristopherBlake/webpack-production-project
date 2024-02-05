@@ -12,5 +12,7 @@
   "Обновить страницу": "Reload page",
   "throw error": "throw error",
   "Short Lang": "En",
-  "Sign Up": "Sign Up"
+  "Sign Up": "Sign Up",
+  "decrement": "decrement",
+  "increment": "increment"
 }
