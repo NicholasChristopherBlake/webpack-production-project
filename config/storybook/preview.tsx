@@ -20,7 +20,7 @@ const preview: Preview = {
     },
   },
   decorators: [
-    (Story) => (StoreDecorator()(Story)),
+    // (Story) => (StoreDecorator()(Story)),
     (Story) => (RouteDecorator()(Story)),
     (Story) => (ThemeDecorator(Theme.LIGHT)(Story)),
   ],
