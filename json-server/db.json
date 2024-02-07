@@ -1,15 +1,25 @@
 {
   "posts": [
-    {"id": 1, "title": "json-server"},
-    {"id": 2, "title": "json-server2"},
-    {"id": 3, "title": "json-server3"},
-    {"id": 4, "title": "json-serve4"}
+    {"id": "1", "title": "json-server"},
+    {"id": "2", "title": "json-server2"},
+    {"id": "3", "title": "json-server3"},
+    {"id": "4", "title": "json-serve4"}
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "admin",
       "password": "123"
     }
-  ]
+  ],
+  "profile": {
+    "first": "Nick",
+    "lastname": "Morgan",
+    "age": 25,
+    "currency": "USD",
+    "country": "Spain",
+    "city": "Barcelona",
+    "username": "admin",
+    "avatar": "https://2.bp.blogspot.com/-AxpHTQ893k8/UDIvTH0QBvI/AAAAAAAAHw4/KOe5r5QCMgg/s1600/Elephant+Wallpapers+1.jpg"
+  }
 }

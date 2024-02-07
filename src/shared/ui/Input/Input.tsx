@@ -1,5 +1,5 @@
 import React, {
-  FC, InputHTMLAttributes, useEffect, useRef, useState,
+  FC, InputHTMLAttributes, memo, useEffect, useRef, useState,
 } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./Input.module.scss";
@@ -13,7 +13,7 @@ interface InputProps extends HTMLInputProps {
   autofocus?: boolean;
 }
 
-export const Input: FC<InputProps> = (props) => {
+export const Input: FC<InputProps> = memo((props: InputProps) => {
   const {
     className, value, onChange, placeholder, autofocus, ...otherProps
   } = props;
@@ -46,4 +46,4 @@ export const Input: FC<InputProps> = (props) => {
       />
     </div>
   );
-};
+});
