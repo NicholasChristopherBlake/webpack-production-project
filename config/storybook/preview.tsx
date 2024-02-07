@@ -5,8 +5,6 @@ import { ThemeDecorator } from
   '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { RouteDecorator } from
   '../../src/shared/config/storybook/RouteDecorator/RouteDecorator';
-import { TranslationDecorator } from
-  '../../src/shared/config/storybook/TranslationDecorator/TranslationDecorator';
 import { Theme } from '../../src/shared/lib/ThemeProvider/ThemeContext';
 
 const preview: Preview = {
