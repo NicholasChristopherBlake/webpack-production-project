@@ -1,5 +1,5 @@
 import React, {
-  FC, InputHTMLAttributes, memo, useEffect, useRef, useState,
+  FC, InputHTMLAttributes, MutableRefObject, memo, useEffect, useRef,
 } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./Input.module.scss";
@@ -17,7 +17,7 @@ export const Input: FC<InputProps> = memo((props: InputProps) => {
   const {
     className, value, onChange, placeholder, autofocus, ...otherProps
   } = props;
-  const ref = useRef<HTMLInputElement>();
+  const ref = useRef<HTMLInputElement>(null);
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange?.(e.target.value);

@@ -51,6 +51,8 @@ module.exports = {
 
     // My
     "jsx-a11y/no-autofocus": "warn",
+    // Custom Global Types
+    "no-undef": "off",
   },
   globals: {
     __IS_DEV__: true,

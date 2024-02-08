@@ -1,7 +1,7 @@
 import React, {
   FC, ReactNode, useCallback, useEffect, useState,
 } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { Mods, classNames } from "shared/lib/classNames/classNames";
 import { useTheme } from "app/providers/ThemeProvider";
 import cls from "./Modal.module.scss";
 import { Portal } from "../Portal/Portal";
@@ -21,7 +21,7 @@ export const Modal: FC<ModalProps> = (props: ModalProps) => {
   const [isMounted, setIsMounted] = useState(false);
   const { theme } = useTheme();
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [cls.opened]: isOpen,
   };
 

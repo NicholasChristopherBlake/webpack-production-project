@@ -4,14 +4,21 @@
     "noImplicitAny": true,
     // "noEmit": false,
     "module": "ESNext",
+    // In what JS specification we compile, for the most browsers
     "target": "es5",
     "jsx": "react-jsx",
+    // Compiler will work on JS files as well
     "allowJs": true,
+    // Strict mode
+    "strict": true,
+    // For absolute imports
     "baseUrl": ".",
     "paths": {
       "*": ["./src/*"]
     },
     "moduleResolution": "node",
+    // esModuleInterop allows us to work with modules that use common js 
+    // with 'import'
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
   },
