@@ -1,5 +1,5 @@
 import React, {
-  FC, InputHTMLAttributes, useEffect, useRef, useState,
+  FC, InputHTMLAttributes, MutableRefObject, memo, useEffect, useRef,
 } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./Input.module.scss";
@@ -13,11 +13,11 @@ interface InputProps extends HTMLInputProps {
   autofocus?: boolean;
 }
 
-export const Input: FC<InputProps> = (props) => {
+export const Input: FC<InputProps> = memo((props: InputProps) => {
   const {
     className, value, onChange, placeholder, autofocus, ...otherProps
   } = props;
-  const ref = useRef<HTMLInputElement>();
+  const ref = useRef<HTMLInputElement>(null);
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange?.(e.target.value);
@@ -46,4 +46,4 @@ export const Input: FC<InputProps> = (props) => {
       />
     </div>
   );
-};
+});

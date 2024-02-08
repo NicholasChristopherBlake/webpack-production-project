@@ -7,6 +7,7 @@
   "Toggle": "Toggle",
   "Main": "Main",
   "About": "About",
+  "Profile": "Profile",
   "Страница не найдена": "Page Not Found",
   "Произошла непредвиденная ошибка": "Unexpected error happened",
   "Обновить страницу": "Reload page",
@@ -20,5 +21,6 @@
   "Enter password": "Enter password",
   "Authorization form": "Authorization form",
   "Wrong login or password": "You entered wrong login or password",
-  "Sign Out": "Sign Out"
+  "Sign Out": "Sign Out",
+  "Profile Page": "Profile Page"
 }
