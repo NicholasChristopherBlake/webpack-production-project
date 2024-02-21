@@ -2,5 +2,8 @@
   "Profile": "Profile",
   "Edit": "Edit",
   "Your name": "Your name",
-  "Your lastname": "Your lastname"
+  "Your lastname": "Your lastname",
+  "Error happenned during loading": "Error happenned during loading",
+  "Try to reload the page": "Try to reload the page",
+  "Cancel": "Cancel"
 }
