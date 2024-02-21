@@ -10,20 +10,22 @@ interface SidebarItemProps {
   collapsed: boolean;
 }
 
-export const SidebarItem: FC<SidebarItemProps> = memo((props: SidebarItemProps) => {
-  const { item, collapsed } = props;
-  const { t } = useTranslation();
-  return (
-    <AppLink
-      theme={AppLinkTheme.SECONDARY}
-      to={item.path}
-      className={classNames(cls.item, { [cls.collapsed]: collapsed }, [])}
-    >
-
-      <item.Icon className={cls.icon} />
-      <span className={cls.link}>
-        {t(item.text)}
-      </span>
-    </AppLink>
-  );
-});
+export const SidebarItem: FC<SidebarItemProps> = memo(
+  (props: SidebarItemProps) => {
+    const { item, collapsed } = props;
+    const { t } = useTranslation();
+    return (
+      <AppLink
+        theme={AppLinkTheme.SECONDARY}
+        to={item.path}
+        className={classNames(cls.item, { [cls.collapsed]: collapsed }, [])}
+      >
+        <item.Icon className={cls.icon} />
+        <span className={cls.link}>
+          {/* i18next-extract-disable-next-line */}
+          {t(item.text)}
+        </span>
+      </AppLink>
+    );
+  },
+);
