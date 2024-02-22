@@ -1,6 +1,23 @@
 {
+  "Avatar": "",
+  "Cancel": "",
+  "Choose country": "",
+  "Choose currency": "",
   "Edit": "",
+  "Error happenned during loading": "",
+  "Firstname and lastname are empty": "",
+  "Firstname or lastname are empty": "",
+  "Firstname or lastname is empty": "",
+  "Incorrect age": "",
+  "Incorrect country": "",
+  "No data": "",
   "Profile": "",
+  "Save": "",
+  "Server error": "",
+  "Try to reload the page": "",
+  "Your age": "",
+  "Your city": "",
   "Your lastname": "",
-  "Your name": ""
+  "Your name": "",
+  "Your username": ""
 }

@@ -2,5 +2,20 @@
   "Profile": "Profile",
   "Edit": "Edit",
   "Your name": "Your name",
-  "Your lastname": "Your lastname"
+  "Your lastname": "Your lastname",
+  "Error happenned during loading": "Error happenned during loading",
+  "Try to reload the page": "Try to reload the page",
+  "Cancel": "Cancel",
+  "Save": "Save",
+  "Your city": "Your city",
+  "Your age": "Your age",
+  "Your username": "Your username",
+  "Avatar": "Avatar",
+  "Choose currency": "Choose currency",
+  "Choose country": "Choose country",
+  "Server error": "Server error",
+  "Firstname or lastname is empty": "Firstname or lastname is empty",
+  "Incorrect age": "Incorrect age",
+  "Incorrect country": "Incorrect country",
+  "No data": "No data"
 }
