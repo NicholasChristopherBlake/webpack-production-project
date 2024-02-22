@@ -28,6 +28,9 @@ const ThemeProvider: FC<ThemeProviderProps> = (props) => {
 
   useEffect(() => {
     if (theme === Theme.DARK) {
+      document.body.classList.remove(Theme.ORANGE);
+      document.body.classList.add(theme);
+    } else if (theme === Theme.ORANGE) {
       document.body.classList.remove(Theme.LIGHT);
       document.body.classList.add(theme);
     } else if (theme === Theme.LIGHT) {
