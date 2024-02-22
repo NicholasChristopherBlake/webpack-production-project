@@ -5,5 +5,12 @@
   "Your lastname": "Ваша фамилия",
   "Error happenned during loading": "Произошла ошибка во время загрузка",
   "Try to reload the page": "Попробуйте перезагрузить страницу",
-  "Cancel": "Отменить"
+  "Cancel": "Отменить",
+  "Save": "Сохранить",
+  "Your city": "Ваш город",
+  "Your age": "Ваш возраст",
+  "Your username": "Ваше имя пользователя",
+  "Avatar": "Аватар",
+  "Choose currency": "Выберите валюту",
+  "Choose country": "Выберите страну"
 }

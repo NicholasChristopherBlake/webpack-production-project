@@ -13,6 +13,8 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { DynamicReducerLoader, ReducersList }
   from "shared/lib/components/DynamicReducerLoader/DynamicReducerLoader";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { Currency } from "entity/Currency";
+import { Country } from "entity/Country";
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 
 interface ProfilePageProps {
@@ -43,6 +45,31 @@ const ProfilePage: FC<ProfilePageProps> = memo(({ className }: ProfilePageProps)
     dispatch(profileActions.updateProfile({ lastname: value || '' }));
   }, [dispatch]);
 
+  const onChangeAge = useCallback((value: string = '0') => {
+    const ageValue = /^\d+$/.test(value) ? Number(value) || 0 : 0;
+    dispatch(profileActions.updateProfile({ age: ageValue }));
+  }, [dispatch]);
+
+  const onChangeCity = useCallback((value?: string) => {
+    dispatch(profileActions.updateProfile({ city: value || '' }));
+  }, [dispatch]);
+
+  const onChangeUsername = useCallback((value?: string) => {
+    dispatch(profileActions.updateProfile({ username: value || '' }));
+  }, [dispatch]);
+
+  const onChangeAvatar = useCallback((value?: string) => {
+    dispatch(profileActions.updateProfile({ avatar: value || '' }));
+  }, [dispatch]);
+
+  const onChangeCurrency = useCallback((value?: Currency) => {
+    dispatch(profileActions.updateProfile({ currency: value }));
+  }, [dispatch]);
+
+  const onChangeCountry = useCallback((value?: Country) => {
+    dispatch(profileActions.updateProfile({ country: value }));
+  }, [dispatch]);
+
   return (
     <DynamicReducerLoader reducers={reducers} removeAfterUnmount>
       <div className={classNames('cls.profilePage', {}, [className])}>
@@ -54,6 +81,12 @@ const ProfilePage: FC<ProfilePageProps> = memo(({ className }: ProfilePageProps)
           readonly={readonly}
           onChangeFirstname={onChangeFirstname}
           onChangeLastname={onChangeLastname}
+          onChangeAge={onChangeAge}
+          onChangeCity={onChangeCity}
+          onChangeUsername={onChangeUsername}
+          onChangeAvatar={onChangeAvatar}
+          onChangeCurrency={onChangeCurrency}
+          onChangeCountry={onChangeCountry}
         />
       </div>
     </DynamicReducerLoader>
