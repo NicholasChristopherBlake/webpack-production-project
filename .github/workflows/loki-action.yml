@@ -1,4 +1,4 @@
-name: linting, testing, building
+name: screenshot testing
 run-name: ${{ github.actor }} workflow
 on:
   push:
