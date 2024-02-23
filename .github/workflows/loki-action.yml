@@ -1,5 +1,5 @@
 name: screenshot testing
-run-name: ${{ github.actor }} workflow
+run-name: ${{ github.actor }} workflow screenshot testing
 on:
   push:
     branches: [ master ]
