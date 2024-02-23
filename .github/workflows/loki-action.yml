@@ -1,4 +1,4 @@
-name: screenshot testing
+name: screenshot testing loki
 run-name: ${{ github.actor }} workflow
 on:
   push:
