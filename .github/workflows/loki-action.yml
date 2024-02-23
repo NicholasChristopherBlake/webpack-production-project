@@ -23,3 +23,6 @@ jobs:
       - name: build storybook
         run: npm run storybook:build
         if: always()
+      - name: screenshot testing with loki
+        run: npm run test:ui:ci
+        if: always()
