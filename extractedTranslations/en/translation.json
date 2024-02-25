@@ -1,5 +1,6 @@
 {
   "About": "",
+  "Article has not been found": "",
   "Authorization form": "",
   "Avatar": "",
   "Cancel": "",
@@ -10,6 +11,7 @@
   "Enter text": "",
   "Enter username": "",
   "Error happenned during loading": "",
+  "Error has occured during article loading": "",
   "Firstname and lastname are empty": "",
   "Firstname or lastname are empty": "",
   "Firstname or lastname is empty": "",

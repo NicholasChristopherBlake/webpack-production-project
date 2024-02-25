@@ -1,5 +1,6 @@
 {
   "About": "About",
+  "Article has not been found": "Article has not been found",
   "Authorization form": "Authorization form",
   "Avatar": "Avatar",
   "Cancel": "Cancel",
@@ -10,6 +11,7 @@
   "Enter text": "Enter text",
   "Enter username": "Enter username",
   "Error happenned during loading": "Error happenned during loading",
+  "Error has occured during article loading": "Error has occured during article loading",
   "Firstname and lastname are empty": "Firstname and lastname are empty",
   "Firstname or lastname are empty": "Firstname or lastname are empty",
   "Firstname or lastname is empty": "Firstname or lastname is empty",
