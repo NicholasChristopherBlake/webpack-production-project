@@ -12,10 +12,10 @@ interface ArticleDetailsPageProps {
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   const { className } = props;
   const { t } = useTranslation('article-details');
-  // Add 'article'
   const { id } = useParams<{id: string}>();
 
-  if (!id) {
+  // Also added for storybook
+  if (!id && __PROJECT__ !== 'storybook') {
     return (
       <div className={classNames(cls.articleDetailsPage, {}, [className])}>
         {t('Article has not been found')}
@@ -25,7 +25,8 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
   return (
     <div className={classNames(cls.articleDetailsPage, {}, [className])}>
-      <ArticleDetails id={id} />
+      {/* The || '1' is added for storybook to work, because useParams don't work there */}
+      <ArticleDetails id={id || '1'} />
     </div>
   );
 };
