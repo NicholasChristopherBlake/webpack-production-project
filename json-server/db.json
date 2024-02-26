@@ -113,13 +113,15 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://teknotower.com/wp-content/uploads/2020/11/js.png"
     }
   ],
   "profile": {

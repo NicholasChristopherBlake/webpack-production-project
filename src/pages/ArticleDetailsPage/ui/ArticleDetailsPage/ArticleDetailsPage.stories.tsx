@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Article } from 'entity/Article';
 import { ArticleBlockType, ArticleType } from 'entity/Article/model/types/article';
+import { Comment } from 'entity/Comment';
 import ArticleDetailsPage from './ArticleDetailsPage';
 
 const meta: Meta<typeof ArticleDetailsPage> = {
@@ -89,6 +90,29 @@ export const Primary: Story = {
   decorators: StoreDecorator({
     articleDetails: {
       data: article,
+    },
+    articleDetailsComments: {
+      ids: ['1', '2'],
+      entities: {
+        1: {
+          id: "1",
+          text: "some comment",
+          user: {
+            id: '1',
+            username: 'Nick',
+            avatar: "https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg",
+          },
+        },
+        2: {
+          id: "2",
+          text: "some comment 2",
+          user: {
+            id: '1',
+            username: 'Nick',
+            avatar: "https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg",
+          },
+        },
+      },
     },
   }),
 };
