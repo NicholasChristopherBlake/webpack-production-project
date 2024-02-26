@@ -20,6 +20,7 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({ className }) => 
   const authData = useSelector(getUserAuthData);
   const profileData = useSelector(getProfileData);
   const canEdit = authData?.id === profileData?.id;
+  console.log(canEdit, authData?.id, profileData);
 
   const readonly = useSelector(getProfileReadonly);
   const dispatch = useAppDispatch();
