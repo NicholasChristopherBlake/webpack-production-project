@@ -3,8 +3,8 @@ import { ThunkConfig } from 'app/providers/StoreProvider';
 import { Article } from '../../types/article';
 
 export const fetchArticleById = createAsyncThunk<
-Article,
-string,
+Article, // type of returned value
+string, // type of arguments (articleId in this case)
 ThunkConfig<string>
 >(
   'articleDetails/fetchArticleById',
