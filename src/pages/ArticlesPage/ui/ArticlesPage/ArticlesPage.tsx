@@ -17,14 +17,7 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
       <ArticleList
         isLoading
         view={ArticleView.LIST}
-        articles={
-          // new Array(16)
-          //   .fill(0)
-          //   .map((item, index) => ({
-          //     ...article,
-          //     id: String(index),
-          //   }))
-        }
+        articles={[]}
       />
     </div>
   );
