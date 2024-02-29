@@ -3,12 +3,19 @@ import { StateSchema, StoreProvider } from "app/providers/StoreProvider";
 import { articleDetailsReducer } from "entity/Article/model/slice/articleDetailsSlice";
 import { profileReducer } from "entity/Profile";
 import { loginReducer } from "features/AuthByUsername/model/slice/loginSlice";
+import { addCommentFormReducer } from "features/addCommentForm/model/slices/addCommentFormSlice";
+import { articleDetailsCommentsReducer }
+  from "pages/ArticleDetailsPage/model/slice/articleDetailsCommentsSlice";
+import { articlesPageReducer } from "pages/ArticlesPage/model/slices/articlesPageSlice";
 import { ReducersList } from "shared/lib/components/DynamicReducerLoader/DynamicReducerLoader";
 
 const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,
   profile: profileReducer,
   articleDetails: articleDetailsReducer,
+  addCommentForm: addCommentFormReducer,
+  articleDetailsComments: articleDetailsCommentsReducer,
+  articlesPage: articlesPageReducer,
 };
 
 export const StoreDecorator = (

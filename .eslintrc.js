@@ -53,6 +53,8 @@ module.exports = {
     "jsx-a11y/no-autofocus": "warn",
     // Custom Global Types
     "no-undef": "off",
+    // No index as key
+    "react/no-array-index-key": "warn",
   },
   globals: {
     __IS_DEV__: true,

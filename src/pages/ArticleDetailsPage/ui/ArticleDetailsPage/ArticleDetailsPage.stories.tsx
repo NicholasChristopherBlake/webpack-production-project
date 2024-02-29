@@ -23,6 +23,10 @@ const article: Article = {
   img: "https://teknotower.com/wp-content/uploads/2020/11/js.png",
   views: 1022,
   createdAt: "26.02.2022",
+  user: {
+    id: '1',
+    username: 'Nick',
+  },
   type: [ArticleType.IT],
   blocks: [
     {
@@ -88,9 +92,6 @@ const article: Article = {
 
 export const Primary: Story = {
   decorators: StoreDecorator({
-    articleDetails: {
-      data: article,
-    },
     articleDetailsComments: {
       ids: ['1', '2'],
       entities: {
