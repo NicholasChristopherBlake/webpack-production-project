@@ -92,9 +92,6 @@ const article: Article = {
 
 export const Primary: Story = {
   decorators: StoreDecorator({
-    articleDetails: {
-      data: article,
-    },
     articleDetailsComments: {
       ids: ['1', '2'],
       entities: {

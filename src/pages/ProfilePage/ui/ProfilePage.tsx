@@ -19,6 +19,7 @@ import { Text, TextTheme } from "shared/ui/Text/Text";
 import { ValidateProfileError } from "entity/Profile/model/types/profile";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { useParams } from "react-router-dom";
+import { Page } from "shared/ui/Page/Page";
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 
 interface ProfilePageProps {
@@ -88,7 +89,7 @@ const ProfilePage: FC<ProfilePageProps> = memo(({ className }: ProfilePageProps)
 
   return (
     <DynamicReducerLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames('cls.profilePage', {}, [className])}>
+      <Page className={classNames('cls.profilePage', {}, [className])}>
         <ProfilePageHeader />
         {validateErrors?.length && validateErrors.map((err) => (
           <Text theme={TextTheme.ERROR} body={validateErrorTranslation[err]} key={err} />
@@ -107,7 +108,7 @@ const ProfilePage: FC<ProfilePageProps> = memo(({ className }: ProfilePageProps)
           onChangeCurrency={onChangeCurrency}
           onChangeCountry={onChangeCountry}
         />
-      </div>
+      </Page>
     </DynamicReducerLoader>
   );
 });

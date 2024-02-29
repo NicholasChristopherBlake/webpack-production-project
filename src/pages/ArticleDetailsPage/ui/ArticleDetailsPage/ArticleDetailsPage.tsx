@@ -1,4 +1,6 @@
-import { FC, memo, useCallback } from 'react';
+import {
+  FC, Suspense, memo, useCallback,
+} from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ArticleDetails } from 'entity/Article';
@@ -13,6 +15,8 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AddCommentForm } from 'features/addCommentForm';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routePaths';
+import { Page } from 'shared/ui/Page/Page';
+import { PageLoader } from 'widgets/PageLoader';
 import { fetchCommentsByArticleId }
   from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { articleDetailsCommentsReducer, getArticleComments }
@@ -54,29 +58,32 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   // Also added for storybook
   if (!id && __PROJECT__ !== 'storybook') {
     return (
-      <div className={classNames(cls.articleDetailsPage, {}, [className])}>
+      <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
         {t('Article has not been found')}
-      </div>
+      </Page>
     );
   }
 
   return (
     <DynamicReducerLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames(cls.articleDetailsPage, {}, [className])}>
-        <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
-          {t('Back to the list')}
-        </Button>
-        {/* The || '1' is added for storybook to work, because useParams don't work there */}
-        <ArticleDetails id={id || '1'} />
-        <Text className={cls.commentTitle} title={t('Comments')} />
-        <AddCommentForm
-          onSendComment={onSendComment}
-        />
-        <CommentList
-          isLoading={commentsIsLoading}
-          comments={comments}
-        />
-      </div>
+      {/* Added suspense for storybook */}
+      <Suspense fallback={<PageLoader />}>
+        <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
+          <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
+            {t('Back to the list')}
+          </Button>
+          {/* The || '1' is added for storybook to work, because useParams don't work there */}
+          <ArticleDetails id={id || '1'} />
+          <Text className={cls.commentTitle} title={t('Comments')} />
+          <AddCommentForm
+            onSendComment={onSendComment}
+          />
+          <CommentList
+            isLoading={commentsIsLoading}
+            comments={comments}
+          />
+        </Page>
+      </Suspense>
     </DynamicReducerLoader>
   );
 };
