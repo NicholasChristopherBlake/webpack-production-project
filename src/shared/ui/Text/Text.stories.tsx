@@ -18,6 +18,14 @@ export const Primary: Story = {
     body: 'Lorem ipsum dolor sit amet',
   },
 };
+export const Inverted: Story = {
+  args: {
+    title: 'Title Title Title',
+    body: 'Lorem ipsum dolor sit amet',
+    theme: TextTheme.INVERTED,
+  },
+};
+
 export const Error: Story = {
   args: {
     title: 'Title Title Title',

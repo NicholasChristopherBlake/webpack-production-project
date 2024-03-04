@@ -20,11 +20,11 @@
   "articles": [
     {
       "id": "1",
-      "title": "Javascript news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "title": "JavaScript language overview",
+      "subtitle": "What's new in JavaScript in 2022?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
-      "createdAt": "26.02.2022",
+      "createdAt": "26.04.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -33,11 +33,11 @@
         {
           "id": "1",
           "type": "TEXT",
-          "title": "Заголовок этого блока",
+          "title": "This block's title",
           "paragraphs": [
-            "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.",
-            "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
-            "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
+            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+            "Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well. JavaScript supports object-oriented programming with object prototypes and classes. ",
+            "It also supports functional programming since functions are first-class objects that can be easily created via expressions and passed around like any other object."
           ]
         },
         {
@@ -48,7 +48,7 @@
         {
           "id": "5",
           "type": "TEXT",
-          "title": "Заголовок этого блока",
+          "title": "This block's title",
           "paragraphs": [
             "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.",
             "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
@@ -92,10 +92,10 @@
     },
     {
       "id": "2",
-      "title": "Python news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "title": "Python News",
+      "subtitle": "Python News 2023",
       "img": "https://th.bing.com/th/id/OIP.FWkfpoMroeM7SW_tSrov6QAAAA?pid=ImgDet&w=241&h=150.625&c=7",
-      "views": 1022,
+      "views": 5204,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -116,11 +116,11 @@
     },
     {
       "id": "3",
-      "title": "Kotlin news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "title": "Kotlin news 2019",
+      "subtitle": "Is Kotlin the best language?",
       "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 94002,
+      "createdAt": "26.02.2019",
       "userId": "1",
       "type": [
         "IT"
@@ -140,11 +140,11 @@
     },
     {
       "id": "4",
-      "title": "Python news",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://th.bing.com/th/id/OIP.FWkfpoMroeM7SW_tSrov6QAAAA?pid=ImgDet&w=241&h=150.625&c=7",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "title": "Scala News",
+      "subtitle": "What is that and how to eat it",
+      "img": "https://th.bing.com/th/id/OIP.iRy59MSRT-Z627BqzoY8_AHaEK?pid=ImgDet&w=240.99999999999997&h=143.45238095238093&c=7",
+      "views": 10222,
+      "createdAt": "07.01.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -164,12 +164,12 @@
     },
     {
       "id": "5",
-      "title": "Kotlin news",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
-      "userId": "1",
+      "title": "Golang news",
+      "subtitle": "Golang goes crazy this year",
+      "img": "https://th.bing.com/th/id/OIP.30aoNxlSnaYrLhBT0O1lzwHaE8?pid=ImgDet&w=241.00000000000003&h=160.66666666666669&c=7",
+      "views": 1322,
+      "createdAt": "13.07.2021",
+      "userId": "2",
       "type": [
         "IT"
       ],
@@ -188,11 +188,11 @@
     },
     {
       "id": "6",
-      "title": "Python news",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://th.bing.com/th/id/OIP.FWkfpoMroeM7SW_tSrov6QAAAA?pid=ImgDet&w=241&h=150.625&c=7",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "title": "Java news",
+      "subtitle": "Is it already dead?",
+      "img": "https://th.bing.com/th/id/OIP.Tzs3s3tVrtDBHGTMkVzwtwHaHa?pid=ImgDet&w=180&h=180&c=7",
+      "views": 502,
+      "createdAt": "30.08.2023",
       "userId": "1",
       "type": [
         "IT"
@@ -212,12 +212,12 @@
     },
     {
       "id": "7",
-      "title": "Kotlin news",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
-      "userId": "1",
+      "title": "Ruby news",
+      "subtitle": "What's new in Ruby language",
+      "img": "https://th.bing.com/th/id/OIP.ApGzx1s49-Mh7EEKAFYBXwHaFs?pid=ImgDet&w=233.76623376623377&h=180&c=7",
+      "views": 100,
+      "createdAt": "15.10.2020",
+      "userId": "2",
       "type": [
         "IT"
       ],
@@ -236,11 +236,11 @@
     },
     {
       "id": "8",
-      "title": "Python news",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://th.bing.com/th/id/OIP.FWkfpoMroeM7SW_tSrov6QAAAA?pid=ImgDet&w=241&h=150.625&c=7",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "title": "TypeScript news",
+      "subtitle": "TypeScript is a better JavaScript",
+      "img": "https://miro.medium.com/max/1400/1*aTCN2ctKNoZupUCMP0hQuw.png",
+      "views": 130027,
+      "createdAt": "18.01.2024",
       "userId": "1",
       "type": [
         "IT"
@@ -260,11 +260,11 @@
     },
     {
       "id": "9",
-      "title": "Kotlin news",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "title": "Python News",
+      "subtitle": "Python News 2019",
+      "img": "https://th.bing.com/th/id/OIP.FWkfpoMroeM7SW_tSrov6QAAAA?pid=ImgDet&w=241&h=150.625&c=7",
+      "views": 204,
+      "createdAt": "01.08.2019",
       "userId": "1",
       "type": [
         "IT"
@@ -284,11 +284,11 @@
     },
     {
       "id": "10",
-      "title": "Python news",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://th.bing.com/th/id/OIP.FWkfpoMroeM7SW_tSrov6QAAAA?pid=ImgDet&w=241&h=150.625&c=7",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "title": "Kotlin news 2020",
+      "subtitle": "Is Kotlin the best language?",
+      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
+      "views": 8000,
+      "createdAt": "08.05.2020",
       "userId": "1",
       "type": [
         "IT"
@@ -308,12 +308,12 @@
     },
     {
       "id": "11",
-      "title": "Kotlin news",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
-      "userId": "1",
+      "title": "Scala News",
+      "subtitle": "What's new",
+      "img": "https://th.bing.com/th/id/OIP.iRy59MSRT-Z627BqzoY8_AHaEK?pid=ImgDet&w=240.99999999999997&h=143.45238095238093&c=7",
+      "views": 335,
+      "createdAt": "10.08.2021",
+      "userId": "2",
       "type": [
         "IT"
       ],
@@ -332,11 +332,11 @@
     },
     {
       "id": "12",
-      "title": "Python news",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://th.bing.com/th/id/OIP.FWkfpoMroeM7SW_tSrov6QAAAA?pid=ImgDet&w=241&h=150.625&c=7",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "title": "Golang news",
+      "subtitle": "Golang gets new update",
+      "img": "https://th.bing.com/th/id/OIP.30aoNxlSnaYrLhBT0O1lzwHaE8?pid=ImgDet&w=241.00000000000003&h=160.66666666666669&c=7",
+      "views": 9522,
+      "createdAt": "23.10.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -356,11 +356,11 @@
     },
     {
       "id": "13",
-      "title": "Kotlin news",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "title": "Java news",
+      "subtitle": "Java still rules, new update incoming in 2023",
+      "img": "https://th.bing.com/th/id/OIP.Tzs3s3tVrtDBHGTMkVzwtwHaHa?pid=ImgDet&w=180&h=180&c=7",
+      "views": 5021,
+      "createdAt": "01.05.2023",
       "userId": "1",
       "type": [
         "IT"
@@ -380,11 +380,11 @@
     },
     {
       "id": "14",
-      "title": "Python news",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://th.bing.com/th/id/OIP.FWkfpoMroeM7SW_tSrov6QAAAA?pid=ImgDet&w=241&h=150.625&c=7",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "title": "Ruby news",
+      "subtitle": "Ruby on Rails - how to work with that",
+      "img": "https://th.bing.com/th/id/OIP.ApGzx1s49-Mh7EEKAFYBXwHaFs?pid=ImgDet&w=233.76623376623377&h=180&c=7",
+      "views": 12,
+      "createdAt": "02.02.2024",
       "userId": "1",
       "type": [
         "IT"
@@ -404,11 +404,11 @@
     },
     {
       "id": "15",
-      "title": "Kotlin news",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "title": "TypeScript news",
+      "subtitle": "TypeScript 4.0",
+      "img": "https://miro.medium.com/max/1400/1*aTCN2ctKNoZupUCMP0hQuw.png",
+      "views": 975,
+      "createdAt": "19.12.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -428,14 +428,14 @@
     },
     {
       "id": "16",
-      "title": "Python news",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://th.bing.com/th/id/OIP.FWkfpoMroeM7SW_tSrov6QAAAA?pid=ImgDet&w=241&h=150.625&c=7",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "title": "Our economy is going to experience a huge crisis in the next year",
+      "subtitle": "About 2023 crisis",
+      "img": "https://th.bing.com/th/id/OIP.z7QKWW4K2Bl9Uu7geBRz9AHaGN?pid=ImgDet&w=225&h=180&c=7",
+      "views": 5812,
+      "createdAt": "13.12.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -452,14 +452,14 @@
     },
     {
       "id": "17",
-      "title": "Kotlin news",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "title": "Biology - new study shows incredible results",
+      "subtitle": "Now we know how it works",
+      "img": "https://th.bing.com/th/id/OIP.5FBQXJhMksE0jaxcIl4zQAHaHa?pid=ImgDet&w=180&h=180&c=7",
+      "views": 30023,
+      "createdAt": "22.06.2020",
       "userId": "1",
       "type": [
-        "IT"
+        "SCIENCE"
       ],
       "blocks": [
         {

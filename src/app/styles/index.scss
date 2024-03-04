@@ -19,3 +19,18 @@ body {
   display: flex;
   color: var(--primary-color);
 }
+
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: var(--card-bg); // color of scroll background
+}
+
+*::-webkit-scrollbar-thumb { // scroll item customization
+  background-color: var(--inverted-primary-color);
+  border-radius: 20px;
+  border: 2px solid var(--primary-color);
+}
