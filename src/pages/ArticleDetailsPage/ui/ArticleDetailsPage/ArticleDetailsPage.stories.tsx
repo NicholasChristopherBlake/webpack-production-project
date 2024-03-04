@@ -92,25 +92,27 @@ const article: Article = {
 
 export const Primary: Story = {
   decorators: StoreDecorator({
-    articleDetailsComments: {
-      ids: ['1', '2'],
-      entities: {
-        1: {
-          id: "1",
-          text: "some comment",
-          user: {
-            id: '1',
-            username: 'Nick',
-            avatar: "https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg",
+    articleDetailsPage: {
+      comments: {
+        ids: ['1', '2'],
+        entities: {
+          1: {
+            id: "1",
+            text: "some comment",
+            user: {
+              id: '1',
+              username: 'Nick',
+              avatar: "https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg",
+            },
           },
-        },
-        2: {
-          id: "2",
-          text: "some comment 2",
-          user: {
-            id: '1',
-            username: 'Nick',
-            avatar: "https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg",
+          2: {
+            id: "2",
+            text: "some comment 2",
+            user: {
+              id: '1',
+              username: 'Nick',
+              avatar: "https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg",
+            },
           },
         },
       },

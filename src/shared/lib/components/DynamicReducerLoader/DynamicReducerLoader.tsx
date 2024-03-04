@@ -1,11 +1,13 @@
 import { FC, useEffect } from "react";
 import { useDispatch, useStore } from "react-redux";
 import { ReduxStoreWithManager } from "app/providers/StoreProvider";
-import { StateSchemaKey } from "app/providers/StoreProvider/config/StateSchema";
+import { StateSchema, StateSchemaKey } from "app/providers/StoreProvider/config/StateSchema";
 import { Reducer } from "@reduxjs/toolkit";
 
 export type ReducersList = {
-  [reducerKey in StateSchemaKey]?: Reducer;
+  // for more strict types to find exact reducer schema
+  // dynamically gets correct part of stateschema based on provided reducer
+  [reducerKey in StateSchemaKey]?: Reducer<NonNullable<StateSchema[reducerKey]>>;
 }
 
 interface DynamicReducerLoaderProps {
