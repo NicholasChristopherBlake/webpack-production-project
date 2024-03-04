@@ -8,13 +8,15 @@ import { DynamicReducerLoader, ReducersList }
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Page } from 'shared/ui/Page/Page';
+import { initArticlesPage }
+  from '../../model/services/initArticlesPage/initArticlesPage';
 import { fetchNextArticlesPage }
-  from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+  from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import {
-  getArticlesPageError, getArticlesPageIsLoading,
+  getArticlesPageError,
+  getArticlesPageIsLoading,
   getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
-import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { articlesPageActions, articlesPageReducer, getArticles }
   from '../../model/slices/articlesPageSlice';
 import cls from './ArticlesPage.module.scss';
@@ -45,14 +47,11 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
   }, [dispatch]);
 
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initState());
-    dispatch(fetchArticlesList({
-      page: 1,
-    }));
+    dispatch(initArticlesPage());
   });
 
   return (
-    <DynamicReducerLoader reducers={reducers}>
+    <DynamicReducerLoader reducers={reducers} removeAfterUnmount={false}>
       <Page
         onScrollEnd={onLoadNextPart}
         className={classNames(cls.articlesPage, {}, [className])}
