@@ -1,3 +1,17 @@
 {
-  "Read more": "Read more..."
+  "Read more": "Read more...",
+  "Sort by": "Sort by",
+  "articles.Search": "Search",
+  "by": "by",
+  "ascending": "ascending",
+  "descending": "descending",
+  "date of creation": "date of creation",
+  "title": "title",
+  "views": "views",
+  "Search": "Search",
+  "All articles": "All articles",
+  "IT": "IT",
+  "ECONOMICS": "Economics",
+  "SCIENCE": "Science",
+  "Articles have not been found": "Articles have not been found"
 }

@@ -7,7 +7,8 @@ import { DynamicReducerLoader, ReducersList }
   from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
+import { useSearchParams } from 'react-router-dom';
 import { initArticlesPage }
   from '../../model/services/initArticlesPage/initArticlesPage';
 import { fetchNextArticlesPage }
@@ -20,6 +21,7 @@ import {
 import { articlesPageActions, articlesPageReducer, getArticles }
   from '../../model/slices/articlesPageSlice';
 import cls from './ArticlesPage.module.scss';
+import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
 
 interface ArticlesPageProps {
    className?: string;
@@ -37,17 +39,14 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
   const isLoading = useSelector(getArticlesPageIsLoading);
   const error = useSelector(getArticlesPageError);
   const view = useSelector(getArticlesPageView);
-
-  const onChangeView = useCallback((view: ArticleView) => {
-    dispatch(articlesPageActions.setView(view));
-  }, [dispatch]);
+  const [searchParams] = useSearchParams();
 
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesPage());
   }, [dispatch]);
 
   useInitialEffect(() => {
-    dispatch(initArticlesPage());
+    dispatch(initArticlesPage(searchParams));
   });
 
   return (
@@ -56,11 +55,12 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
         onScrollEnd={onLoadNextPart}
         className={classNames(cls.articlesPage, {}, [className])}
       >
-        <ArticleViewSelector view={view} onViewClick={onChangeView} />
+        <ArticlesPageFilters />
         <ArticleList
           isLoading={isLoading}
           view={view}
           articles={articles}
+          className={cls.list}
         />
       </Page>
     </DynamicReducerLoader>

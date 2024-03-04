@@ -7,6 +7,7 @@ import { CounterSchema } from "entity/Counter";
 import { ProfileSchema } from "entity/Profile";
 import { UserSchema } from "entity/User";
 import { LoginSchema } from "features/AuthByUsername";
+import { ScrollSaveSchema } from "features/ScrollSave";
 import { AddCommentFormSchema } from "features/addCommentForm";
 import { ArticleDetailsCommentsSchema } from "pages/ArticleDetailsPage";
 import { ArticlesPageSchema } from "pages/ArticlesPage";
@@ -14,6 +15,7 @@ import { ArticlesPageSchema } from "pages/ArticlesPage";
 export interface StateSchema {
   counter: CounterSchema;
   user: UserSchema;
+  scrollSave: ScrollSaveSchema;
 
   // Async reducers
   loginForm?: LoginSchema;
