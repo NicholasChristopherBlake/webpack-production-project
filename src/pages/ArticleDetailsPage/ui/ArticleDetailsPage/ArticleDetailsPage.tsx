@@ -4,7 +4,7 @@ import {
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ArticleDetails, ArticleList } from 'entity/Article';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { CommentList } from 'entity/Comment';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { DynamicReducerLoader, ReducersList }
@@ -14,16 +14,15 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AddCommentForm } from 'features/addCommentForm';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { RoutePath } from 'shared/config/routeConfig/routePaths';
-import { Page } from 'widgets/Page/Page';
+import { Page } from 'widgets/Page/ui/Page';
 import { PageLoader } from 'widgets/PageLoader';
 import { getArticleRecommendationsIsLoading }
   from '../../model/selectors/recommendations';
-import { articleDetailsRecommendationsReducer, getArticleRecommendations }
+import { getArticleRecommendations }
   from '../../model/slice/articleDetailsRecommendationsSlice';
 import { fetchCommentsByArticleId }
   from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { articleDetailsCommentsReducer, getArticleComments }
+import { getArticleComments }
   from '../../model/slice/articleDetailsCommentsSlice';
 import cls from './ArticleDetailsPage.module.scss';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
@@ -32,6 +31,7 @@ import { addCommentForArticle } from
 import { fetchArticleRecommendations }
   from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { articleDetailsPageReducer } from '../../model/slice';
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
 interface ArticleDetailsPageProps {
    className?: string;
@@ -50,11 +50,6 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   const recommendations = useSelector(getArticleRecommendations.selectAll);
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
   const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading);
-  const navigate = useNavigate();
-
-  const onBackToList = useCallback(() => {
-    navigate(RoutePath.articles);
-  }, [navigate]);
 
   const onSendComment = useCallback((text: string) => {
     dispatch(addCommentForArticle(text));
@@ -79,9 +74,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
       {/* Added suspense for storybook */}
       <Suspense fallback={<PageLoader />}>
         <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
-          <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
-            {t('Back to the list')}
-          </Button>
+          <ArticleDetailsPageHeader />
           {/* The || '1' is added for storybook to work, because useParams don't work there */}
           <ArticleDetails id={id || '1'} />
           <Text

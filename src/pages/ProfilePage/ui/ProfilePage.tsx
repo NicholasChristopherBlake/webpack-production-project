@@ -19,7 +19,7 @@ import { Text, TextTheme } from "shared/ui/Text/Text";
 import { ValidateProfileError } from "entity/Profile/model/types/profile";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { useParams } from "react-router-dom";
-import { Page } from "widgets/Page/Page";
+import { Page } from "widgets/Page/ui/Page";
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 
 interface ProfilePageProps {

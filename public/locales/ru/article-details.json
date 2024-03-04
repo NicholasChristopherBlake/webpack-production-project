@@ -6,5 +6,7 @@
   "Enter comment text": "Введите текст комментария",
   "Send": "Отправить",
   "Back to the list": "Назад к списку",
-  "We recommend": "Рекомендуем"
+  "We recommend": "Рекомендуем",
+  "Editing article with ID": "Редактирование статьи с ID = ",
+  "Creating a new article": "Создание новой статьи"
 }
