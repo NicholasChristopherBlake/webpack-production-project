@@ -8,8 +8,6 @@ import ArticleDetailsPage from './ArticleDetailsPage';
 const meta: Meta<typeof ArticleDetailsPage> = {
   title: 'pages/ArticleDetailsPage/ArticleDetailsPage',
   component: ArticleDetailsPage,
-  args: {
-  },
 };
 
 export default meta;
@@ -91,7 +89,17 @@ const article: Article = {
 
 export const Primary: Story = {
   decorators: StoreDecorator({
+    articleDetails: {
+      data: article,
+    },
+
     articleDetailsPage: {
+      recommendations: {
+        ids: ['1'],
+        entities: {
+          1: article,
+        },
+      },
       comments: {
         ids: ['1', '2'],
         entities: {
