@@ -1,10 +1,10 @@
-import { Country } from "entity/Country/model/types/Country";
 import {
   FC, memo, useCallback, useMemo,
 } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Select } from "shared/ui/Select/Select";
+import { Country } from "../../model/types/Country";
 
 interface CountrySelectProps {
   className?: string;

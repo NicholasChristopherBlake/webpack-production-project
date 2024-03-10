@@ -15,7 +15,12 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "i18next", 'react-hooks'],
+  plugins: [
+    "react",
+    "i18next",
+    'react-hooks',
+    'nick-plugin',
+  ],
   rules: {
     "react/jsx-filename-extension": [
       2,
@@ -56,6 +61,8 @@ module.exports = {
     "no-undef": "off",
     // No index as key
     "react/no-array-index-key": "warn",
+    // Custom rules
+    "nick-plugin/fsd-path-checker": "error",
   },
   globals: {
     __IS_DEV__: true,
