@@ -6,6 +6,7 @@ const meta: Meta<typeof Listbox> = {
   title: 'shared/Listbox',
   component: Listbox,
   args: {
+    value: 'choose',
     items: [
       { value: '1', content: '123' },
       { value: '2', content: '444' },
@@ -13,15 +14,31 @@ const meta: Meta<typeof Listbox> = {
       { value: '4', content: '666' },
     ],
   },
+  decorators: [
+    (Story) => <div style={{ padding: '100px' }}><Story /></div>,
+  ],
 };
 
 export default meta;
 type Story = StoryObj<typeof Listbox>;
 
-export const Primary: Story = {};
-export const DirectionTop: Story = {
+export const TopLeft: Story = {
   args: {
-    direction: 'top',
+    direction: 'top left',
   },
 };
-
+export const TopRight: Story = {
+  args: {
+    direction: 'top right',
+  },
+};
+export const BottomLeft: Story = {
+  args: {
+    direction: 'bottom left',
+  },
+};
+export const BottomRight: Story = {
+  args: {
+    direction: 'bottom right',
+  },
+};

@@ -1,4 +1,6 @@
-import { FC, memo } from 'react';
+import {
+  FC, ForwardedRef, forwardRef, memo,
+} from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Link, LinkProps } from 'react-router-dom';
 import cls from './AppLink.module.scss';
@@ -14,7 +16,11 @@ interface AppLinkProps extends LinkProps {
   theme?: AppLinkTheme;
 }
 
-export const AppLink: FC<AppLinkProps> = memo((props: AppLinkProps) => {
+// Need forwardRef for Dropdown component
+export const AppLink: FC<AppLinkProps> = forwardRef((
+  props: AppLinkProps,
+  ref: ForwardedRef<HTMLAnchorElement>,
+) => {
   const {
     to,
     className,
@@ -24,6 +30,7 @@ export const AppLink: FC<AppLinkProps> = memo((props: AppLinkProps) => {
   } = props;
   return (
     <Link
+      ref={ref}
       to={to}
       className={classNames(cls.appLink, {}, [className, cls[theme]])}
       {...otherProps}
@@ -32,3 +39,4 @@ export const AppLink: FC<AppLinkProps> = memo((props: AppLinkProps) => {
     </Link>
   );
 });
+
