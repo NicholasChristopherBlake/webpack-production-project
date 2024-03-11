@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { DynamicReducerLoader, ReducersList }
   from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
+import { HStack } from 'shared/ui/Stack';
 import { addCommentFormActions, addCommentFormReducer }
   from '../../model/slices/addCommentFormSlice';
 import { getAddCommentFormError, getAddCommentFormText } from
@@ -40,7 +41,11 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 
   return (
     <DynamicReducerLoader reducers={reducers}>
-      <div className={classNames(cls.addCommentForm, {}, [className])}>
+      <HStack
+        justify="between"
+        max
+        className={classNames(cls.addCommentForm, {}, [className])}
+      >
         <Input
           placeholder={t('Enter comment text')}
           value={text}
@@ -53,7 +58,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
         >
           {t('Send')}
         </Button>
-      </div>
+      </HStack>
     </DynamicReducerLoader>
 
   );

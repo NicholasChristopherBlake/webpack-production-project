@@ -16,6 +16,7 @@ import { AddCommentForm } from 'features/addCommentForm';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Page } from 'widgets/Page/ui/Page';
 import { PageLoader } from 'widgets/PageLoader';
+import { VStack } from 'shared/ui/Stack';
 import { getArticleRecommendationsIsLoading }
   from '../../model/selectors/recommendations';
 import { getArticleRecommendations }
@@ -74,32 +75,34 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
       {/* Added suspense for storybook */}
       <Suspense fallback={<PageLoader />}>
         <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
-          <ArticleDetailsPageHeader />
-          {/* The || '1' is added for storybook to work, because useParams don't work there */}
-          <ArticleDetails id={id || '1'} />
-          <Text
-            size={TextSize.L}
-            className={cls.commentTitle}
-            title={t('We recommend')}
-          />
-          <ArticleList
-            articles={recommendations}
-            isLoading={recommendationsIsLoading}
-            className={cls.recommendations}
-            target="_blank"
-          />
-          <Text
-            size={TextSize.L}
-            className={cls.commentTitle}
-            title={t('Comments')}
-          />
-          <AddCommentForm
-            onSendComment={onSendComment}
-          />
-          <CommentList
-            isLoading={commentsIsLoading}
-            comments={comments}
-          />
+          <VStack gap="16" max>
+            <ArticleDetailsPageHeader />
+            {/* The || '1' is added for storybook to work, because useParams don't work there */}
+            <ArticleDetails id={id || '1'} />
+            <Text
+              size={TextSize.L}
+              className={cls.commentTitle}
+              title={t('We recommend')}
+            />
+            <ArticleList
+              articles={recommendations}
+              isLoading={recommendationsIsLoading}
+              className={cls.recommendations}
+              target="_blank"
+            />
+            <Text
+              size={TextSize.L}
+              className={cls.commentTitle}
+              title={t('Comments')}
+            />
+            <AddCommentForm
+              onSendComment={onSendComment}
+            />
+            <CommentList
+              isLoading={commentsIsLoading}
+              comments={comments}
+            />
+          </VStack>
         </Page>
       </Suspense>
     </DynamicReducerLoader>
