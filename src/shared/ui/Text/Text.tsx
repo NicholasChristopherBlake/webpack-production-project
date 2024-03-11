@@ -16,6 +16,7 @@ export enum TextAlign {
 }
 
 export enum TextSize {
+  S = 'size_s',
   M = 'size_m',
   L = 'size_l',
 }
@@ -28,6 +29,16 @@ interface TextProps {
   align?: TextAlign;
   size?: TextSize;
 }
+
+type HeaderTagType = 'h1' | 'h2' | 'h3';
+
+// Not the best solution for semantics, because size and h-tags are not the same
+// There must be only one h1 tag on page
+const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
+  [TextSize.S]: 'h3',
+  [TextSize.M]: 'h2',
+  [TextSize.L]: 'h1',
+};
 
 export const Text: FC<TextProps> = memo((props: TextProps) => {
   const {
@@ -46,9 +57,11 @@ export const Text: FC<TextProps> = memo((props: TextProps) => {
     cls[size],
   ];
 
+  const HeaderTag = mapSizeToHeaderTag[size];
+
   return (
     <div className={classNames(cls.text, {}, adds)}>
-      {title && <p className={cls.title}>{title}</p>}
+      {title && <HeaderTag className={cls.title}>{title}</HeaderTag>}
       {body && <p className={cls.body}>{body}</p>}
     </div>
   );

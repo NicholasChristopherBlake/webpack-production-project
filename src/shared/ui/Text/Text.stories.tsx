@@ -6,30 +6,24 @@ import { Text, TextSize, TextTheme } from './Text';
 const meta: Meta<typeof Text> = {
   title: 'shared/Text',
   component: Text,
-
-};
-
-export default meta;
-type Story = StoryObj<typeof Text>;
-
-export const Primary: Story = {
   args: {
     title: 'Title Title Title',
     body: 'Lorem ipsum dolor sit amet',
   },
 };
+
+export default meta;
+type Story = StoryObj<typeof Text>;
+
+export const Primary: Story = {};
 export const Inverted: Story = {
   args: {
-    title: 'Title Title Title',
-    body: 'Lorem ipsum dolor sit amet',
     theme: TextTheme.INVERTED,
   },
 };
 
 export const Error: Story = {
   args: {
-    title: 'Title Title Title',
-    body: 'Lorem ipsum dolor sit amet',
     theme: TextTheme.ERROR,
   },
 };
@@ -37,37 +31,46 @@ export const Error: Story = {
 export const onlyTitle: Story = {
   args: {
     title: 'Title Title Title',
+    body: '',
   },
 };
 export const onlyBody: Story = {
   args: {
+    title: '',
     body: 'Lorem ipsum dolor sit amet',
   },
 };
 
 export const PrimaryDark: Story = {
-  args: {
-    title: 'Title Title Title',
-    body: 'Lorem ipsum dolor sit amet',
-  },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
 export const onlyTitleDark: Story = {
   args: {
     title: 'Title Title Title',
+    body: '',
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
 export const onlyBodyDark: Story = {
   args: {
+    title: '',
     body: 'Lorem ipsum dolor sit amet',
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
+export const SizeS: Story = {
+  args: {
+    size: TextSize.S,
+  },
+};
+export const SizeM: Story = {
+  args: {
+    size: TextSize.M,
+  },
+};
 export const SizeL: Story = {
   args: {
-    title: 'Title Title Title',
-    body: 'Lorem ipsum dolor sit amet',
     size: TextSize.L,
   },
 };
+
