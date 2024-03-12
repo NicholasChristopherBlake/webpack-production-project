@@ -23,13 +23,8 @@ const MainPage = memo(() => {
             { value: '3', content: '123', disabled: true },
             { value: '4', content: '1234' },
           ]}
-
         />
       </HStack>
-      <div>asdasd</div>
-      <div>asdasd</div>
-      <div>asdasd</div>
-      <div>asdasd</div>
     </Page>
   );
 });
