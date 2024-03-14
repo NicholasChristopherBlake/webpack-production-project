@@ -17,5 +17,6 @@
   "Firstname or lastname is empty": "Имя или фамилия пустые",
   "Incorrect age": "Неверный возраст",
   "Incorrect country": "Неверная страна",
-  "No data": "Нет данных"
+  "No data": "Нет данных",
+  "Profile has not been found": "Профиль не был найден"
 }

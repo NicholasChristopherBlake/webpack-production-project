@@ -13,5 +13,6 @@
   "IT": "IT",
   "ECONOMICS": "Economics",
   "SCIENCE": "Science",
-  "Articles have not been found": "Articles have not been found"
+  "Articles have not been found": "Articles have not been found",
+  "Error while loading articles": "Error while loading articles"
 }

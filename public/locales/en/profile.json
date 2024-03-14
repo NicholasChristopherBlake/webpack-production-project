@@ -17,5 +17,6 @@
   "Firstname or lastname is empty": "Firstname or lastname is empty",
   "Incorrect age": "Incorrect age",
   "Incorrect country": "Incorrect country",
-  "No data": "No data"
+  "No data": "No data",
+  "Profile has not been found": "Profile has not been found"
 }

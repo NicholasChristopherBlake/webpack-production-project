@@ -4,20 +4,22 @@ import {
 import { AxiosInstance } from "axios";
 import { ArticleDetailsSchema } from "entity/Article";
 import { CounterSchema } from "entity/Counter";
-import { ProfileSchema } from "entity/Profile";
 import { UserSchema } from "entity/User";
 import { LoginSchema } from "features/AuthByUsername";
 import { ScrollSaveSchema } from "features/ScrollSave";
 import { AddCommentFormSchema } from "features/addCommentForm";
+import { ProfileSchema } from "features/editableProfileCard";
 import {
   ArticleDetailsPageSchema,
 } from "pages/ArticleDetailsPage";
 import { ArticlesPageSchema } from "pages/ArticlesPage";
+import { rtkApi } from "shared/api/rtkApi";
 
 export interface StateSchema {
   counter: CounterSchema;
   user: UserSchema;
   scrollSave: ScrollSaveSchema;
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 
   // Async reducers
   loginForm?: LoginSchema;

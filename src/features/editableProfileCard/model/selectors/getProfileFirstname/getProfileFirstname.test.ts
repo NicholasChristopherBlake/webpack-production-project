@@ -1,6 +1,4 @@
 import { StateSchema } from "app/providers/StoreProvider";
-import { Currency } from "entity/Currency";
-import { Country } from "entity/Country";
 import { getProfileFirstname } from "./getProfileFirstname";
 
 describe('getProfileFirstname.test', () => {

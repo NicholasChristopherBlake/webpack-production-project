@@ -1,9 +1,9 @@
 import { StoryFn } from "@storybook/react";
 import { StateSchema, StoreProvider } from "app/providers/StoreProvider";
 import { articleDetailsReducer } from "entity/Article/model/slice/articleDetailsSlice";
-import { profileReducer } from "entity/Profile";
 import { loginReducer } from "features/AuthByUsername/model/slice/loginSlice";
 import { addCommentFormReducer } from "features/addCommentForm/model/slices/addCommentFormSlice";
+import { profileReducer } from "features/editableProfileCard/model/slice/profileSlice";
 import { articleDetailsPageReducer } from "pages/ArticleDetailsPage/model/slice";
 import { articlesPageReducer } from "pages/ArticlesPage/model/slices/articlesPageSlice";
 import { ReducersList } from "shared/lib/components/DynamicReducerLoader/DynamicReducerLoader";
