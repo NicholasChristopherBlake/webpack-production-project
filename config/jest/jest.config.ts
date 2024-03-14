@@ -46,6 +46,15 @@ const config = {
     __PROJECT__: 'jest',
   },
   transformIgnorePatterns: ["node_modules/(?!(axios)/)"],
+  reporters: [ // for HTML unit tests reports
+    "default",
+    ["jest-html-reporters", {
+      publicPath: "<rootDir>/reports/unit",
+      filename: "report.html",
+      openReport: true,
+      inlineSource: true, // no extra JS files
+    }],
+  ],
 
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
