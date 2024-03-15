@@ -34,10 +34,6 @@ export function buildPlugins({
         { from: paths.locales, to: paths.buildLocales },
       ],
     }),
-    new CircularDependencyPlugin({
-      exclude: /node_modules/,
-      failOnError: true,
-    }),
     new BundleAnalyzerPlugin({
       analyzerMode: analyze ? 'server' : 'disabled',
     }),
@@ -45,6 +41,10 @@ export function buildPlugins({
 
   if (isDev) {
     plugins.push(new ReactRefreshWebpackPlugin({ overlay: false }));
+    plugins.push(new CircularDependencyPlugin({
+      exclude: /node_modules/,
+      failOnError: true,
+    }));
   }
 
   return plugins;
