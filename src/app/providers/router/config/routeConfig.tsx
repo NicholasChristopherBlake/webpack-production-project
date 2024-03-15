@@ -1,7 +1,10 @@
+import { UserRole } from "entity/User";
 import { AboutPage } from "pages/AboutPage";
+import { AdminPanelPage } from "pages/AdminPanelPage";
 import { ArticleDetailsPage } from "pages/ArticleDetailsPage";
 import { ArticleEditPage } from "pages/ArticleEditPage";
 import { ArticlesPage } from "pages/ArticlesPage";
+import { ForbiddenPage } from "pages/ForbiddenPage";
 import { MainPage } from "pages/MainPage";
 import { NotFoundPage } from "pages/NotFoundPage";
 import { ProfilePage } from "pages/ProfilePage";
@@ -10,6 +13,7 @@ import { AppRoutes, RoutePath } from "shared/config/routeConfig/routePaths";
 
 export type AppRouteProps = RouteProps & {
   authOnly?: boolean;
+  roles?: UserRole[];
 }
 
 export const routeConfig: Record<AppRoutes, AppRouteProps> = {
@@ -45,6 +49,16 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
     path: `${RoutePath.article_edit}`, // adding id
     element: <ArticleEditPage />,
     authOnly: true,
+  },
+  [AppRoutes.ADMIN_PANEL]: {
+    path: `${RoutePath.admin_panel}`,
+    element: <AdminPanelPage />,
+    authOnly: true,
+    roles: [UserRole.ADMIN, UserRole.MANAGER],
+  },
+  [AppRoutes.FORBIDDEN]: {
+    path: `${RoutePath.forbidden}`,
+    element: <ForbiddenPage />,
   },
 
   // Last

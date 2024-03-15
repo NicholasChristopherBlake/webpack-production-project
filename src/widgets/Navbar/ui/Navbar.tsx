@@ -6,7 +6,9 @@ import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserAuthData, userActions } from 'entity/User';
+import {
+  getUserAuthData, isUserAdmin, isUserManager, userActions,
+} from 'entity/User';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routePaths';
@@ -23,6 +25,8 @@ export const Navbar: FC<NavbarProps> = memo(({ className }: NavbarProps) => {
   const [isAuthModal, setIsAuthModal] = useState(false);
   const authData = useSelector(getUserAuthData);
   const dispatch = useDispatch();
+  const isAdmin = useSelector(isUserAdmin);
+  const isManager = useSelector(isUserManager);
 
   const onCloseModal = useCallback(() => {
     setIsAuthModal(false);
@@ -36,6 +40,8 @@ export const Navbar: FC<NavbarProps> = memo(({ className }: NavbarProps) => {
     setIsAuthModal(false);
     dispatch(userActions.logout());
   }, [dispatch]);
+
+  const isAdminPanelAvailable = isAdmin || isManager;
 
   if (authData) {
     return (
@@ -56,6 +62,9 @@ export const Navbar: FC<NavbarProps> = memo(({ className }: NavbarProps) => {
           direction="bottom left"
           className={cls.dropdown}
           items={[
+            ...(isAdminPanelAvailable
+              ? [{ content: t('Admin panel'), href: RoutePath.admin_panel }]
+              : []),
             { content: t('Profile'), href: RoutePath.profile + authData.id },
             { content: t('Sign Out'), onClick: onLogout },
           ]}

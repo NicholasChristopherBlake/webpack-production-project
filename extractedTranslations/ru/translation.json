@@ -1,5 +1,6 @@
 {
   "About": "About",
+  "Admin panel": "Admin panel",
   "All articles": "All articles",
   "Article has not been found": "Article has not been found",
   "Articles has not been found": "Articles has not been found",
@@ -53,6 +54,7 @@
   "User profile": "User profile",
   "We recommend": "We recommend",
   "Wrong login or password": "Wrong login or password",
+  "You dont have access to this page": "You dont have access to this page",
   "Your age": "Your age",
   "Your city": "Your city",
   "Your lastname": "Your lastname",
