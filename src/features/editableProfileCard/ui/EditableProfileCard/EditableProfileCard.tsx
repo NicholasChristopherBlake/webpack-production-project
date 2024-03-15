@@ -12,7 +12,7 @@ import { DynamicReducerLoader, ReducersList }
   from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
 import { VStack } from 'shared/ui/Stack';
 import { ValidateProfileError }
-  from "../../model/types/editableProfileCardSchema";
+  from "../../model/consts/consts";
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
@@ -25,7 +25,7 @@ import { EditableProfileCardHeader } from '../EditableProfileCardHeader/Editable
 
 interface EditableProfileCardProps {
   className?: string;
-  id: string;
+  id?: string;
 }
 
 const reducers: ReducersList = {

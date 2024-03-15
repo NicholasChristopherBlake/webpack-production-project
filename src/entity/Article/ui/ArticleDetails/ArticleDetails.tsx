@@ -19,7 +19,9 @@ import {
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import cls from './ArticleDetails.module.scss';
-import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
+import { ArticleBlock } from '../../model/types/article';
+import { ArticleBlockType }
+  from "../../model/consts/articleConsts";
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from
   '../ArticleImageBlockComponent/ArticleImageBlockComponent';
@@ -27,7 +29,7 @@ import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleT
 
 interface ArticleDetailsProps {
    className?: string;
-   id: string;
+   id?: string;
 }
 
 const reducers: ReducersList = {

@@ -6,6 +6,8 @@ import { ThemeDecorator } from
 import { RouteDecorator } from
   '../../src/shared/config/storybook/RouteDecorator/RouteDecorator';
 import { Theme } from '../../src/shared/lib/ThemeProvider/ThemeContext';
+import { SuspenseDecorator } from
+  '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
 
 const preview: Preview = {
   parameters: {
@@ -20,6 +22,7 @@ const preview: Preview = {
   decorators: [
     (Story) => (RouteDecorator()(Story)),
     (Story) => (ThemeDecorator(Theme.LIGHT)(Story)),
+    (Story) => (SuspenseDecorator()(Story)),
   ],
 };
 

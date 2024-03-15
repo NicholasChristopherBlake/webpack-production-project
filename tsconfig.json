@@ -21,6 +21,8 @@
     // with 'import'
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    // Here for babel, for modules with types only
+    "isolatedModules": true,
   },
   "ts-node": {
     "compilerOptions": {

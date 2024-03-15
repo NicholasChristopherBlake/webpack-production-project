@@ -3,8 +3,9 @@ import { Country } from "entity/Country";
 import { profileActions, profileReducer } from "./profileSlice";
 import { updateProfileData } from "../services/updateProfileData/updateProfileData";
 import {
-  ProfileSchema, ValidateProfileError,
+  ProfileSchema,
 } from "../types/editableProfileCardSchema";
+import { ValidateProfileError } from "../consts/consts";
 
 const data = {
   username: 'admin',
