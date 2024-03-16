@@ -8,7 +8,8 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
   const { isDev } = options;
   const svgLoader = buildSvgLoader();
 
-  const babelLoader = buildBabelLoader(options);
+  const codeBabelLoader = buildBabelLoader({ ...options, isTsx: false });
+  const tsxCodebabelLoader = buildBabelLoader({ ...options, isTsx: true });
 
   const fileLoader = {
     test: /\.(png|jpe?g|gif|woff2|woff)$/i,
@@ -22,11 +23,16 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
   const cssLoader = buildCssLoader(isDev);
 
   // If we use TS that's enough. If using native JS - need Babel
-  const typescriptLoader = {
-    test: /\.tsx?$/,
-    use: 'ts-loader',
-    exclude: /node_modules/,
-  };
+  // const typescriptLoader = {
+  //   test: /\.tsx?$/,
+  //   use: 'ts-loader',
+  //   exclude: /node_modules/,
+  // };
 
-  return [fileLoader, svgLoader, babelLoader, typescriptLoader, cssLoader];
+  return [
+    fileLoader,
+    svgLoader,
+    codeBabelLoader,
+    tsxCodebabelLoader,
+    cssLoader];
 }
