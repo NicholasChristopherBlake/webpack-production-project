@@ -1,20 +1,30 @@
 {
-  "posts": [
+  "notifications": [
     {
       "id": "1",
-      "title": "json-server"
+      "title": "Notification 1",
+      "description": "Some action occurred",
+      "userId": "1"
     },
     {
       "id": "2",
-      "title": "json-server2"
+      "title": "Notification 2",
+      "description": "Some action occurred",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
     },
     {
       "id": "3",
-      "title": "json-server3"
+      "title": "Notification 3",
+      "description": "Some action occurred",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
     },
     {
       "id": "4",
-      "title": "json-serve4"
+      "title": "Notification 4",
+      "description": "Some action occurred",
+      "userId": "1"
     }
   ],
   "articles": [

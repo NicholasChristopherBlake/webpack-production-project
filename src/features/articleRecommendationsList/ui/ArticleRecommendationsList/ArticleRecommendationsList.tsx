@@ -5,7 +5,7 @@ import { ArticleList } from 'entity/Article';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { VStack } from 'shared/ui/Stack';
 import { useArticleRecommendationsList }
-  from '../../api/articleRecommentaionsApi';
+  from '../../api/articleRecommendationsApi';
 
 interface ArticleRecommendationsListProps {
     className?: string;

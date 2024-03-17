@@ -43,7 +43,8 @@ module.exports = {
         markupOnly: true,
         // What to always ignore on translations
         ignoreAttribute: ['data-testid', 'to', 'target',
-          'justify', 'align', 'direction', 'gap', 'role', 'as'],
+          'justify', 'align', 'direction', 'gap', 'role', 'as',
+          'borderRadius', 'rel'],
       }],
     "max-len": ['error', { ignoreComments: true, code: 100 }],
     quotes: "off",
