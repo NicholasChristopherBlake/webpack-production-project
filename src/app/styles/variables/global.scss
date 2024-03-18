@@ -28,8 +28,9 @@
   --sidebar-width-collapsed: 80px;
 
   // Z-indexes
-  --modal-z-index: 10;
-  --drawer-z-index: 10;
+  --modal-z-index: 11;
+  --drawer-z-index: 11;
+  --overlay-z-index: -1;
   --collapsebtn-z-index: 9;
   --popups-z-index: 10000;
 
