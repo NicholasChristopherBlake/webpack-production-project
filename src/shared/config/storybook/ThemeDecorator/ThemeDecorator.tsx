@@ -1,5 +1,5 @@
-import { Theme, ThemeProvider } from "@/app/providers/ThemeProvider";
 import { StoryFn } from "@storybook/react";
+import { Theme, ThemeProvider } from "@/app/providers/ThemeProvider";
 
 // interface Props {
 // children?: React.ReactNode;

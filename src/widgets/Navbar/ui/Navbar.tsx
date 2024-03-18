@@ -1,14 +1,14 @@
 import {
+  FC, memo, useCallback, useState,
+} from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import {
   getUserAuthData,
 } from '@/entity/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import { NotificationsButton } from '@/features/notificationsButton';
-import {
-  FC, memo, useCallback, useState,
-} from 'react';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import { RoutePath } from '@/shared/config/routeConfig/routePaths';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink';

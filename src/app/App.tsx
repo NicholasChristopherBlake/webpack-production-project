@@ -1,8 +1,8 @@
+import { Suspense, memo, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Navbar } from "@/widgets/Navbar/ui/Navbar";
 import { Sidebar } from "@/widgets/Sidebar";
-import { Suspense, memo, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { getUserInited, userActions } from "@/entity/User";
 import { AppRouter } from "./providers/router";
 
