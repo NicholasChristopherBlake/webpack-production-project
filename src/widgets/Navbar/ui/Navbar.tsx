@@ -15,6 +15,8 @@ import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { HStack } from 'shared/ui/Stack';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { Drawer } from 'shared/ui/Drawer/Drawer';
+import { NotificationsList } from 'entity/Notification';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {

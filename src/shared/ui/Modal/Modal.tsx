@@ -1,10 +1,12 @@
-import React, {
-  FC, ReactNode, useCallback, useEffect, useState,
+import {
+  FC, ReactNode,
 } from "react";
 import { Mods, classNames } from "shared/lib/classNames/classNames";
 import { useTheme } from "app/providers/ThemeProvider";
+import { useModal } from "shared/lib/hooks/useModal/useModal";
 import cls from "./Modal.module.scss";
 import { Portal } from "../Portal/Portal";
+import { Overlay } from "../Overlay/Overlay";
 
 interface ModalProps {
   className?: string;
@@ -18,43 +20,18 @@ export const Modal: FC<ModalProps> = (props: ModalProps) => {
   const {
     children, className, isOpen, onClose, lazy,
   } = props;
-  const [isMounted, setIsMounted] = useState(false);
+  const { close, isClosing, isMounted } = useModal({
+    animationDelay: 300,
+    onClose,
+    isOpen,
+  });
+
   const { theme } = useTheme();
 
   const mods: Mods = {
     [cls.opened]: isOpen,
+    [cls.isClosing]: isClosing,
   };
-
-  const onCloseHandler = useCallback(() => {
-    if (onClose) {
-      onClose();
-    }
-  }, [onClose]);
-
-  useEffect(() => {
-    if (isOpen) {
-      setIsMounted(true);
-    }
-  }, [isOpen]);
-
-  const onContentClickHandler = (e: React.MouseEvent) => {
-    e.stopPropagation();
-  };
-
-  const onKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      onCloseHandler();
-    }
-  }, [onCloseHandler]);
-
-  useEffect(() => {
-    if (isOpen) {
-      window.addEventListener('keydown', onKeyDown);
-    }
-    return () => {
-      window.removeEventListener('keydown', onKeyDown);
-    };
-  }, [isOpen, onKeyDown]);
 
   if (lazy && !isMounted) {
     return null;
@@ -63,13 +40,11 @@ export const Modal: FC<ModalProps> = (props: ModalProps) => {
   return (
     <Portal>
       <div className={classNames(cls.modal, mods, [className, theme])}>
-        <div className={cls.overlay} onClick={onCloseHandler}>
-          <div className={cls.content} onClick={onContentClickHandler}>
-            {children}
-          </div>
+        <Overlay onClick={close} />
+        <div className={cls.content}>
+          {children}
         </div>
       </div>
     </Portal>
-
   );
 };
