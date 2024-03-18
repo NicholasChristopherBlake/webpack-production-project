@@ -5,7 +5,7 @@
     // "noEmit": false,
     "module": "ESNext",
     // In what JS specification we compile, for the most browsers
-    "target": "es5",
+    "target": "ES2015", // for vite, for webpack it was es5
     "jsx": "react-jsx",
     // Compiler will work on JS files as well
     "allowJs": true,
