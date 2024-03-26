@@ -15,6 +15,10 @@ interface ProfilePageProps {
 const ProfilePage: FC<ProfilePageProps> = memo(({ className }: ProfilePageProps) => {
   const { id } = useParams<{id: string}>();
 
+  if (!id) {
+    return null;
+  }
+
   return (
     <Page className={classNames('cls.profilePage', {}, [className])}>
       <VStack gap="16" max>
