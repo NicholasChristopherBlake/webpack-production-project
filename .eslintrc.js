@@ -20,6 +20,7 @@ module.exports = {
     "i18next",
     'react-hooks',
     'nick-plugin',
+    'unused-imports',
   ],
   rules: {
     "react/jsx-filename-extension": [
@@ -56,7 +57,8 @@ module.exports = {
 
     // For RTK (immerJS)
     "no-param-reassign": "off",
-
+    // No unused imports
+    "unused-imports/no-unused-imports": "error",
     // My
     "jsx-a11y/no-autofocus": "warn",
     // Custom Global Types

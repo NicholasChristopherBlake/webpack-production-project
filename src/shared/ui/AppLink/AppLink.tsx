@@ -1,5 +1,5 @@
 import {
-  FC, ForwardedRef, forwardRef, memo,
+  FC, ForwardedRef, forwardRef,
 } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
