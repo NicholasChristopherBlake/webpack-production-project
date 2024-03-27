@@ -65,7 +65,13 @@ module.exports = {
     "react/no-array-index-key": "warn",
     // Custom rules
     "nick-plugin/fsd-path-checker": ["error", { alias: '@' }],
-    "nick-plugin/fsd-public-api-checker": ["error", { alias: '@' }],
+    "nick-plugin/fsd-public-api-checker": [
+      "error",
+      {
+        alias: '@',
+        testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'],
+      },
+    ],
   },
   globals: {
     __IS_DEV__: true,

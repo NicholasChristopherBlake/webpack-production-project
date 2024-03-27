@@ -36,8 +36,9 @@ export function createReduxStore(
         extraArgument: extraArg,
       },
     }).concat(rtkApi.middleware),
-  }) as ReduxStoreWithManager; // casting to remove ts-ignore error
+  }); // casting doesn't work, types break in components
 
+  // @ts-ignore
   store.reducerManager = reducerManager;
 
   return store;
