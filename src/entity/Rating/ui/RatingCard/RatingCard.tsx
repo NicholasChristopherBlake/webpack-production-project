@@ -32,7 +32,6 @@ export const RatingCard = memo((props: RatingCardProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [starsCount, setStarsCount] = useState(rate);
   const [feedback, setFeedback] = useState('');
-
   const onSelectStars = useCallback((selectedStarsCount: number) => {
     setStarsCount(selectedStarsCount);
     if (hasFeedback) {

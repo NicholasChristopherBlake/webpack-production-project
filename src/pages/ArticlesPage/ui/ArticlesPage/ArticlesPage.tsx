@@ -4,7 +4,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicReducerLoader, ReducersList }
   from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Page } from '@/widgets/Page/ui/Page';
+import { Page } from '@/widgets/Page';
 import { fetchNextArticlesPage }
   from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { articlesPageReducer } from '../../model/slices/articlesPageSlice';

@@ -6,7 +6,7 @@ import { userReducer } from "@/entity/User";
 import { $api } from "@/shared/api/api";
 import { scrollSaveReducer } from "@/features/ScrollSave";
 import { rtkApi } from "@/shared/api/rtkApi";
-import { StateSchema, ThunkExtraArg } from "./StateSchema";
+import { ReduxStoreWithManager, StateSchema, ThunkExtraArg } from "./StateSchema";
 import { createReducerManager } from "./reducerManager";
 
 export function createReduxStore(
@@ -36,9 +36,8 @@ export function createReduxStore(
         extraArgument: extraArg,
       },
     }).concat(rtkApi.middleware),
-  });
+  }) as ReduxStoreWithManager; // casting to remove ts-ignore error
 
-  // @ts-ignore
   store.reducerManager = reducerManager;
 
   return store;

@@ -64,7 +64,8 @@ module.exports = {
     // No index as key
     "react/no-array-index-key": "warn",
     // Custom rules
-    "nick-plugin/fsd-path-checker": "error",
+    "nick-plugin/fsd-path-checker": ["error", { alias: '@' }],
+    "nick-plugin/fsd-public-api-checker": ["error", { alias: '@' }],
   },
   globals: {
     __IS_DEV__: true,

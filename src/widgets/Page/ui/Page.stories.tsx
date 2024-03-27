@@ -4,7 +4,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { Page } from './Page';
 
 const meta: Meta<typeof Page> = {
-  title: 'shared/Page',
+  title: 'widgets/Page',
   component: Page,
   decorators: [
     StoreDecorator(
