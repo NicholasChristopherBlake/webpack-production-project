@@ -27,4 +27,3 @@ export const RoutePath: Record<AppRoutes, string> = {
   // Last
   [AppRoutes.NOT_FOUND]: '*',
 };
-

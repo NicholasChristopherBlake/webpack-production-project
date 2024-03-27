@@ -9,7 +9,7 @@ import { ForbiddenPage } from "@/pages/ForbiddenPage";
 import { MainPage } from "@/pages/MainPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
 import { ProfilePage } from "@/pages/ProfilePage";
-import { AppRoutes, RoutePath } from "@/shared/config/routeConfig/routePaths";
+import { AppRoutes, RoutePath } from "@/shared/const/router";
 
 export type AppRouteProps = RouteProps & {
   authOnly?: boolean;
