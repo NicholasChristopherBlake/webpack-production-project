@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleTypeTabs } from './ArticleTypeTabs';
 
 const meta: Meta<typeof ArticleTypeTabs> = {
-  title: 'entities/Article/ArticleTypeTabs',
+  title: 'features/ArticleTypeTabs',
   component: ArticleTypeTabs,
   args: {
   },
