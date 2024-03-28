@@ -5,9 +5,15 @@ module.exports = {
 
   addons: [
     "@storybook/addon-links",
-    "@storybook/addon-essentials",
+    {
+      name: "@storybook/addon-essentials",
+      options: {
+        backgrounds: false, // turn off for addon-themes
+      },
+    },
     "@storybook/addon-interactions",
     "storybook-addon-mock",
+    "storybook-addon-themes",
   ],
 
   framework: {
