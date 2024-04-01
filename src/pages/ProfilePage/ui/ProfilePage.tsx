@@ -13,7 +13,7 @@ interface ProfilePageProps {
 }
 
 const ProfilePage: FC<ProfilePageProps> = memo(({ className }: ProfilePageProps) => {
-  const { id } = useParams<{id: string}>();
+  const { id = '1' } = useParams<{id: string}>(); // added default value for storybook
 
   if (!id) {
     return null;

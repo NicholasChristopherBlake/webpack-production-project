@@ -9,28 +9,28 @@ npm run start:dev or npm run start:dev:vite - run server and frontend project in
 
 ## Scripts
 
-- `npm run start` - Запуск frontend проекта на webpack dev server
-- `npm run start:vite` - Запуск frontend проекта на vite
-- `npm run start:dev` - Запуск frontend проекта на webpack dev server + backend
-- `npm run start:dev:vite` - Запуск frontend проекта на vite + backend
-- `npm run start:dev:server` - Запуск backend сервера
-- `npm run build:prod` - Сборка в prod режиме
-- `npm run build:dev` - Сборка в dev режиме (не минимизирован)
-- `npm run lint:ts` - Проверка ts файлов линтером
-- `npm run lint:ts:fix` - Исправление ts файлов линтером
-- `npm run lint:scss` - Проверка scss файлов style линтером
-- `npm run lint:scss:fix` - Исправление scss файлов style линтером
-- `npm run test:unit` - Хапуск unit тестов с jest
-- `npm run test:ui` - Хапуск скриншотных тестов с loki
-- `npm run test:ui:ok` - Подтверждение новых скриншотов
-- `npm run test:ui:ci` - Запуск скриншотных тестов в CI
-- `npm run test:ui:report` - Генерация полного отчета для скриншотных тестов
-- `npm run test:ui:json` - Генерация json отчета для скриншотных тестов
-- `npm run test:ui:html` - Генерация HTML отчета для скриншотных тестов
-- `npm run storybook` - запуск Storybook
-- `npm run storybook:build` - Сборка storybook билда
-- `npm run prepare` - прекоммит хуки
-- `npm run generate:slice` - Скрипт для генерации FSD слайсов
+- `npm run start` - Start frontend project dev server using Webpack
+- `npm run start:vite` - Start frontend project dev server using Vite
+- `npm run start:dev` - Start frontend project dev server and backend JSON-server using Webpack
+- `npm run start:dev:vite` - Start frontend project dev server and backend JSON-server using Vite
+- `npm run start:dev:server` - Start backend JSON server
+- `npm run build:prod` - Production mode build
+- `npm run build:dev` - Development mode build (not minimized)
+- `npm run lint:ts` - Linting TS files with ESLint
+- `npm run lint:ts:fix` - Fixing TS files with ESLint
+- `npm run lint:scss` - Linting SCSS files with Stylelint
+- `npm run lint:scss:fix` - Fixing SCSS files with Stylelint
+- `npm run test:unit` - Run unit tests with Jest
+- `npm run test:ui` - Run screenshot tests with Loki
+- `npm run test:ui:ok` - Approve new screenshots
+- `npm run test:ui:ci` - Run screenshot tests in CI
+- `npm run test:ui:report` - Generate full report for screenshot tests
+- `npm run test:ui:json` - Generate JSON report for screenshot tests
+- `npm run test:ui:html` - Generate HTML report for screenshot tests
+- `npm run storybook` - Start Storybook
+- `npm run storybook:build` - Build Storybook
+- `npm run prepare` - Pre-commit hooks
+- `npm run generate:slice` - Script for generating FSD slices
 
 ----
 
@@ -61,115 +61,108 @@ There are 4 types of tests, which are used in this project:
 3) Screenshot tests using Loki `npm run test:ui`
 4) e2e tests using Cypress `npm run test:e2e`
 
-More details about tests - [документация тестирование](/docs/tests.md)
+More details about tests - [Tests Documentation](/docs/tests.md)
 
 ----
 
-## Линтинг
+## Linting
 
-В проекте используется eslint для проверки typescript кода и stylelint для проверки файлов со стилями.
+ESLint is used in project for checking Typescript code and Stylelint is used for checking style files.
 
-Также для строгого контроля главных архитектурных принципов
-используется собственный eslint plugin *eslint-plugin-ulbi-tv-plugin*,
-который содержит 3 правила
-1) path-checker - запрещает использовать абсолютные импорты в рамках одного модуля
-2) layer-imports - проверяет корректность использования слоев с точки зрения FSD
-   (например widgets нельзя использовать в features и entitites)
-3) public-api-imports - разрешает импорт из других модулей только из public api. Имеет auto fix
+For strict control of following main architectural principles we use custom-made ESLint plugin
+*eslint-plugin-nick-plugin*,
+that contains 3 rules
+1) fsd-path-checker - doesn't allow to use absolute imports inside one slice/module
+2) fsd-layer-imports - checks whether layers are used correctly according to FSD (layers can use only lower layers inside of them)
+3) fsd-public-api-imports - allows import from other slices/modules only from Public API. Has autofix
 
-##### Запуск линтеров
-- `npm run lint:ts` - Проверка ts файлов линтером
-- `npm run lint:ts:fix` - Исправление ts файлов линтером
-- `npm run lint:scss` - Проверка scss файлов style линтером
-- `npm run lint:scss:fix` - Исправление scss файлов style линтером
+##### Starting linters
+- `npm run lint:ts` - Check TS files with linter
+- `npm run lint:ts:fix` - Fix TS files with linter
+- `npm run lint:scss` - Check SCSS files with linter
+- `npm run lint:scss:fix` - Fix SCSS files with linter
 
 ----
 ## Storybook
 
-В проекте для каждого компонента описываются стори-кейсы.
-Запросы на сервер мокаются с помощью storybook-addon-mock.
+In the project for each component there's a storycase describing it.
+Requests to the server are mocked using storybook-addon-mock.
 
-Файл со сторикейсами создает рядом с компонентом с расширением .stories.tsx
+File with storycase is placed next to the component - it has extension .stories.tsx
 
-Запустить сторибук можно командой:
+Run storybook with this command:
 - `npm run storybook`
 
-Подробнее о [Storybook](/docs/storybook.md)
+More details about [Storybook](/docs/storybook.md)
 
-Пример:
+Example:
 
 ```typescript jsx
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-
+import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Button, ButtonSize, ButtonTheme } from './Button';
 import { Theme } from '@/shared/const/theme';
 
-export default {
-    title: 'shared/Button',
-    component: Button,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
-} as ComponentMeta<typeof Button>;
-
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
-
-export const Primary = Template.bind({});
-Primary.args = {
+const meta: Meta<typeof Button> = {
+  title: 'shared/Button',
+  component: Button,
+  args: {
     children: 'Text',
+  },
 };
 
-export const Clear = Template.bind({});
-Clear.args = {
-    children: 'Text',
+export default meta;
+type Story = StoryObj<typeof Button>;
+
+export const Primary: Story = {};
+
+export const Clear: Story = {
+  args: {
     theme: ButtonTheme.CLEAR,
+  },
 };
 ```
 
 
 ----
 
-## Конфигурация проекта
+## Project configuration
 
-Для разработки проект содержит 2 конфига:
+For development project has 2 configs:
 1. Webpack - ./config/build
-2. vite - vite.config.ts
+2. Vite - vite.config.ts
 
-Оба сборщика адаптированы под основные фичи приложения.
+Both builders are adapted for the main features of the app.
 
-Вся конфигурация хранится в /config
-- /config/babel - babel
-- /config/build - конфигурация webpack
-- /config/jest - конфигурация тестовой среды
-- /config/storybook - конфигурация сторибука
+All configuration is placed in /config
+- /config/babel - Babel configuration
+- /config/build - Webpack configuration
+- /config/jest - testing environment configuration
+- /config/storybook - Storybook configuration
 
-В папке `scripts` находятся различные скрипты для рефакторинга\упрощения написания кода\генерации отчетов и тд.
-
-----
-
-## CI pipeline и pre commit хуки
-
-Конфигурация github actions находится в /.github/workflows.
-В ci прогоняются все виды тестов, сборка проекта и сторибука, линтинг.
-
-В прекоммит хуках проверяем проект линтерами, конфиг в /.husky
+Folder `scripts` has different scripts for refactoring/automatic writing of code/generation of reports, etc.
 
 ----
 
-### Work with data
+## CI pipeline and pre-commit hooks
 
-Взаимодействие с данными осуществляется с помощью redux toolkit.
-По возможности переиспользуемые сущности необходимо нормализовать с помощью EntityAdapter
+Github Actions configuration is placed in /.github/workflows.
+In CI we run all kinds of tests, project and storybook build, linting.
 
-Запросы на сервер отправляются с помощью [RTK query](/src/shared/api/rtkApi.ts)
-
-Для асинхронного подключения редюсеров (чтобы не тянуть их в общий бандл) используется
-[DynamicModuleLoader](/src/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader.tsx)
+In pre-commit hooks we run linters, config is placed in /.husky
 
 ----
 
+### Working with data
+
+Work with data is handled using Redux Toolkit. Reusable entities should be normalized using EntityAdapter from Redux for a better optimization.
+
+Requests to the server are sent using [RTK query](/src/shared/api/rtkApi.ts)
+
+For asynchronous loading of reducers (for optimization purposes - lazy loading) we use
+[DynamicReducerLoader](/src/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader.tsx)
+
+----
 
 ## Entities
 
@@ -196,4 +189,3 @@ Clear.args = {
 - [notificationButton](/src/features/notificationButton)
 - [profileRating](/src/features/profileRating)
 - [ThemeSwitcher](/src/features/ThemeSwitcher)
-- [UI](/src/features/UI)

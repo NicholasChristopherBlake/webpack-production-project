@@ -6,6 +6,9 @@ const meta: Meta<typeof CurrencySelect> = {
   component: CurrencySelect,
   args: {
   },
+  parameters: {
+    layout: 'centered', // because select goes top right
+  },
 };
 
 export default meta;

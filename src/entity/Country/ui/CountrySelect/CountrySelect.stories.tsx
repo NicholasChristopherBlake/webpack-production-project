@@ -6,6 +6,9 @@ const meta: Meta<typeof CountrySelect> = {
   component: CountrySelect,
   args: {
   },
+  parameters: {
+    layout: 'centered', // because select goes top right
+  },
 };
 
 export default meta;

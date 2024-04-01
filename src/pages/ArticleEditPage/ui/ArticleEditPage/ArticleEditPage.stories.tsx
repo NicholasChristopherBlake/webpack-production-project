@@ -14,5 +14,5 @@ const meta: Meta<typeof ArticleEditPage> = {
 export default meta;
 type Story = StoryObj<typeof ArticleEditPage>;
 
-export const Primary: Story = {};
+export const CreateNew: Story = {};
 

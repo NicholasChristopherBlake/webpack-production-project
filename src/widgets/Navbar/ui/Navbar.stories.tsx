@@ -22,7 +22,11 @@ export const Dark: Story = {
 
 export const AuthNavbar: Story = {
   decorators: StoreDecorator({
-    user: { authData: {} },
+    user: {
+      authData: {
+        avatar: "https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg",
+      },
+    },
   }),
 };
 
