@@ -17,8 +17,6 @@ export const AppImage = memo((props: AppImageProps) => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
 
-  const testingLintStaged = 0;
-
   useLayoutEffect(() => {
     const img = new Image();
     img.src = src ?? '';
