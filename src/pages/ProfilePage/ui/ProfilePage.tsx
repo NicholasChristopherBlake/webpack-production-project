@@ -20,7 +20,10 @@ const ProfilePage: FC<ProfilePageProps> = memo(({ className }: ProfilePageProps)
   }
 
   return (
-    <Page className={classNames('cls.profilePage', {}, [className])}>
+    <Page
+      data-testid="ProfilePage"
+      className={classNames('cls.profilePage', {}, [className])}
+    >
       <VStack gap="16" max>
         <EditableProfileCard id={id} />
         <ProfileRating profileId={id} />
