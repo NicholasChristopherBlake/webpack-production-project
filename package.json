@@ -18,6 +18,7 @@
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
+    "test:unit:staged": "jest --config ./config/jest/jest.config.ts -o",
     "test:loki": "npx loki test",
     "test:loki:ok": "npx loki approve",
     "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
@@ -31,7 +32,11 @@
     "postinstall": "node ./scripts/clear-cache.js"
   },
   "lint-staged": {
-    "**/*.{ts,tsx}": "eslint"
+    "**/*.{ts,tsx}": [
+        "eslint",
+        "npm run test:unit:staged"
+      ],
+      "**/*.scss": "npx stylelint"
   },
   "keywords": [],
   "author": "",
