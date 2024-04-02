@@ -19,24 +19,24 @@
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:unit:staged": "jest --config ./config/jest/jest.config.ts -o --passWithNoTests",
-    "test:loki": "npx loki test",
-    "test:loki:ok": "npx loki approve",
+    "test:ui": "npx loki test",
+    "test:ui:ok": "npx loki approve",
     "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
     "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static",
     "test:ui:json": "node scripts/generate-visual-json-report.js",
     "test:ui:html": "npx reg-cli --from .loki/report.json --report .loki/report.html",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook",
-    "test:ui:ok": "loki update --reactUri=\"file:./storybook-static\"",
+    "test:ui:ci:ok": "loki update --reactUri=\"file:./storybook-static\"",
     "generate:slice": "node ./scripts/createSlice/index.js",
     "postinstall": "node ./scripts/clear-cache.js"
   },
   "lint-staged": {
     "**/*.{ts,tsx}": [
-        "eslint",
-        "npm run test:unit:staged"
-      ],
-      "**/*.scss": "npx stylelint"
+      "eslint",
+      "npm run test:unit:staged"
+    ],
+    "**/*.scss": "npx stylelint"
   },
   "keywords": [],
   "author": "",
@@ -84,7 +84,7 @@
     "eslint-plugin-i18next": "^5.1.2",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-nick-plugin": "^0.0.9",
+    "eslint-plugin-nick-plugin": "^0.0.12",
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-react": "^7.29.2",
     "eslint-plugin-react-hooks": "^4.3.0",
