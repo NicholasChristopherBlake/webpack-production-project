@@ -607,6 +607,17 @@
       "city": "Moscow",
       "username": "Lebron",
       "avatar": "https://teknotower.com/wp-content/uploads/2020/11/js.png"
+    },
+    {
+      "id": "4",
+      "first": "Test",
+      "lastname": "User",
+      "age": 25,
+      "currency": "USD",
+      "country": "Kazakhstan",
+      "city": "Barcelona",
+      "username": "testuser",
+      "avatar": "https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg"
     }
   ],
   "article-ratings": [

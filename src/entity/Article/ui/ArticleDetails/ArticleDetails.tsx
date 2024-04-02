@@ -110,7 +110,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = (props) => {
             className={cls.avatar}
           />
         </HStack>
-        <VStack gap="4" max>
+        <VStack gap="4" max data-testid="ArticleDetails.Info">
           <Text
             className={cls.title}
             title={article?.title}
