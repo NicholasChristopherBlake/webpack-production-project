@@ -19,6 +19,7 @@
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:unit:staged": "jest --config ./config/jest/jest.config.ts -o --passWithNoTests",
+    "test:e2e": "cypress open",
     "test:ui": "npx loki test",
     "test:ui:ok": "npx loki approve",
     "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
@@ -32,11 +33,7 @@
     "postinstall": "node ./scripts/clear-cache.js"
   },
   "lint-staged": {
-    "**/*.{ts,tsx}": [
-      "eslint",
-      "npm run test:unit:staged"
-    ],
-    "**/*.scss": "npx stylelint"
+    "**/*.{ts,tsx}": "eslint"
   },
   "keywords": [],
   "author": "",
@@ -78,6 +75,7 @@
     "concurrently": "^7.0.0",
     "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.6.0",
+    "cypress": "^11.0.0",
     "eslint": "^8.10.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^9.1.0",
