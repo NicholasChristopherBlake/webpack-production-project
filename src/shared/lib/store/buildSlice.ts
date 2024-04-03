@@ -18,8 +18,9 @@ export function buildSlice<
   const useActions = (): typeof slice.actions => {
     const dispatch = useDispatch();
     // from redux documentation
-    // @ts-ignore, because types for slice.actions don't work properly for some reason
+    // @ts-ignore
     return useMemo(
+      // @ts-ignore, because types for slice.actions don't work properly for some reason
       () => bindActionCreators(slice.actions, dispatch),
       [dispatch],
     );
