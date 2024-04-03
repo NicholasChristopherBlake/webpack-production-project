@@ -1,10 +1,8 @@
-import {
-  FC, memo, useCallback, useMemo,
-} from "react";
-import { useTranslation } from "react-i18next";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { Listbox } from "@/shared/ui/Popups";
-import { Currency } from "../../model/types/Currency";
+import { FC, memo, useCallback, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Listbox } from '@/shared/ui/Popups';
+import { Currency } from '../../model/types/Currency';
 
 interface CurrencySelectProps {
   className?: string;
@@ -13,30 +11,38 @@ interface CurrencySelectProps {
   readonly?: boolean;
 }
 
-export const CurrencySelect: FC<CurrencySelectProps> = memo((props: CurrencySelectProps) => {
-  const {
-    className, value, onChange, readonly,
-  } = props;
-  const { t } = useTranslation('profile');
+export const CurrencySelect: FC<CurrencySelectProps> = memo(
+  (props: CurrencySelectProps) => {
+    const { className, value, onChange, readonly } = props;
+    const { t } = useTranslation('profile');
 
-  const currencyOptions = useMemo(() => (
-    Object.entries(Currency).map((val) => ({ value: val[0], content: val[1] }))
-  ), []);
+    const currencyOptions = useMemo(
+      () =>
+        Object.entries(Currency).map((val) => ({
+          value: val[0],
+          content: val[1],
+        })),
+      [],
+    );
 
-  const onChangeHandler = useCallback((value: string) => {
-    onChange?.(value as Currency);
-  }, [onChange]);
+    const onChangeHandler = useCallback(
+      (value: string) => {
+        onChange?.(value as Currency);
+      },
+      [onChange],
+    );
 
-  return (
-    <Listbox
-      className={classNames('', {}, [className])}
-      value={value}
-      defaultValue={t('Choose currency')}
-      label={t('Choose currency')}
-      items={currencyOptions}
-      onChange={onChangeHandler}
-      readonly={readonly}
-      direction="top right"
-    />
-  );
-});
+    return (
+      <Listbox
+        className={classNames('', {}, [className])}
+        value={value}
+        defaultValue={t('Choose currency')}
+        label={t('Choose currency')}
+        items={currencyOptions}
+        onChange={onChangeHandler}
+        readonly={readonly}
+        direction="top right"
+      />
+    );
+  },
+);

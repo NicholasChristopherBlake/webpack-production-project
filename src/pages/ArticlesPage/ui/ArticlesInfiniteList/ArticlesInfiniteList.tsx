@@ -9,11 +9,14 @@ import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitial
 import { Text } from '@/shared/ui/Text';
 import { getArticles } from '../../model/slices/articlesPageSlice';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
-import { getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView }
-  from '../../model/selectors/articlesPageSelectors';
+import {
+  getArticlesPageError,
+  getArticlesPageIsLoading,
+  getArticlesPageView,
+} from '../../model/selectors/articlesPageSelectors';
 
 interface ArticlesInfiniteListProps {
-   className?: string;
+  className?: string;
 }
 
 export const ArticlesInfiniteList = memo((props: ArticlesInfiniteListProps) => {

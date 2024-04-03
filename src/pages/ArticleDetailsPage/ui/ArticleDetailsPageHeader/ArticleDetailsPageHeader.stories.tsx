@@ -12,41 +12,37 @@ export default meta;
 type Story = StoryObj<typeof ArticleDetailsPageHeader>;
 
 export const PrimaryCanEdit: Story = {
-  decorators: StoreDecorator(
-    {
-      articleDetails: {
-        data: {
-          id: '1',
-          user: {
-            id: '1',
-          },
-        },
-      },
-      user: {
-        authData: {
+  decorators: StoreDecorator({
+    articleDetails: {
+      data: {
+        id: '1',
+        user: {
           id: '1',
         },
       },
     },
-  ),
+    user: {
+      authData: {
+        id: '1',
+      },
+    },
+  }),
 };
 
 export const PrimaryNoEdit: Story = {
-  decorators: StoreDecorator(
-    {
-      articleDetails: {
-        data: {
-          id: '1',
-          user: {
-            id: '2',
-          },
-        },
-      },
-      user: {
-        authData: {
-          id: '1',
+  decorators: StoreDecorator({
+    articleDetails: {
+      data: {
+        id: '1',
+        user: {
+          id: '2',
         },
       },
     },
-  ),
+    user: {
+      authData: {
+        id: '1',
+      },
+    },
+  }),
 };

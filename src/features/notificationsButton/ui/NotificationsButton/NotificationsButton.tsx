@@ -10,7 +10,7 @@ import { useDevice } from '@/shared/lib/hooks/useDevice/useDevice';
 import cls from './NotificationsButton.module.scss';
 
 interface NotificationsButtonProps {
-   className?: string;
+  className?: string;
 }
 
 export const NotificationsButton = memo((props: NotificationsButtonProps) => {

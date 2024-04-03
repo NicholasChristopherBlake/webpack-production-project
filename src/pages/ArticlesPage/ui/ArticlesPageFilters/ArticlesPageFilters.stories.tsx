@@ -14,16 +14,13 @@ type Story = StoryObj<typeof ArticlesPageFilters>;
 
 export const Primary: Story = {
   decorators: [
-    StoreDecorator(
-      {
-        articlesPage: {
-          view: ArticleView.LIST,
-          order: 'asc',
-          limit: 4,
-          sort: ArticleSortField.CREATED,
-        },
+    StoreDecorator({
+      articlesPage: {
+        view: ArticleView.LIST,
+        order: 'asc',
+        limit: 4,
+        sort: ArticleSortField.CREATED,
       },
-    ),
+    }),
   ],
 };
-

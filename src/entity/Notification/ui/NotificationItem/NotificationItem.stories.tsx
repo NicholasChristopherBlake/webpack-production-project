@@ -15,4 +15,3 @@ export default meta;
 type Story = StoryObj<typeof NotificationItem>;
 
 export const Primary: Story = {};
-

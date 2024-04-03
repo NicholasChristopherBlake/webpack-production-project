@@ -1,7 +1,7 @@
-import { StoryFn } from "@storybook/react";
+import { StoryFn } from '@storybook/react';
 // eslint-disable-next-line nick-plugin/fsd-layer-imports
-import { ThemeProvider } from "@/app/providers/ThemeProvider";
-import { Theme } from "@/shared/const/theme";
+import { ThemeProvider } from '@/app/providers/ThemeProvider';
+import { Theme } from '@/shared/const/theme';
 
 // Second variant as a function
 export const ThemeDecorator = (theme: Theme) => (Story: StoryFn) => (

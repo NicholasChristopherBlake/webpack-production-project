@@ -16,4 +16,3 @@ describe('Sidebar Test', () => {
     expect(screen.getByTestId('sidebar')).toHaveClass('collapsed');
   });
 });
-

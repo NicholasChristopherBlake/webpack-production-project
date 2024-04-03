@@ -1,14 +1,19 @@
-import { ReactNode, useEffect } from "react";
-import { useDispatch, useStore } from "react-redux";
-import { Reducer } from "@reduxjs/toolkit";
-import { ReduxStoreWithManager, StateSchema, StateSchemaKey }
-  from "@/app/providers/StoreProvider";
+import { ReactNode, useEffect } from 'react';
+import { useDispatch, useStore } from 'react-redux';
+import { Reducer } from '@reduxjs/toolkit';
+import {
+  ReduxStoreWithManager,
+  StateSchema,
+  StateSchemaKey,
+} from '@/app/providers/StoreProvider';
 
 export type ReducersList = {
   // for more strict types to find exact reducer schema
   // dynamically gets correct part of stateschema based on provided reducer
-  [reducerKey in StateSchemaKey]?: Reducer<NonNullable<StateSchema[reducerKey]>>;
-}
+  [reducerKey in StateSchemaKey]?: Reducer<
+    NonNullable<StateSchema[reducerKey]>
+  >;
+};
 
 interface DynamicReducerLoaderProps {
   children: ReactNode;
@@ -17,9 +22,7 @@ interface DynamicReducerLoaderProps {
 }
 
 export const DynamicReducerLoader = (props: DynamicReducerLoaderProps) => {
-  const {
-    children, reducers, removeAfterUnmount = true,
-  } = props;
+  const { children, reducers, removeAfterUnmount = true } = props;
   const store = useStore() as ReduxStoreWithManager;
   const dispatch = useDispatch();
 
@@ -42,13 +45,11 @@ export const DynamicReducerLoader = (props: DynamicReducerLoaderProps) => {
         });
       }
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     // eslint-disable-next-line react/jsx-no-useless-fragment
-    <>
-      {children}
-    </>
+    <>{children}</>
   );
 };

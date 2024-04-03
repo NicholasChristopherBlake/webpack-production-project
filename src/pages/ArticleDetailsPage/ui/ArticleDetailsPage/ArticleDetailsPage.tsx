@@ -1,14 +1,13 @@
-import {
-  FC, memo,
-} from 'react';
+import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
-import { ArticleRecommendationsList }
-  from '@/features/articleRecommendationsList';
+import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { ArticleDetails } from '@/entity/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { DynamicReducerLoader, ReducersList }
-  from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
+import {
+  DynamicReducerLoader,
+  ReducersList,
+} from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
 import { VStack } from '@/shared/ui/Stack';
 import { Page } from '@/widgets/Page';
 import { articleDetailsPageReducer } from '../../model/slice';
@@ -18,7 +17,7 @@ import cls from './ArticleDetailsPage.module.scss';
 import { ArticleRating } from '@/features/articleRating';
 
 interface ArticleDetailsPageProps {
-   className?: string;
+  className?: string;
 }
 
 const reducers: ReducersList = {
@@ -28,7 +27,7 @@ const reducers: ReducersList = {
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   const { className } = props;
   const { t } = useTranslation('article-details');
-  const { id = '1' } = useParams<{id: string}>(); // passed default value for storybook
+  const { id = '1' } = useParams<{ id: string }>(); // passed default value for storybook
 
   if (!id) {
     return null;

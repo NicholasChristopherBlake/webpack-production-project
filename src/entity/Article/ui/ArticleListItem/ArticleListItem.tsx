@@ -7,29 +7,27 @@ import { Icon } from '@/shared/ui/Icon';
 import { Card } from '@/shared/ui/Card';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { getRouteArticleDetails } from "@/shared/const/router";
+import { getRouteArticleDetails } from '@/shared/const/router';
 import { AppLink } from '@/shared/ui/AppLink';
 import cls from './ArticleListItem.module.scss';
+import { Article, ArticleTextBlock } from '../../model/types/article';
 import {
-  Article, ArticleTextBlock,
-} from '../../model/types/article';
-import { ArticleBlockType, ArticleView }
-  from "../../model/consts/articleConsts";
+  ArticleBlockType,
+  ArticleView,
+} from '../../model/consts/articleConsts';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { AppImage } from '@/shared/ui/AppImage';
 import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface ArticleListItemProps {
-   className?: string;
-   article: Article;
-   view: ArticleView;
-   target?: HTMLAttributeAnchorTarget;
+  className?: string;
+  article: Article;
+  view: ArticleView;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-  const {
-    className, article, view, target,
-  } = props;
+  const { className, article, view, target } = props;
   const { t } = useTranslation('articles');
 
   const types = <Text body={article.type.join(', ')} className={cls.types} />;
@@ -64,17 +62,14 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             alt={article.title}
           />
           {textBlock && (
-            <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
+            <ArticleTextBlockComponent
+              block={textBlock}
+              className={cls.textBlock}
+            />
           )}
           <div className={cls.footer}>
-            <Button
-              theme={ButtonTheme.OUTLINE}
-            >
-              <AppLink
-                to={getRouteArticleDetails(article.id)}
-                target={target}
-              >
-
+            <Button theme={ButtonTheme.OUTLINE}>
+              <AppLink to={getRouteArticleDetails(article.id)} target={target}>
                 {t('Read more')}
               </AppLink>
             </Button>
@@ -111,4 +106,3 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     </AppLink>
   );
 });
-

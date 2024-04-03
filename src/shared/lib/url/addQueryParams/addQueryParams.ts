@@ -9,9 +9,9 @@ export function getQueryParams(params: OptionalRecord<string, string>) {
 }
 
 /*
-* Function for adding query parameters to the URL
-* @param
-*/
+ * Function for adding query parameters to the URL
+ * @param
+ */
 
 export function addQueryParams(params: OptionalRecord<string, string>) {
   window.history.pushState(null, '', getQueryParams(params));

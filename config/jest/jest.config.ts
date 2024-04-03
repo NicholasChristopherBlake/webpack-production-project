@@ -3,7 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
-import path from "path";
+import path from 'path';
 
 const config = {
   // All imported modules in your tests should be mocked automatically
@@ -17,24 +17,22 @@ const config = {
 
   // Automatically clear mock calls, instances, contexts and results before every test
   clearMocks: true,
-  testEnvironment: "jsdom",
-  coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
-  moduleDirectories: ["node_modules"],
+  testEnvironment: 'jsdom',
+  coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
+  moduleDirectories: ['node_modules'],
   moduleFileExtensions: [
-    "js",
-    "mjs",
-    "cjs",
-    "jsx",
-    "ts",
-    "tsx",
-    "json",
-    "node",
+    'js',
+    'mjs',
+    'cjs',
+    'jsx',
+    'ts',
+    'tsx',
+    'json',
+    'node',
   ],
-  modulePaths: [
-    "<rootDir>src",
-  ],
-  rootDir: "../../",
-  testMatch: ["<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)"],
+  modulePaths: ['<rootDir>src'],
+  rootDir: '../../',
+  testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
   setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
   moduleNameMapper: {
     '\\.s?css$': 'identity-obj-proxy',
@@ -46,15 +44,19 @@ const config = {
     __API__: '',
     __PROJECT__: 'jest',
   },
-  transformIgnorePatterns: ["node_modules/(?!(axios)/)"],
-  reporters: [ // for HTML unit tests reports
-    "default",
-    ["jest-html-reporters", {
-      publicPath: "<rootDir>/reports/unit",
-      filename: "report.html",
-      // openReport: true,
-      inlineSource: true, // no extra JS files
-    }],
+  transformIgnorePatterns: ['node_modules/(?!(axios)/)'],
+  reporters: [
+    // for HTML unit tests reports
+    'default',
+    [
+      'jest-html-reporters',
+      {
+        publicPath: '<rootDir>/reports/unit',
+        filename: 'report.html',
+        // openReport: true,
+        inlineSource: true, // no extra JS files
+      },
+    ],
   ],
 
   // Indicates whether the coverage information should be collected while executing the test

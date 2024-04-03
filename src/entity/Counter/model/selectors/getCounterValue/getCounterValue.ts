@@ -1,4 +1,4 @@
-import { buildSelector } from "@/shared/lib/store";
+import { buildSelector } from '@/shared/lib/store';
 
 // // Example with Reselect
 // export const getCounterValue = createSelector(

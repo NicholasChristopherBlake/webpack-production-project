@@ -7,15 +7,15 @@ import { UserRole } from '@/entity/User';
 const meta: Meta<typeof AvatarDropdown> = {
   title: 'features/AvatarDropdown',
   component: AvatarDropdown,
-  args: {
-  },
+  args: {},
   decorators: [
     StoreDecorator({
       user: {
         authData: {
           id: '1',
           username: 'Nick',
-          avatar: "https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg",
+          avatar:
+            'https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg',
         },
       },
     }),
@@ -33,11 +33,11 @@ export const Admin: Story = {
         authData: {
           id: '1',
           username: 'Nick',
-          avatar: "https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg",
+          avatar:
+            'https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg',
           roles: [UserRole.ADMIN],
         },
       },
     }),
   ],
 };
-

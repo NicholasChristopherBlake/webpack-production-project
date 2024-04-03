@@ -1,6 +1,4 @@
-import {
-  FC, memo, useMemo, useState,
-} from 'react';
+import { FC, memo, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
@@ -20,13 +18,10 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }: SidebarProps) => {
   const sidebarItemsList = useSelector(getSidebarItems);
 
   const itemsList = useMemo(
-    () => sidebarItemsList.map((item) => (
-      <SidebarItem
-        key={item.path}
-        item={item}
-        collapsed={collapsed}
-      />
-    )),
+    () =>
+      sidebarItemsList.map((item) => (
+        <SidebarItem key={item.path} item={item} collapsed={collapsed} />
+      )),
     [collapsed, sidebarItemsList],
   );
 
@@ -58,10 +53,7 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }: SidebarProps) => {
 
       <div className={cls.switchers}>
         <ThemeSwitcher />
-        <LangSwitcher
-          short={collapsed}
-          className={cls.lang}
-        />
+        <LangSwitcher short={collapsed} className={cls.lang} />
       </div>
     </aside>
   );

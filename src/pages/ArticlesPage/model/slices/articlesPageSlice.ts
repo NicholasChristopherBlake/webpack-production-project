@@ -1,12 +1,19 @@
-import { PayloadAction, createEntityAdapter, createSlice } from "@reduxjs/toolkit";
 import {
-  Article, ArticleSortField, ArticleType, ArticleView,
-} from "@/entity/Article";
-import { StateSchema } from "@/app/providers/StoreProvider";
-import { ARTICLE_VIEW_LOCAL_STORAGE_KEY } from "@/shared/const/localStorage";
-import { SortOrder } from "@/shared/types/order";
-import { ArticlesPageSchema } from "../types/ArticlesPageSchema";
-import { fetchArticlesList } from "../services/fetchArticlesList/fetchArticlesList";
+  PayloadAction,
+  createEntityAdapter,
+  createSlice,
+} from '@reduxjs/toolkit';
+import {
+  Article,
+  ArticleSortField,
+  ArticleType,
+  ArticleView,
+} from '@/entity/Article';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { ARTICLE_VIEW_LOCAL_STORAGE_KEY } from '@/shared/const/localStorage';
+import { SortOrder } from '@/shared/types/order';
+import { ArticlesPageSchema } from '../types/ArticlesPageSchema';
+import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
 
 const articlesAdapter = createEntityAdapter<Article>({
   selectId: (article) => article.id,
@@ -54,12 +61,13 @@ const articlesPageSlice = createSlice({
       state.search = action.payload;
     },
     initState: (state) => {
-      const view = localStorage.getItem(ARTICLE_VIEW_LOCAL_STORAGE_KEY) as ArticleView;
+      const view = localStorage.getItem(
+        ARTICLE_VIEW_LOCAL_STORAGE_KEY,
+      ) as ArticleView;
       state.view = view;
       state.limit = view === ArticleView.LIST ? 4 : 9;
       state._inited = true;
     },
-
   },
   extraReducers: (builder) => {
     builder

@@ -33,21 +33,25 @@ const gapClasses: Record<FlexGap, string> = {
 };
 
 // for applying different div props - from React type for <div>
-type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+type DivProps = DetailedHTMLProps<
+  HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+>;
 
 export interface FlexProps extends DivProps {
-   className?: string;
-   children: ReactNode;
-   justify?: FlexJustify;
-   align?: FlexAlign;
-   direction: FlexDirection;
-   gap?: FlexGap;
-   max?: boolean;
+  className?: string;
+  children: ReactNode;
+  justify?: FlexJustify;
+  align?: FlexAlign;
+  direction: FlexDirection;
+  gap?: FlexGap;
+  max?: boolean;
 }
 
 export const Flex = (props: FlexProps) => {
   const {
-    className, children,
+    className,
+    children,
     justify = 'start',
     align = 'center',
     direction = 'row',

@@ -1,10 +1,16 @@
 import {
-  ReactNode, createContext, useContext, useEffect, useMemo, useRef, useState,
+  ReactNode,
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
 } from 'react';
 
 // to get correct types for libraries
-type SpringType = typeof import('@react-spring/web')
-type GestureType = typeof import('@use-gesture/react')
+type SpringType = typeof import('@react-spring/web');
+type GestureType = typeof import('@use-gesture/react');
 
 interface AnimationContextPayload {
   Gesture?: GestureType;
@@ -15,19 +21,16 @@ interface AnimationContextPayload {
 const AnimationContext = createContext<AnimationContextPayload>({});
 
 // Both libraries are used together, so we wait while they both are loaded with Promise.all
-const getAsyncAnimationModules = async () => Promise.all(
-  // this import works with promises - lazy loading
-  [
-    import('@react-spring/web'),
-    import('@use-gesture/react'),
-  ],
-);
+const getAsyncAnimationModules = async () =>
+  Promise.all(
+    // this import works with promises - lazy loading
+    [import('@react-spring/web'), import('@use-gesture/react')],
+  );
 
-export const useAnimationLibs = () => useContext(
-  AnimationContext,
-) as Required<AnimationContextPayload>; // to say that these fields are not undefined
+export const useAnimationLibs = () =>
+  useContext(AnimationContext) as Required<AnimationContextPayload>; // to say that these fields are not undefined
 
-export const AnimationProvider = ({ children }: {children: ReactNode}) => {
+export const AnimationProvider = ({ children }: { children: ReactNode }) => {
   // Create refs for libraries to not have rerenders
   const SpringRef = useRef<SpringType>();
   const GestureRef = useRef<GestureType>();
@@ -42,16 +45,17 @@ export const AnimationProvider = ({ children }: {children: ReactNode}) => {
     });
   }, []);
 
-  const value = useMemo(() => ({
-    Gesture: GestureRef.current,
-    Spring: SpringRef.current,
-    isLoaded,
-  }), [isLoaded]);
+  const value = useMemo(
+    () => ({
+      Gesture: GestureRef.current,
+      Spring: SpringRef.current,
+      isLoaded,
+    }),
+    [isLoaded],
+  );
 
   return (
-    <AnimationContext.Provider
-      value={value}
-    >
+    <AnimationContext.Provider value={value}>
       {children}
     </AnimationContext.Provider>
   );

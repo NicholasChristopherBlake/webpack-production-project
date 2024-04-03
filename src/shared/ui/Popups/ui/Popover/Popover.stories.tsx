@@ -7,8 +7,8 @@ const meta: Meta<typeof Popover> = {
   title: 'shared/Popups/Popover',
   component: Popover,
   args: {
-    trigger: (<Button>Open</Button>),
-    children: (<div>Popover content</div>),
+    trigger: <Button>Open</Button>,
+    children: <div>Popover content</div>,
   },
 };
 
@@ -16,4 +16,3 @@ export default meta;
 type Story = StoryObj<typeof Popover>;
 
 export const Primary: Story = {};
-

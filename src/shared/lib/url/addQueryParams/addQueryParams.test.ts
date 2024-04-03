@@ -1,4 +1,4 @@
-import { getQueryParams } from "./addQueryParams";
+import { getQueryParams } from './addQueryParams';
 
 describe('addQueryParams.test', () => {
   test('test with one param', () => {

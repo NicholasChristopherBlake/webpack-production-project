@@ -11,10 +11,12 @@ const meta: Meta<typeof Tabs> = {
       {
         value: 'tab 1',
         content: 'tab 1',
-      }, {
+      },
+      {
         value: 'tab 2',
         content: 'tab 2',
-      }, {
+      },
+      {
         value: 'tab 3',
         content: 'tab 3',
       },
@@ -28,4 +30,3 @@ export default meta;
 type Story = StoryObj<typeof Tabs>;
 
 export const Primary: Story = {};
-

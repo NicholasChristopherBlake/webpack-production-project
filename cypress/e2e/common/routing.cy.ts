@@ -1,4 +1,4 @@
-import { selectByTestId } from "cypress/helpers/selectByTestId";
+import { selectByTestId } from 'cypress/helpers/selectByTestId';
 
 describe('Routing', () => {
   describe('User is NOT authed', () => {

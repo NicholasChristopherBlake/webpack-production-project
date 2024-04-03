@@ -6,8 +6,7 @@ import { ArticleTypeTabs } from './ArticleTypeTabs';
 const meta: Meta<typeof ArticleTypeTabs> = {
   title: 'features/ArticleTypeTabs',
   component: ArticleTypeTabs,
-  args: {
-  },
+  args: {},
 };
 
 export default meta;
@@ -18,4 +17,3 @@ export const Primary: Story = {
     value: ArticleType.ALL,
   },
 };
-

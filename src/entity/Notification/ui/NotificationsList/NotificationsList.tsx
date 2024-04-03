@@ -7,7 +7,7 @@ import { useNotifications } from '../../api/notificationsApi';
 import { NotificationItem } from '../NotificationItem/NotificationItem';
 
 interface NotificationsListProps {
-   className?: string;
+  className?: string;
 }
 
 export const NotificationsList = memo((props: NotificationsListProps) => {
@@ -18,7 +18,11 @@ export const NotificationsList = memo((props: NotificationsListProps) => {
 
   if (isLoading) {
     return (
-      <VStack gap="16" max className={classNames(cls.notificationsList, {}, [className])}>
+      <VStack
+        gap="16"
+        max
+        className={classNames(cls.notificationsList, {}, [className])}
+      >
         <Skeleton width="100%" borderRadius="8px" height="80px" />
         <Skeleton width="100%" borderRadius="8px" height="80px" />
         <Skeleton width="100%" borderRadius="8px" height="80px" />
@@ -27,10 +31,12 @@ export const NotificationsList = memo((props: NotificationsListProps) => {
   }
 
   return (
-    <VStack gap="16" max className={classNames(cls.notificationsList, {}, [className])}>
-      {data?.map((item) => (
-        <NotificationItem key={item.id} item={item} />
-      ))}
+    <VStack
+      gap="16"
+      max
+      className={classNames(cls.notificationsList, {}, [className])}
+    >
+      {data?.map((item) => <NotificationItem key={item.id} item={item} />)}
     </VStack>
   );
 });

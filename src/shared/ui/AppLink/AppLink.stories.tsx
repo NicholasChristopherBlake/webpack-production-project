@@ -45,7 +45,6 @@ export const SecondaryDark: Story = {
     theme: AppLinkTheme.SECONDARY,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
-
 };
 
 export const RedDark: Story = {
@@ -53,7 +52,6 @@ export const RedDark: Story = {
     theme: AppLinkTheme.RED,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
-
 };
 
 // export const OutlinedDark: Story = {
@@ -69,4 +67,3 @@ export const RedDark: Story = {
 //     // ),
 //   ],
 // };
-

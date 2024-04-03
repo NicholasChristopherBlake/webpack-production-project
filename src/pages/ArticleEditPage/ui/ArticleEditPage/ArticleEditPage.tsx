@@ -6,20 +6,18 @@ import { Page } from '@/widgets/Page';
 import cls from './ArticleEditPage.module.scss';
 
 interface ArticleEditPageProps {
-   className?: string;
+  className?: string;
 }
 
 const ArticleEditPage = memo((props: ArticleEditPageProps) => {
   const { className } = props;
   const { t } = useTranslation('article-details');
-  const { id } = useParams<{id: string}>();
+  const { id } = useParams<{ id: string }>();
   const isEdit = Boolean(id);
 
   return (
     <Page className={classNames(cls.articleEditPage, {}, [className])}>
-      {isEdit
-        ? t('Editing article with ID') + id
-        : t('Creating a new article')}
+      {isEdit ? t('Editing article with ID') + id : t('Creating a new article')}
     </Page>
   );
 });

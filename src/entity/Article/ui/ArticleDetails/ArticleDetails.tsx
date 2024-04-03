@@ -2,8 +2,10 @@ import { FC, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { DynamicReducerLoader, ReducersList }
-  from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
+import {
+  DynamicReducerLoader,
+  ReducersList,
+} from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Text, TextAlign, TextSize } from '@/shared/ui/Text';
 import { Skeleton } from '@/shared/ui/Skeleton';
@@ -13,23 +15,22 @@ import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg';
 import { Icon } from '@/shared/ui/Icon';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import {
-  getArticleDetailsData, getArticleDetailsError,
+  getArticleDetailsData,
+  getArticleDetailsError,
   getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import cls from './ArticleDetails.module.scss';
 import { ArticleBlock } from '../../model/types/article';
-import { ArticleBlockType }
-  from "../../model/consts/articleConsts";
+import { ArticleBlockType } from '../../model/consts/articleConsts';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
-import { ArticleImageBlockComponent } from
-  '../ArticleImageBlockComponent/ArticleImageBlockComponent';
+import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
 interface ArticleDetailsProps {
-   className?: string;
-   id?: string;
+  className?: string;
+  id?: string;
 }
 
 const reducers: ReducersList = {
@@ -86,7 +87,12 @@ export const ArticleDetails: FC<ArticleDetailsProps> = (props) => {
   if (isLoading) {
     content = (
       <>
-        <Skeleton className={cls.avatar} width={200} height={200} borderRadius="50%" />
+        <Skeleton
+          className={cls.avatar}
+          width={200}
+          height={200}
+          borderRadius="50%"
+        />
         <Skeleton className={cls.title} width={300} height={32} />
         <Skeleton className={cls.skeleton} width={600} height={24} />
         <Skeleton className={cls.skeleton} width="100%" height={200} />
@@ -104,11 +110,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = (props) => {
     content = (
       <>
         <HStack justify="center" max className={cls.avatarWrapper}>
-          <Avatar
-            size={200}
-            src={article?.img}
-            className={cls.avatar}
-          />
+          <Avatar size={200} src={article?.img} className={cls.avatar} />
         </HStack>
         <VStack gap="4" max data-testid="ArticleDetails.Info">
           <Text
@@ -134,7 +136,11 @@ export const ArticleDetails: FC<ArticleDetailsProps> = (props) => {
 
   return (
     <DynamicReducerLoader reducers={reducers} removeAfterUnmount>
-      <VStack gap="16" max className={classNames(cls.articleDetails, {}, [className])}>
+      <VStack
+        gap="16"
+        max
+        className={classNames(cls.articleDetails, {}, [className])}
+      >
         {content}
       </VStack>
     </DynamicReducerLoader>

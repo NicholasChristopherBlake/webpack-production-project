@@ -2,14 +2,12 @@ import { Preview } from '@storybook/react';
 import '../../src/app/styles/index.scss';
 import { Theme } from '../../src/shared/const/theme';
 
-import { RouteDecorator } from
-  '../../src/shared/config/storybook/RouteDecorator/RouteDecorator';
-import { SuspenseDecorator } from
-  '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
+import { RouteDecorator } from '../../src/shared/config/storybook/RouteDecorator/RouteDecorator';
+import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
 
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: "^on[A-Z].*" },
+    actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -27,9 +25,9 @@ const preview: Preview = {
     },
   },
   decorators: [
-    (Story) => (RouteDecorator()(Story)),
+    (Story) => RouteDecorator()(Story),
     // (Story) => (ThemeDecorator(Theme.LIGHT)(Story)),
-    (Story) => (SuspenseDecorator()(Story)),
+    (Story) => SuspenseDecorator()(Story),
   ],
 };
 

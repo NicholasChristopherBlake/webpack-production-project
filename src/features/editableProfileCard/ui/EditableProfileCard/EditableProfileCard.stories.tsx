@@ -8,8 +8,7 @@ import { EditableProfileCard } from './EditableProfileCard';
 const meta: Meta<typeof EditableProfileCard> = {
   title: 'features/editableProfileCard/EditableProfileCard',
   component: EditableProfileCard,
-  args: {
-  },
+  args: {},
   decorators: [
     StoreDecorator({
       profile: {

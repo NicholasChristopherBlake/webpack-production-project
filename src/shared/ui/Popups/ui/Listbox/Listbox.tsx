@@ -27,8 +27,14 @@ interface ListboxProps {
 
 export function Listbox(props: ListboxProps) {
   const {
-    className, items, value, defaultValue, onChange, readonly,
-    direction = 'bottom right', label,
+    className,
+    items,
+    value,
+    defaultValue,
+    onChange,
+    readonly,
+    direction = 'bottom right',
+    label,
   } = props;
 
   const optionsClasses = [mapDirectionClass[direction]];
@@ -36,9 +42,9 @@ export function Listbox(props: ListboxProps) {
   return (
     <HStack gap="4">
       {label && (
-      <span className={classNames('', { [cls.labelDisabled]: readonly }, [])}>
-        {`${label}>`}
-      </span>
+        <span className={classNames('', { [cls.labelDisabled]: readonly }, [])}>
+          {`${label}>`}
+        </span>
       )}
       <HListbox
         disabled={readonly}
@@ -47,14 +53,13 @@ export function Listbox(props: ListboxProps) {
         onChange={onChange}
         className={classNames(cls.listbox, {}, [className, popupCls.popup])}
       >
-
         <HListbox.Button className={cls.trigger} as="div">
-          <Button disabled={readonly}>
-            {value ?? defaultValue}
-          </Button>
+          <Button disabled={readonly}>{value ?? defaultValue}</Button>
         </HListbox.Button>
 
-        <HListbox.Options className={classNames(cls.options, {}, optionsClasses)}>
+        <HListbox.Options
+          className={classNames(cls.options, {}, optionsClasses)}
+        >
           {items?.map((item) => (
             <HListbox.Option
               key={item.value}
@@ -63,21 +68,20 @@ export function Listbox(props: ListboxProps) {
               as={Fragment}
             >
               {({ active, selected }) => (
-                <li className={classNames(cls.item, {
-                  [popupCls.active]: active,
-                  [popupCls.disabled]: item.disabled,
-                })}
+                <li
+                  className={classNames(cls.item, {
+                    [popupCls.active]: active,
+                    [popupCls.disabled]: item.disabled,
+                  })}
                 >
-                  {selected && (<span>&#10004;</span>)}
+                  {selected && <span>&#10004;</span>}
                   {item.content}
                 </li>
               )}
-
             </HListbox.Option>
           ))}
         </HListbox.Options>
       </HListbox>
     </HStack>
-
   );
 }

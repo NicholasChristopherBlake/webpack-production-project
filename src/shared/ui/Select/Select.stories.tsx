@@ -4,8 +4,7 @@ import { Select } from './Select';
 const meta: Meta<typeof Select> = {
   title: 'shared/Select',
   component: Select,
-  args: {
-  },
+  args: {},
 };
 
 export default meta;
@@ -21,4 +20,3 @@ export const Primary: Story = {
     ],
   },
 };
-

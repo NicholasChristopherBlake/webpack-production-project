@@ -1,5 +1,5 @@
-import { StateSchema } from "@/app/providers/StoreProvider";
-import { getProfileFirstname } from "./getProfileFirstname";
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { getProfileFirstname } from './getProfileFirstname';
 
 describe('getProfileFirstname.test', () => {
   test('should return correct state', () => {

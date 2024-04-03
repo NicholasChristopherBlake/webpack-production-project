@@ -1,13 +1,16 @@
 import {
-  CombinedState, Reducer, ReducersMapObject, configureStore,
-} from "@reduxjs/toolkit";
-import { counterReducer } from "@/entity/Counter";
-import { userReducer } from "@/entity/User";
-import { $api } from "@/shared/api/api";
-import { scrollSaveReducer } from "@/features/ScrollSave";
-import { rtkApi } from "@/shared/api/rtkApi";
-import { StateSchema, ThunkExtraArg } from "./StateSchema";
-import { createReducerManager } from "./reducerManager";
+  CombinedState,
+  Reducer,
+  ReducersMapObject,
+  configureStore,
+} from '@reduxjs/toolkit';
+import { counterReducer } from '@/entity/Counter';
+import { userReducer } from '@/entity/User';
+import { $api } from '@/shared/api/api';
+import { scrollSaveReducer } from '@/features/ScrollSave';
+import { rtkApi } from '@/shared/api/rtkApi';
+import { StateSchema, ThunkExtraArg } from './StateSchema';
+import { createReducerManager } from './reducerManager';
 
 export function createReduxStore(
   initialState?: StateSchema,
@@ -31,11 +34,12 @@ export function createReduxStore(
     reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
     devTools: __IS_DEV__,
     preloadedState: initialState,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-      thunk: {
-        extraArgument: extraArg,
-      },
-    }).concat(rtkApi.middleware),
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+        thunk: {
+          extraArgument: extraArg,
+        },
+      }).concat(rtkApi.middleware),
   }); // casting doesn't work, types break in components
 
   // @ts-ignore
@@ -44,4 +48,4 @@ export function createReduxStore(
   return store;
 }
 
-export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch']
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];

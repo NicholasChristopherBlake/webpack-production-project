@@ -6,9 +6,7 @@
   "views": 5021,
   "createdAt": "01.05.2023",
   "userId": "1",
-  "type": [
-    "IT"
-  ],
+  "type": ["IT"],
   "blocks": [
     {
       "id": "1",
@@ -25,9 +23,7 @@
     "id": "1",
     "username": "admin",
     "password": "123",
-    "roles": [
-      "ADMIN"
-    ],
+    "roles": ["ADMIN"],
     "avatar": "https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg"
   }
 }

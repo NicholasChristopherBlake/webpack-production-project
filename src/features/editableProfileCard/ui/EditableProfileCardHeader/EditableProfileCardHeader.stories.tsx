@@ -6,15 +6,11 @@ import { EditableProfileCardHeader } from './EditableProfileCardHeader';
 const meta: Meta<typeof EditableProfileCardHeader> = {
   title: 'features/editableProfileCard/EditableProfileCardHeader',
   component: EditableProfileCardHeader,
-  args: {
-  },
-  decorators: [
-    StoreDecorator({}),
-  ],
+  args: {},
+  decorators: [StoreDecorator({})],
 };
 
 export default meta;
 type Story = StoryObj<typeof EditableProfileCardHeader>;
 
 export const Primary: Story = {};
-

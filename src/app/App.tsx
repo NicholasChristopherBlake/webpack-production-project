@@ -1,10 +1,10 @@
-import { Suspense, memo, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { Navbar } from "@/widgets/Navbar";
-import { Sidebar } from "@/widgets/Sidebar";
-import { getUserInited, userActions } from "@/entity/User";
-import { AppRouter } from "./providers/router";
+import { Suspense, memo, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Navbar } from '@/widgets/Navbar';
+import { Sidebar } from '@/widgets/Sidebar';
+import { getUserInited, userActions } from '@/entity/User';
+import { AppRouter } from './providers/router';
 
 const App = memo(() => {
   const dispatch = useDispatch();
@@ -15,7 +15,7 @@ const App = memo(() => {
   }, [dispatch]);
 
   return (
-    <div className={classNames("app", {}, [])}>
+    <div className={classNames('app', {}, [])}>
       <Suspense fallback="">
         <Navbar />
         <div className="content-page">

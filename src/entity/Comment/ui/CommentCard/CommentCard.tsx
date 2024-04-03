@@ -4,15 +4,15 @@ import { Avatar } from '@/shared/ui/Avatar';
 import { Text } from '@/shared/ui/Text';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { AppLink } from '@/shared/ui/AppLink';
-import { getRouteProfile } from "@/shared/const/router";
+import { getRouteProfile } from '@/shared/const/router';
 import { VStack } from '@/shared/ui/Stack';
 import cls from './CommentCard.module.scss';
 import { Comment } from '../../model/types/comment';
 
 interface CommentCardProps {
-   className?: string;
-   comment?: Comment;
-   isLoading?: boolean;
+  className?: string;
+  comment?: Comment;
+  isLoading?: boolean;
 }
 
 export const CommentCard = memo((props: CommentCardProps) => {
@@ -47,7 +47,9 @@ export const CommentCard = memo((props: CommentCardProps) => {
       className={classNames(cls.commentCard, {}, [className])}
     >
       <AppLink to={getRouteProfile(comment.user.id)} className={cls.header}>
-        {comment.user.avatar ? <Avatar size={30} src={comment.user.avatar} /> : null}
+        {comment.user.avatar ? (
+          <Avatar size={30} src={comment.user.avatar} />
+        ) : null}
         <Text className={cls.username} title={comment.user.username} />
       </AppLink>
       <Text className={cls.text} body={comment.text} />

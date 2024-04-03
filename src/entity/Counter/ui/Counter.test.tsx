@@ -25,4 +25,3 @@ describe('Counter Test', () => {
     expect(screen.getByTestId('value-title')).toHaveTextContent('9');
   });
 });
-

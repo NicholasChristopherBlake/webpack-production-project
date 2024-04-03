@@ -1,10 +1,11 @@
-import React, {
-  FC, InputHTMLAttributes, memo, useEffect, useRef,
-} from "react";
-import { Mods, classNames } from "@/shared/lib/classNames/classNames";
-import cls from "./Input.module.scss";
+import React, { FC, InputHTMLAttributes, memo, useEffect, useRef } from 'react';
+import { Mods, classNames } from '@/shared/lib/classNames/classNames';
+import cls from './Input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
+type HTMLInputProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'value' | 'onChange' | 'readOnly'
+>;
 
 interface InputProps extends HTMLInputProps {
   className?: string;
@@ -16,7 +17,13 @@ interface InputProps extends HTMLInputProps {
 
 export const Input: FC<InputProps> = memo((props: InputProps) => {
   const {
-    className, value, onChange, placeholder, autofocus, readonly, ...otherProps
+    className,
+    value,
+    onChange,
+    placeholder,
+    autofocus,
+    readonly,
+    ...otherProps
   } = props;
   const ref = useRef<HTMLInputElement>(null);
 
@@ -36,11 +43,7 @@ export const Input: FC<InputProps> = memo((props: InputProps) => {
 
   return (
     <div className={classNames(cls.inputWrapper, mods, [className])}>
-      {placeholder && (
-      <div className={cls.placeholder}>
-        {`${placeholder}`}
-      </div>
-      )}
+      {placeholder && <div className={cls.placeholder}>{`${placeholder}`}</div>}
       <input
         ref={ref}
         className={cls.input}

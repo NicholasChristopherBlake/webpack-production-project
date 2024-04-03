@@ -17,25 +17,18 @@
       "@/*": ["./src/*"]
     },
     "moduleResolution": "node",
-    // esModuleInterop allows us to work with modules that use common js 
+    // esModuleInterop allows us to work with modules that use common js
     // with 'import'
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     // Here for babel, for modules with types only
-    "isolatedModules": true,
+    "isolatedModules": true
   },
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
     }
   },
-  "include": [
-    "./config/jest/setupTests.ts",
-    "./src/**/*.ts",
-	  "./src/**/*.tsx",
-  ],
-  "exclude": [
-    ".husky/**/*",
-    ".fttemplates"
-  ],
+  "include": ["./config/jest/setupTests.ts", "./src/**/*.ts", "./src/**/*.tsx"],
+  "exclude": [".husky/**/*", ".fttemplates"]
 }

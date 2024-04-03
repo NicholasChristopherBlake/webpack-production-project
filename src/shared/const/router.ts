@@ -10,7 +10,7 @@ export enum AppRoutes {
   FORBIDDEN = 'forbidden',
 
   // Last
-  NOT_FOUND = 'not_found'
+  NOT_FOUND = 'not_found',
 }
 
 // for more pretty use in components instead of RoutePath object

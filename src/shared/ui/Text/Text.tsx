@@ -1,7 +1,7 @@
-import { FC, memo } from "react";
-import { useTranslation } from "react-i18next";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import cls from "./Text.module.scss";
+import { FC, memo } from 'react';
+import { useTranslation } from 'react-i18next';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './Text.module.scss';
 
 export enum TextTheme {
   PRIMARY = 'primary',
@@ -12,7 +12,7 @@ export enum TextTheme {
 export enum TextAlign {
   RIGHT = 'right',
   LEFT = 'left',
-  CENTER = 'center'
+  CENTER = 'center',
 }
 
 export enum TextSize {
@@ -44,7 +44,9 @@ const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
 
 export const Text: FC<TextProps> = memo((props: TextProps) => {
   const {
-    className, title, body,
+    className,
+    title,
+    body,
     theme = TextTheme.PRIMARY,
     align = TextAlign.LEFT,
     size = TextSize.M,
@@ -53,34 +55,21 @@ export const Text: FC<TextProps> = memo((props: TextProps) => {
 
   const { t } = useTranslation();
 
-  const adds = [
-    className,
-    cls[theme],
-    cls[align],
-    cls[size],
-  ];
+  const adds = [className, cls[theme], cls[align], cls[size]];
 
   const HeaderTag = mapSizeToHeaderTag[size];
 
   return (
     <div className={classNames(cls.text, {}, adds)}>
-      {title
-      && (
-      <HeaderTag
-        className={cls.title}
-        data-testid={`${dataTestId}.Header`}
-      >
-        {title}
-      </HeaderTag>
+      {title && (
+        <HeaderTag className={cls.title} data-testid={`${dataTestId}.Header`}>
+          {title}
+        </HeaderTag>
       )}
-      {body
-      && (
-      <p
-        className={cls.body}
-        data-testid={`${dataTestId}.Paragraph`}
-      >
-        {body}
-      </p>
+      {body && (
+        <p className={cls.body} data-testid={`${dataTestId}.Paragraph`}>
+          {body}
+        </p>
       )}
     </div>
   );

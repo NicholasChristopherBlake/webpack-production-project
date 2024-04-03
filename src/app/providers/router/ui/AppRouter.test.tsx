@@ -1,8 +1,12 @@
-import { screen } from "@testing-library/react";
-import { componentRender } from "@/shared/lib/tests/componentRender/componentRender";
-import AppRouter from "./AppRouter";
-import { getRouteAbout, getRouteAdminPanel, getRouteProfile } from "@/shared/const/router";
-import { UserRole } from "@/entity/User";
+import { screen } from '@testing-library/react';
+import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
+import AppRouter from './AppRouter';
+import {
+  getRouteAbout,
+  getRouteAdminPanel,
+  getRouteProfile,
+} from '@/shared/const/router';
+import { UserRole } from '@/entity/User';
 
 describe('app/router/AppRouter.test', () => {
   test('Page must be rendered', async () => {

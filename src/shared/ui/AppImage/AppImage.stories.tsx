@@ -6,8 +6,7 @@ import { Skeleton } from '../Skeleton';
 const meta: Meta<typeof AppImage> = {
   title: 'shared/AppImage',
   component: AppImage,
-  args: {
-  },
+  args: {},
 };
 
 export default meta;
@@ -30,4 +29,3 @@ export const ErrorState: Story = {
     errorFallback: <div>Error</div>,
   },
 };
-

@@ -1,25 +1,31 @@
-import { RouteProps } from "react-router-dom";
-import { UserRole } from "@/entity/User";
-import { AboutPage } from "@/pages/AboutPage";
-import { AdminPanelPage } from "@/pages/AdminPanelPage";
-import { ArticleDetailsPage } from "@/pages/ArticleDetailsPage";
-import { ArticleEditPage } from "@/pages/ArticleEditPage";
-import { ArticlesPage } from "@/pages/ArticlesPage";
-import { ForbiddenPage } from "@/pages/ForbiddenPage";
-import { MainPage } from "@/pages/MainPage";
-import { NotFoundPage } from "@/pages/NotFoundPage";
-import { ProfilePage } from "@/pages/ProfilePage";
+import { RouteProps } from 'react-router-dom';
+import { UserRole } from '@/entity/User';
+import { AboutPage } from '@/pages/AboutPage';
+import { AdminPanelPage } from '@/pages/AdminPanelPage';
+import { ArticleDetailsPage } from '@/pages/ArticleDetailsPage';
+import { ArticleEditPage } from '@/pages/ArticleEditPage';
+import { ArticlesPage } from '@/pages/ArticlesPage';
+import { ForbiddenPage } from '@/pages/ForbiddenPage';
+import { MainPage } from '@/pages/MainPage';
+import { NotFoundPage } from '@/pages/NotFoundPage';
+import { ProfilePage } from '@/pages/ProfilePage';
 import {
-  AppRoutes, getRouteAbout, getRouteAdminPanel,
-  getRouteArticleCreate, getRouteArticleDetails,
-  getRouteArticleEdit, getRouteArticles, getRouteForbidden,
-  getRouteMain, getRouteProfile,
-} from "@/shared/const/router";
+  AppRoutes,
+  getRouteAbout,
+  getRouteAdminPanel,
+  getRouteArticleCreate,
+  getRouteArticleDetails,
+  getRouteArticleEdit,
+  getRouteArticles,
+  getRouteForbidden,
+  getRouteMain,
+  getRouteProfile,
+} from '@/shared/const/router';
 
 export type AppRouteProps = RouteProps & {
   authOnly?: boolean;
   roles?: UserRole[];
-}
+};
 
 export const routeConfig: Record<AppRoutes, AppRouteProps> = {
   [AppRoutes.MAIN]: {

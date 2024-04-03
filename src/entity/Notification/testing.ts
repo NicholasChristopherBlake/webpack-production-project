@@ -1,1 +1,4 @@
-export { notificationItemMock, notificationsListMock } from './mocks/notifications.mock';
+export {
+  notificationItemMock,
+  notificationsListMock,
+} from './mocks/notifications.mock';

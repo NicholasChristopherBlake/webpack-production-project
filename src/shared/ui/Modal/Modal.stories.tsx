@@ -8,7 +8,8 @@ const meta: Meta<typeof Modal> = {
   component: Modal,
   args: {
     isOpen: true,
-    children: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, dolorem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, dolorem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, dolorem.',
+    children:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, dolorem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, dolorem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, dolorem.',
   },
 };
 
@@ -20,4 +21,3 @@ export const Primary: Story = {};
 export const Dark: Story = {
   decorators: [ThemeDecorator(Theme.DARK)],
 };
-

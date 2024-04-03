@@ -1,6 +1,6 @@
-import { FC, useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
-import { Button } from "@/shared/ui/Button";
+import { FC, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Button } from '@/shared/ui/Button';
 
 interface BugButtonProps {
   className?: string;
@@ -16,9 +16,5 @@ export const BugButton: FC<BugButtonProps> = () => {
       throw new Error();
     }
   }, [error]);
-  return (
-    <Button onClick={onThrow}>
-      {t('throw error')}
-    </Button>
-  );
+  return <Button onClick={onThrow}>{t('throw error')}</Button>;
 };

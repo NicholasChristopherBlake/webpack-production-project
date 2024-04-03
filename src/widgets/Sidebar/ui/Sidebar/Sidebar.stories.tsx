@@ -19,13 +19,16 @@ export const Light: Story = {
 };
 
 export const Dark: Story = {
-  decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({
-    user: { authData: {} },
-  })],
+  decorators: [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+      user: { authData: {} },
+    }),
+  ],
 };
 
 export const NoAuth: Story = {
   decorators: StoreDecorator({
-    user: { },
+    user: {},
   }),
 };

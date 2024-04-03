@@ -5,12 +5,12 @@ import { Comment } from '@/entity/Comment';
 import { ArticleDetailsComments } from './ArticleDetailsComments';
 
 const comment: Comment = {
-  id: "1",
-  text: "some comment",
+  id: '1',
+  text: 'some comment',
   user: {
     id: '1',
     username: 'Nick',
-    avatar: "https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg",
+    avatar: 'https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg',
   },
 };
 
@@ -38,4 +38,3 @@ export default meta;
 type Story = StoryObj<typeof ArticleDetailsComments>;
 
 export const Primary: Story = {};
-

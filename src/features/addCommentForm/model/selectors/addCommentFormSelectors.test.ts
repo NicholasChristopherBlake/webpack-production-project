@@ -1,5 +1,8 @@
-import { StateSchema } from "@/app/providers/StoreProvider";
-import { getAddCommentFormError, getAddCommentFormText } from "./addCommentFormSelectors";
+import { StateSchema } from '@/app/providers/StoreProvider';
+import {
+  getAddCommentFormError,
+  getAddCommentFormText,
+} from './addCommentFormSelectors';
 
 describe('getAddCommentForm.test', () => {
   test('getAddCommentFormText should return correct state', () => {
@@ -11,7 +14,7 @@ describe('getAddCommentForm.test', () => {
     expect(getAddCommentFormText(state as StateSchema)).toEqual('some text');
   });
   test('getAddCommentFormText should work with empty state', () => {
-    const state: DeepPartial<StateSchema> = { };
+    const state: DeepPartial<StateSchema> = {};
     expect(getAddCommentFormText(state as StateSchema)).toEqual('');
   });
   test('should return error', () => {
@@ -23,7 +26,7 @@ describe('getAddCommentForm.test', () => {
     expect(getAddCommentFormError(state as StateSchema)).toEqual('error');
   });
   test('should work with empty state', () => {
-    const state: DeepPartial<StateSchema> = { };
+    const state: DeepPartial<StateSchema> = {};
     expect(getAddCommentFormError(state as StateSchema)).toEqual(undefined);
   });
 });

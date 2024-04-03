@@ -4,8 +4,7 @@ import { CurrencySelect } from './CurrencySelect';
 const meta: Meta<typeof CurrencySelect> = {
   title: 'entities/CurrencySelect',
   component: CurrencySelect,
-  args: {
-  },
+  args: {},
   parameters: {
     layout: 'centered', // because select goes top right
   },
@@ -15,7 +14,5 @@ export default meta;
 type Story = StoryObj<typeof CurrencySelect>;
 
 export const Primary: Story = {
-  args: {
-  },
+  args: {},
 };
-

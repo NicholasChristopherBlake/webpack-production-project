@@ -34,7 +34,5 @@ const articleRatingApi = rtkApi.injectEndpoints({
   }),
 });
 
-export const useGetArticleRating = articleRatingApi
-  .useGetArticleRatingQuery;
-export const useRateArticle = articleRatingApi
-  .useRateArticleMutation;
+export const useGetArticleRating = articleRatingApi.useGetArticleRatingQuery;
+export const useRateArticle = articleRatingApi.useRateArticleMutation;

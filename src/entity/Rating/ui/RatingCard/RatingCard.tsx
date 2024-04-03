@@ -11,18 +11,22 @@ import { useDevice } from '@/shared/lib/hooks/useDevice/useDevice';
 import { Drawer } from '@/shared/ui/Drawer';
 
 interface RatingCardProps {
-   className?: string;
-   title?: string;
-   feedbackTitle?: string;
-   hasFeedback?: boolean;
-   onAccept?: (starsCount: number, feedback?: string) => void;
-   onCancel?: (starsCount: number) => void;
-   rate?: number;
+  className?: string;
+  title?: string;
+  feedbackTitle?: string;
+  hasFeedback?: boolean;
+  onAccept?: (starsCount: number, feedback?: string) => void;
+  onCancel?: (starsCount: number) => void;
+  rate?: number;
 }
 
 export const RatingCard = memo((props: RatingCardProps) => {
   const {
-    className, feedbackTitle, hasFeedback, onAccept, onCancel,
+    className,
+    feedbackTitle,
+    hasFeedback,
+    onAccept,
+    onCancel,
     rate = 0,
     title,
   } = props;
@@ -31,14 +35,17 @@ export const RatingCard = memo((props: RatingCardProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [starsCount, setStarsCount] = useState(rate);
   const [feedback, setFeedback] = useState('');
-  const onSelectStars = useCallback((selectedStarsCount: number) => {
-    setStarsCount(selectedStarsCount);
-    if (hasFeedback) {
-      setIsModalOpen(true);
-    } else {
-      onAccept?.(selectedStarsCount);
-    }
-  }, [hasFeedback, onAccept]);
+  const onSelectStars = useCallback(
+    (selectedStarsCount: number) => {
+      setStarsCount(selectedStarsCount);
+      if (hasFeedback) {
+        setIsModalOpen(true);
+      } else {
+        onAccept?.(selectedStarsCount);
+      }
+    },
+    [hasFeedback, onAccept],
+  );
 
   const acceptHandle = useCallback(() => {
     setIsModalOpen(false);
@@ -66,46 +73,45 @@ export const RatingCard = memo((props: RatingCardProps) => {
     <Card max className={className} data-testid="RatingCard">
       <VStack align="center" gap="8" max>
         <Text title={starsCount ? t('Thank you for the rating') : title} />
-        <StarRating selectedStars={starsCount} size={40} onSelect={onSelectStars} />
+        <StarRating
+          selectedStars={starsCount}
+          size={40}
+          onSelect={onSelectStars}
+        />
       </VStack>
-      {isMobile
-        ? (
-          <Drawer isOpen={isModalOpen} lazy onClose={cancelHandle}>
-            <VStack gap="32">
-              {modalContent}
+      {isMobile ? (
+        <Drawer isOpen={isModalOpen} lazy onClose={cancelHandle}>
+          <VStack gap="32">
+            {modalContent}
+            <Button
+              data-testid="RatingCard.Send"
+              fullWidth
+              onClick={acceptHandle}
+              size={ButtonSize.L}
+            >
+              {t('Send')}
+            </Button>
+          </VStack>
+        </Drawer>
+      ) : (
+        <Modal isOpen={isModalOpen} lazy>
+          <VStack gap="32" max>
+            {modalContent}
+            <HStack max gap="16" justify="end">
               <Button
-                data-testid="RatingCard.Send"
-                fullWidth
-                onClick={acceptHandle}
-                size={ButtonSize.L}
+                data-testid="RatingCard.Close"
+                onClick={cancelHandle}
+                theme={ButtonTheme.OUTLINE_RED}
               >
+                {t('Close')}
+              </Button>
+              <Button data-testid="RatingCard.Send" onClick={acceptHandle}>
                 {t('Send')}
               </Button>
-            </VStack>
-          </Drawer>
-        )
-        : (
-          <Modal isOpen={isModalOpen} lazy>
-            <VStack gap="32" max>
-              {modalContent}
-              <HStack max gap="16" justify="end">
-                <Button
-                  data-testid="RatingCard.Close"
-                  onClick={cancelHandle}
-                  theme={ButtonTheme.OUTLINE_RED}
-                >
-                  {t('Close')}
-                </Button>
-                <Button
-                  data-testid="RatingCard.Send"
-                  onClick={acceptHandle}
-                >
-                  {t('Send')}
-                </Button>
-              </HStack>
-            </VStack>
-          </Modal>
-        )}
+            </HStack>
+          </VStack>
+        </Modal>
+      )}
     </Card>
   );
 });

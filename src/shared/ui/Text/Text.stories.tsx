@@ -73,4 +73,3 @@ export const SizeL: Story = {
     size: TextSize.L,
   },
 };
-

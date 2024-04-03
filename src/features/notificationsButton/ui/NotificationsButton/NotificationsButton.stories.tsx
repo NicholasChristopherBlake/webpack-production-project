@@ -6,15 +6,11 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 const meta: Meta<typeof NotificationsButton> = {
   title: 'features/NotificationsButton',
   component: NotificationsButton,
-  args: {
-  },
-  decorators: [
-    StoreDecorator({}),
-  ],
+  args: {},
+  decorators: [StoreDecorator({})],
 };
 
 export default meta;
 type Story = StoryObj<typeof NotificationsButton>;
 
 export const Primary: Story = {};
-

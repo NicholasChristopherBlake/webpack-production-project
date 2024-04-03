@@ -5,8 +5,7 @@ import { RatingCard } from './RatingCard';
 const meta: Meta<typeof RatingCard> = {
   title: 'entities/Rating/RatingCard',
   component: RatingCard,
-  args: {
-  },
+  args: {},
 };
 
 export default meta;
@@ -24,4 +23,3 @@ export const Rated: Story = {
     rate: 4,
   },
 };
-

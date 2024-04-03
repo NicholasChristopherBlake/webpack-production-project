@@ -6,16 +6,10 @@ import { Page } from './Page';
 const meta: Meta<typeof Page> = {
   title: 'widgets/Page',
   component: Page,
-  decorators: [
-    StoreDecorator(
-      {
-      },
-    ),
-  ],
+  decorators: [StoreDecorator({})],
 };
 
 export default meta;
 type Story = StoryObj<typeof Page>;
 
 export const Primary: Story = {};
-

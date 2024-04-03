@@ -5,12 +5,10 @@ import { ArticleSortSelector } from './ArticleSortSelector';
 const meta: Meta<typeof ArticleSortSelector> = {
   title: 'features/ArticleSortSelector',
   component: ArticleSortSelector,
-  args: {
-  },
+  args: {},
 };
 
 export default meta;
 type Story = StoryObj<typeof ArticleSortSelector>;
 
 export const Primary: Story = {};
-

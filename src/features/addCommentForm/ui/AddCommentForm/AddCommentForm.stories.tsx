@@ -6,8 +6,7 @@ import AddCommentForm from './AddCommentForm';
 const meta: Meta<typeof AddCommentForm> = {
   title: 'features/AddCommentForm',
   component: AddCommentForm,
-  args: {
-  },
+  args: {},
 };
 
 export default meta;
@@ -19,4 +18,3 @@ export const Primary: Story = {
   },
   decorators: StoreDecorator({}),
 };
-

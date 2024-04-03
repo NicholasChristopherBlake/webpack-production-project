@@ -1,15 +1,11 @@
-import {
-  FC, memo, useCallback, useState,
-} from 'react';
+import { FC, memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import {
-  getUserAuthData,
-} from '@/entity/User';
+import { getUserAuthData } from '@/entity/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import { NotificationsButton } from '@/features/notificationsButton';
-import { getRouteArticleCreate } from "@/shared/const/router";
+import { getRouteArticleCreate } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
@@ -67,10 +63,7 @@ export const Navbar: FC<NavbarProps> = memo(({ className }: NavbarProps) => {
         {t('Sign Up')}
       </Button>
       {isAuthModal && (
-      <LoginModal
-        isOpen={isAuthModal}
-        onClose={onCloseModal}
-      />
+        <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
       )}
     </header>
   );

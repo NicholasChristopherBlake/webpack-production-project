@@ -15,7 +15,11 @@ const meta: Meta<typeof Listbox> = {
     ],
   },
   decorators: [
-    (Story) => <div style={{ padding: '100px' }}><Story /></div>,
+    (Story) => (
+      <div style={{ padding: '100px' }}>
+        <Story />
+      </div>
+    ),
   ],
 };
 

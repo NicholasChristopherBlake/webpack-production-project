@@ -11,22 +11,20 @@ const meta: Meta<typeof ProfilePage> = {
   title: 'pages/ProfilePage',
   component: ProfilePage,
   decorators: [
-    StoreDecorator(
-      {
-        profile: {
-          form: {
-            username: 'admin',
-            age: 25,
-            country: Country.France,
-            lastname: 'Morgan',
-            first: 'Nick',
-            city: 'Provance',
-            currency: Currency.EUR,
-            avatar: AvatarImg,
-          },
+    StoreDecorator({
+      profile: {
+        form: {
+          username: 'admin',
+          age: 25,
+          country: Country.France,
+          lastname: 'Morgan',
+          first: 'Nick',
+          city: 'Provance',
+          currency: Currency.EUR,
+          avatar: AvatarImg,
         },
       },
-    ),
+    }),
   ],
 };
 

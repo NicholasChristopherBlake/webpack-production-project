@@ -1,7 +1,7 @@
-import { StateSchema } from "@/app/providers/StoreProvider";
-import { Currency } from "@/entity/Currency";
-import { Country } from "@/entity/Country";
-import { getProfileData } from "./getProfileData";
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { Currency } from '@/entity/Currency';
+import { Country } from '@/entity/Country';
+import { getProfileData } from './getProfileData';
 
 describe('getProfileData.test', () => {
   test('should return correct state', () => {

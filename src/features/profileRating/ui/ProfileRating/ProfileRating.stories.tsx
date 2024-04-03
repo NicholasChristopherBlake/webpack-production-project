@@ -42,11 +42,8 @@ export const Rated: Story = {
         url: `${__API__}/profile-ratings?userId=2&profileId=1`,
         method: 'GET',
         status: 200,
-        response: [
-          { rate: 4 },
-        ],
+        response: [{ rate: 4 }],
       },
     ],
   },
 };
-

@@ -7,11 +7,8 @@ import { notificationsListMock } from '../../testing';
 const meta: Meta<typeof NotificationsList> = {
   title: 'entities/Notification/NotificationsList',
   component: NotificationsList,
-  args: {
-  },
-  decorators: [
-    StoreDecorator({}),
-  ],
+  args: {},
+  decorators: [StoreDecorator({})],
 };
 
 export default meta;
@@ -29,4 +26,3 @@ export const Primary: Story = {
     ],
   },
 };
-
