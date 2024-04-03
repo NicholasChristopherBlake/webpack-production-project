@@ -43,7 +43,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
     return (
       <div
         className={classNames(cls.articleList, {}, [className, cls[view]])}
-        data-testid="ArticleList"
       >
         <Text size={TextSize.L} title={t('Articles have not been found')} />
       </div>

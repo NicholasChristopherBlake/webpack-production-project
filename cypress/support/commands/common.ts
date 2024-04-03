@@ -1,4 +1,4 @@
-import { selectByTestId } from 'cypress/helpers/selectByTestId';
+import { selectByTestId } from '../../helpers/selectByTestId';
 import { USER_LOCAL_STORAGE_KEY } from '../../../src/shared/const/localStorage';
 import { User } from '../../../src/entity/User';
 
