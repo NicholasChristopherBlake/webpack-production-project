@@ -4,9 +4,17 @@ const path = require('path');
 const https = require('https');
 
 const options = {
-  key: fs.readFileSync(path.resolve(__dirname, 'key.pem')),
+  key: fs.readFileSync(
+    path.resolve(
+      __dirname,
+      '/etc/letsencrypt/live/nicholasblake.site/privkey.pem',
+    ),
+  ),
   cert: fs.readFileSync(
-    path.resolve(__dirname, 'cert.pem'),
+    path.resolve(
+      __dirname,
+      '/etc/letsencrypt/live/nicholasblake.site/fullchain.pem',
+    ),
   ),
 };
 
