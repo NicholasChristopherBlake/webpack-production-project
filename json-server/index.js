@@ -74,7 +74,8 @@ server.use((req, res, next) => {
 server.use(router);
 
 // запуск сервера
+const PORT = 8443;
 const httpsServer = https.createServer(options, server);
-server.listen(443, () => {
-  console.log('server is running on 443 port');
+server.listen(PORT, () => {
+  console.log(`server is running on ${PORT} port`);
 });
