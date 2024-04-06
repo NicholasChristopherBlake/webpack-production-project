@@ -1,22 +1,33 @@
 const fs = require('fs');
 const jsonServer = require('json-server');
 const path = require('path');
+const http = require('http');
 const https = require('https');
 
-const options = {
-  key: fs.readFileSync(
-    path.resolve(
-      __dirname,
-      '/etc/letsencrypt/live/nicholasblake.site/privkey.pem',
-    ),
-  ),
-  cert: fs.readFileSync(
-    path.resolve(
-      __dirname,
-      '/etc/letsencrypt/live/nicholasblake.site/fullchain.pem',
-    ),
-  ),
-};
+function getOptions() {
+  let options = {};
+  try {
+    options = {
+      key: fs.readFileSync(
+        path.resolve(
+          __dirname,
+          '/etc/letsencrypt/live/nicholasblake.site/privkey.pem',
+        ),
+      ),
+      cert: fs.readFileSync(
+        path.resolve(
+          __dirname,
+          '/etc/letsencrypt/live/nicholasblake.site/fullchain.pem',
+        ),
+      ),
+    };
+  } catch (e) {
+    console.log('No certificates have been found');
+  }
+  return options;
+}
+
+const options = getOptions();
 
 const server = jsonServer.create();
 
@@ -83,7 +94,14 @@ server.use(router);
 
 // запуск сервера
 const PORT = 8443;
+const HTTP_PORT = 8000;
+
 const httpsServer = https.createServer(options, server);
+const httpServer = http.createServer(server);
+
 httpsServer.listen(PORT, () => {
   console.log(`server is running on ${PORT} port`);
+});
+httpServer.listen(HTTP_PORT, () => {
+  console.log(`server is running on ${HTTP_PORT} port`);
 });
