@@ -1,19 +1,40 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import cls from './ArticlePageGreeting.module.scss';
-import { memo } from 'react';
+import { memo, useEffect, useState } from 'react';
+import { Modal } from '@/shared/ui/Modal';
+import { Text } from '@/shared/ui/Text';
+import { saveJsonSettings, useJsonSettings } from '@/entity/User';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useDevice } from '@/shared/lib/hooks/useDevice/useDevice';
+import { Drawer } from '@/shared/ui/Drawer';
 
-interface ArticlePageGreetingProps {
-    className?: string;
-}
+export const ArticlePageGreeting = memo(() => {
+  const { t } = useTranslation();
+  const [isOpen, setIsOpen] = useState(false);
+  const { isArticlesPageWasOpened } = useJsonSettings();
+  const dispatch = useAppDispatch();
+  const isMobile = useDevice();
 
-export const ArticlePageGreeting = memo((props: ArticlePageGreetingProps) => {
-    const { className } = props;
-    const { t } = useTranslation();
-    
+  useEffect(() => {
+    if (!isArticlesPageWasOpened) {
+      setIsOpen(true);
+      dispatch(saveJsonSettings({ isArticlesPageWasOpened: true }));
+    }
+  }, [dispatch, isArticlesPageWasOpened]);
+
+  const onClose = () => setIsOpen(false);
+  const text = <Text title={t('Welcome')} body={t('Welcome to article')} />;
+
+  if (isMobile) {
     return (
-        <div className={classNames(cls.ArticlePageGreeting, {}, [className])}>
-           
-        </div>
+      <Drawer lazy isOpen={isOpen} onClose={onClose}>
+        {text}
+      </Drawer>
     );
+  }
+
+  return (
+    <Modal lazy isOpen={isOpen} onClose={onClose}>
+      {text}
+    </Modal>
+  );
 });

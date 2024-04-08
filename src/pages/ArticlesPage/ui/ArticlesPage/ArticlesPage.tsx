@@ -12,6 +12,7 @@ import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
 import { ArticlesInfiniteList } from '../ArticlesInfiniteList/ArticlesInfiniteList';
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
 import cls from './ArticlesPage.module.scss';
+import { ArticlePageGreeting } from '@/features/articlePageGreeting';
 
 interface ArticlesPageProps {
   className?: string;
@@ -31,19 +32,15 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
   }, [dispatch]);
 
   return (
-    <DynamicReducerLoader
-      reducers={reducers}
-      removeAfterUnmount={false}
-    >
+    <DynamicReducerLoader reducers={reducers} removeAfterUnmount={false}>
       <Page
         data-testid="ArticlesPage"
         onScrollEnd={onLoadNextPart}
-        className={classNames(cls.articlesPage, {}, [
-          className,
-        ])}
+        className={classNames(cls.articlesPage, {}, [className])}
       >
         <ArticlesPageFilters />
         <ArticlesInfiniteList className={cls.list} />
+        <ArticlePageGreeting />
       </Page>
     </DynamicReducerLoader>
   );

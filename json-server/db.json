@@ -576,7 +576,7 @@
       "jsonSettings": {
         "theme": "app_dark_theme",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpen": false
+        "isArticlesPageWasOpened": true
       }
     },
     {
@@ -590,7 +590,10 @@
         "isArticleRatingEnabled": false,
         "isCounterEnabled": false
       },
-      "avatar": "https://teknotower.com/wp-content/uploads/2020/11/js.png"
+      "avatar": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "jsonSettings": {
+        "isArticlesPageWasOpened": true
+      }
     },
     {
       "id": "3",
@@ -603,7 +606,10 @@
         "isArticleRatingEnabled": true,
         "isCounterEnabled": false
       },
-      "avatar": "https://teknotower.com/wp-content/uploads/2020/11/js.png"
+      "avatar": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "jsonSettings": {
+        "isArticlesPageWasOpened": true
+      }
     },
     {
       "id": "4",
