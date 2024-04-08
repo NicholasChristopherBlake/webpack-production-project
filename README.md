@@ -5,7 +5,7 @@ npm install - install dependencies
 npm run start:dev or npm run start:dev:vite - run server and frontend project in dev mode
 ```
 
-----
+---
 
 ## Scripts
 
@@ -32,7 +32,7 @@ npm run start:dev or npm run start:dev:vite - run server and frontend project in
 - `npm run prepare` - Pre-commit hooks
 - `npm run generate:slice` - Script for generating FSD slices
 
-----
+---
 
 ## Architecture
 
@@ -40,7 +40,7 @@ Project is written using Feature Sliced Design architecture/methodology for fron
 
 Link to documentation - [Feature Sliced Design](https://feature-sliced.design/docs/get-started/tutorial)
 
-----
+---
 
 ## Translations
 
@@ -51,38 +51,42 @@ For a more comfortable work it is recommended to install plugin for VSCode - i18
 
 i18next documentation - [https://react.i18next.com/](https://react.i18next.com/)
 
-----
+---
 
 ## Testing
 
 There are 4 types of tests, which are used in this project:
-1) Unit tests using Jest - `npm run test:unit`
-2) Integration tests on components using React testing library -`npm run test:unit`
-3) Screenshot tests using Loki `npm run test:ui`
-4) e2e tests using Cypress `npm run test:e2e`
+
+1. Unit tests using Jest - `npm run test:unit`
+2. Integration tests on components using React testing library -`npm run test:unit`
+3. Screenshot tests using Loki `npm run test:ui`
+4. e2e tests using Cypress `npm run test:e2e`
 
 More details about tests - [Tests Documentation](/docs/tests.md)
 
-----
+---
 
 ## Linting
 
 ESLint is used in project for checking Typescript code and Stylelint is used for checking style files.
 
 For strict control of following main architectural principles we use custom-made ESLint plugin
-*eslint-plugin-nick-plugin*,
+_eslint-plugin-nick-plugin_,
 that contains 3 rules
-1) fsd-path-checker - doesn't allow to use absolute imports inside one slice/module
-2) fsd-layer-imports - checks whether layers are used correctly according to FSD (layers can use only lower layers inside of them)
-3) fsd-public-api-imports - allows import from other slices/modules only from Public API. Has autofix
+
+1. fsd-path-checker - doesn't allow to use absolute imports inside one slice/module
+2. fsd-layer-imports - checks whether layers are used correctly according to FSD (layers can use only lower layers inside of them)
+3. fsd-public-api-imports - allows import from other slices/modules only from Public API. Has autofix
 
 ##### Starting linters
+
 - `npm run lint:ts` - Check TS files with linter
 - `npm run lint:ts:fix` - Fix TS files with linter
 - `npm run lint:scss` - Check SCSS files with linter
 - `npm run lint:scss:fix` - Fix SCSS files with linter
 
-----
+---
+
 ## Storybook
 
 In the project for each component there's a storycase describing it.
@@ -91,6 +95,7 @@ Requests to the server are mocked using storybook-addon-mock.
 File with storycase is placed next to the component - it has extension .stories.tsx
 
 Run storybook with this command:
+
 - `npm run storybook`
 
 More details about [Storybook](/docs/storybook.md)
@@ -123,18 +128,19 @@ export const Clear: Story = {
 };
 ```
 
-
-----
+---
 
 ## Project configuration
 
 For development project has 2 configs:
+
 1. Webpack - ./config/build
 2. Vite - vite.config.ts
 
 Both builders are adapted for the main features of the app.
 
 All configuration is placed in /config
+
 - /config/babel - Babel configuration
 - /config/build - Webpack configuration
 - /config/jest - testing environment configuration
@@ -142,7 +148,7 @@ All configuration is placed in /config
 
 Folder `scripts` has different scripts for refactoring/automatic writing of code/generation of reports, etc.
 
-----
+---
 
 ## CI pipeline and pre-commit hooks
 
@@ -151,7 +157,7 @@ In CI we run all kinds of tests, project and storybook build, linting.
 
 In pre-commit hooks we run linters, config is placed in /.husky
 
-----
+---
 
 ### Working with data
 
@@ -162,7 +168,23 @@ Requests to the server are sent using [RTK query](/src/shared/api/rtkApi.ts)
 For asynchronous loading of reducers (for optimization purposes - lazy loading) we use
 [DynamicReducerLoader](/src/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader.tsx)
 
-----
+### Working with feature-flags
+
+Usage of feature flags is only allowed with helper toggleFeatures
+
+You should pass into toggleFeatures function an object with these options:
+{
+name: name of this feature flag,
+on: function that should be called when the feature is enabled,
+off: function that should be called when the feature is turned off,
+}
+
+For automatically removing feature you should use script remove-feature.ts, which takes 2 arguments:
+
+1. Name of the removed feature flag
+2. State (on/off)
+
+---
 
 ## Entities
 

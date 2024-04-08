@@ -530,6 +530,10 @@
       "username": "admin",
       "password": "123",
       "roles": ["ADMIN"],
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCounterEnabled": true
+      },
       "avatar": "https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg"
     },
     {
@@ -537,6 +541,10 @@
       "username": "user",
       "password": "123",
       "roles": ["USER"],
+      "features": {
+        "isArticleRatingEnabled": false,
+        "isCounterEnabled": false
+      },
       "avatar": "https://teknotower.com/wp-content/uploads/2020/11/js.png"
     },
     {
@@ -544,6 +552,10 @@
       "username": "manager",
       "password": "123",
       "roles": ["MANAGER"],
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCounterEnabled": false
+      },
       "avatar": "https://teknotower.com/wp-content/uploads/2020/11/js.png"
     },
     {

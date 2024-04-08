@@ -64,6 +64,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
 
+    'react/no-unstable-nested-components': 'warn',
     // For RTK (immerJS)
     'no-param-reassign': 'off',
     // No unused imports
