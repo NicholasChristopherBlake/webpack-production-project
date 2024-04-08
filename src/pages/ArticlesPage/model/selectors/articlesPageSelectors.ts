@@ -1,8 +1,14 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
-import { ArticleSortField, ArticleType, ArticleView } from '@/entity/Article';
+import {
+  ArticleSortField,
+  ArticleType,
+  ArticleView,
+} from '@/entity/Article';
+import { buildSelector } from '@/shared/lib/store';
 
-export const getArticlesPageIsLoading = (state: StateSchema) =>
-  state.articlesPage?.isLoading || false;
+export const getArticlesPageIsLoading = (
+  state: StateSchema,
+) => state.articlesPage?.isLoading || false;
 export const getArticlesPageError = (state: StateSchema) =>
   state.articlesPage?.error;
 export const getArticlesPageView = (state: StateSchema) =>
@@ -11,8 +17,9 @@ export const getArticlesPageNumber = (state: StateSchema) =>
   state.articlesPage?.page || 1;
 export const getArticlesPageLimit = (state: StateSchema) =>
   state.articlesPage?.limit || 9;
-export const getArticlesPageHasMore = (state: StateSchema) =>
-  state.articlesPage?.hasMore;
+export const getArticlesPageHasMore = (
+  state: StateSchema,
+) => state.articlesPage?.hasMore;
 export const getArticlesPageInited = (state: StateSchema) =>
   state.articlesPage?._inited;
 export const getArticlesPageSort = (state: StateSchema) =>
@@ -23,3 +30,7 @@ export const getArticlesPageSearch = (state: StateSchema) =>
   state.articlesPage?.search ?? '';
 export const getArticlesPageType = (state: StateSchema) =>
   state.articlesPage?.type ?? ArticleType.ALL;
+
+export const [useArticleItemById] = buildSelector(
+  (state, id: string) => state.articlesPage?.entities[id],
+);

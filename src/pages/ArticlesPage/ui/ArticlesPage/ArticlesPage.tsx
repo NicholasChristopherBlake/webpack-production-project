@@ -12,6 +12,7 @@ import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
 import { ArticlesInfiniteList } from '../ArticlesInfiniteList/ArticlesInfiniteList';
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
 import cls from './ArticlesPage.module.scss';
+import { useArticleItemById } from '../../model/selectors/articlesPageSelectors';
 
 interface ArticlesPageProps {
   className?: string;
@@ -25,17 +26,23 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
   const { className } = props;
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
+  const data = useArticleItemById('1');
 
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesPage());
   }, [dispatch]);
 
   return (
-    <DynamicReducerLoader reducers={reducers} removeAfterUnmount={false}>
+    <DynamicReducerLoader
+      reducers={reducers}
+      removeAfterUnmount={false}
+    >
       <Page
         data-testid="ArticlesPage"
         onScrollEnd={onLoadNextPart}
-        className={classNames(cls.articlesPage, {}, [className])}
+        className={classNames(cls.articlesPage, {}, [
+          className,
+        ])}
       >
         <ArticlesPageFilters />
         <ArticlesInfiniteList className={cls.list} />
