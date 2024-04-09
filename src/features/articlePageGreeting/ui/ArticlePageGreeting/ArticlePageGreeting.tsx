@@ -3,9 +3,9 @@ import { memo, useEffect, useState } from 'react';
 import { Modal } from '@/shared/ui/Modal';
 import { Text } from '@/shared/ui/Text';
 import { saveJsonSettings, useJsonSettings } from '@/entity/User';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useDevice } from '@/shared/lib/hooks/useDevice/useDevice';
 import { Drawer } from '@/shared/ui/Drawer';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 export const ArticlePageGreeting = memo(() => {
   const { t } = useTranslation();
