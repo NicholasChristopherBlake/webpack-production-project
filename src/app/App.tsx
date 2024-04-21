@@ -43,7 +43,6 @@ const App = memo(() => {
               content={<AppRouter />}
               header={<Navbar />}
               sidebar={<Sidebar />}
-              toolbar={<div>123</div>}
             />
           </Suspense>
         </div>

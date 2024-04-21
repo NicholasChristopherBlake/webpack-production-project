@@ -1,10 +1,10 @@
 import { FeatureFlags } from '@/shared/types/featureFlags';
 
-let featureFlags: FeatureFlags;
+// add default value {}
+// because might be crashing if feature is undefined
+let featureFlags: FeatureFlags = {};
 
-export function setFeatureFlags(
-  newFeatureFlags?: FeatureFlags,
-) {
+export function setFeatureFlags(newFeatureFlags?: FeatureFlags) {
   if (newFeatureFlags) {
     featureFlags = newFeatureFlags;
   }
