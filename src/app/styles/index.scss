@@ -15,9 +15,17 @@ body {
   background-color: var(--bg-color);
 }
 
+.app_redesigned {
+  min-height: 100vh;
+  color: var(--text-redesigned);
+  font: var(--font-m-redesigned);
+  background-color: var(--bg-redesigned);
+}
+
 .content-page {
   display: flex;
-  color: var(--primary-color);
+
+  // color: var(--primary-color); maybe delete
 }
 
 *::-webkit-scrollbar {
