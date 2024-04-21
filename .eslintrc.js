@@ -52,6 +52,8 @@ module.exports = {
           'borderRadius',
           'rel',
           'feature',
+          'color',
+          'variant',
         ],
       },
     ],

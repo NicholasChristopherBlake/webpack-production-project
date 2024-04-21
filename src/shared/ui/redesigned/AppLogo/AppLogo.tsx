@@ -2,19 +2,16 @@ import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './AppLogo.module.scss';
 import AppSvg from '@/shared/assets/icons/app-image.svg';
-import { HStack } from '../Stack';
+import { HStack } from '../../deprecated/Stack';
 
 interface AppLogoProps {
   className?: string;
+  size?: number;
 }
 
 // This component is for adding BG gradient to main logo
-/**
- * Deprecated, use new components from folder redesigned
- * @deprecated
- */
 export const AppLogo = memo((props: AppLogoProps) => {
-  const { className } = props;
+  const { className, size = 50 } = props;
 
   return (
     <HStack
@@ -24,7 +21,12 @@ export const AppLogo = memo((props: AppLogoProps) => {
     >
       <div className={cls.gradientBig} />
       <div className={cls.gradientSmall} />
-      <AppSvg className={cls.appLogo} />
+      <AppSvg
+        width={size}
+        height={size}
+        color="black"
+        className={cls.appLogo}
+      />
     </HStack>
   );
 });
