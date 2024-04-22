@@ -26,6 +26,12 @@ export const Clear: Story = {
   },
 };
 
+export const Filled: Story = {
+  args: {
+    variant: 'filled',
+  },
+};
+
 export const OutlinedDark: Story = {
   args: {
     variant: 'outline',
