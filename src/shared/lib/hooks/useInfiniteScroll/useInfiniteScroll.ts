@@ -3,7 +3,7 @@ import { MutableRefObject, useEffect } from 'react';
 export interface UseInfiniteScrollOptions {
   callback?: () => void;
   triggerRef: MutableRefObject<HTMLElement>;
-  wrapperRef: MutableRefObject<HTMLElement>;
+  wrapperRef?: MutableRefObject<HTMLElement>;
 }
 
 export function useInfiniteScroll({
@@ -14,7 +14,8 @@ export function useInfiniteScroll({
   useEffect(() => {
     // Need to use closures inside this useEffect for referenced elements
     // Otherwise there will be an error
-    const wrapperElement = wrapperRef.current;
+    const wrapperElement = wrapperRef?.current || null;
+    // if wrapperRef is null, intersection observer takes highest DOM element with scroll: window/body
     const triggerElement = triggerRef.current;
     let observer: IntersectionObserver | null = null;
 

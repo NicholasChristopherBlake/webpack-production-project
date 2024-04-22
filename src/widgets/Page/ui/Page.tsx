@@ -15,6 +15,7 @@ import { StateSchema } from '@/app/providers/StoreProvider';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import cls from './Page.module.scss';
 import { TestProps } from '@/shared/types/tests';
+import { toggleFeatures } from '@/shared/lib/features';
 
 interface PageProps extends TestProps {
   className?: string;
@@ -35,7 +36,12 @@ export const Page = (props: PageProps) => {
 
   useInfiniteScroll({
     triggerRef,
-    wrapperRef,
+    // use toggle features for redesigned layout to use basic window scroll
+    wrapperRef: toggleFeatures({
+      name: 'isAppRedesigned',
+      on: () => undefined,
+      off: () => wrapperRef,
+    }),
     callback: onScrollEnd,
   });
 
@@ -58,11 +64,7 @@ export const Page = (props: PageProps) => {
   return (
     <main
       ref={wrapperRef}
-      className={classNames(
-        cls.pageRedesigned,
-        {},
-        [className],
-      )}
+      className={classNames(cls.pageRedesigned, {}, [className])}
       onScroll={onScroll}
       data-testid={dataTestId ?? 'Page'}
     >

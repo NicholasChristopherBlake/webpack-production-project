@@ -13,6 +13,10 @@ import { ArticlesInfiniteList } from '../ArticlesInfiniteList/ArticlesInfiniteLi
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
 import cls from './ArticlesPage.module.scss';
 import { ArticlePageGreeting } from '@/features/articlePageGreeting';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
+import { ViewSelectorContainer } from '../ViewSelectorContainer/ViewSelectorContainer';
+import { FiltersContainer } from '../FiltersContainer/FiltersContainer';
 
 interface ArticlesPageProps {
   className?: string;
@@ -31,17 +35,45 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
     dispatch(fetchNextArticlesPage());
   }, [dispatch]);
 
+  // In Redesign content scrolls, left and right parts stay sticky
+  const content = (
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <StickyContentLayout
+          left={<ViewSelectorContainer />}
+          right={<FiltersContainer />}
+          content={
+            <Page
+              data-testid="ArticlesPage"
+              onScrollEnd={onLoadNextPart}
+              className={classNames(cls.articlesPageRedesigned, {}, [
+                className,
+              ])}
+            >
+              <ArticlesInfiniteList className={cls.list} />
+              <ArticlePageGreeting />
+            </Page>
+          }
+        />
+      }
+      off={
+        <Page
+          data-testid="ArticlesPage"
+          onScrollEnd={onLoadNextPart}
+          className={classNames(cls.articlesPage, {}, [className])}
+        >
+          <ArticlesPageFilters />
+          <ArticlesInfiniteList className={cls.list} />
+          <ArticlePageGreeting />
+        </Page>
+      }
+    />
+  );
+
   return (
     <DynamicReducerLoader reducers={reducers} removeAfterUnmount={false}>
-      <Page
-        data-testid="ArticlesPage"
-        onScrollEnd={onLoadNextPart}
-        className={classNames(cls.articlesPage, {}, [className])}
-      >
-        <ArticlesPageFilters />
-        <ArticlesInfiniteList className={cls.list} />
-        <ArticlePageGreeting />
-      </Page>
+      {content}
     </DynamicReducerLoader>
   );
 };
