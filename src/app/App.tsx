@@ -7,7 +7,6 @@ import { getUserInited, initAuthData } from '@/entity/User';
 import { AppRouter } from './providers/router';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { PageLoader } from '@/widgets/PageLoader';
-import { ToggleFeatures } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/layouts/MainLayout';
 
 const App = memo(() => {

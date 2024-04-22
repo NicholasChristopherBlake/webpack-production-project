@@ -7,9 +7,7 @@ import { VStack } from '@/shared/ui/redesigned/Stack';
 import cls from './Sidebar.module.scss';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
-import { ToggleFeatures } from '@/shared/lib/features';
 import { AppLogo } from '@/shared/ui/redesigned/AppLogo';
-import { Button, ButtonTheme, ButtonSize } from '@/shared/ui/deprecated/Button';
 import { Icon } from '@/shared/ui/redesigned/Icon';
 import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
 
