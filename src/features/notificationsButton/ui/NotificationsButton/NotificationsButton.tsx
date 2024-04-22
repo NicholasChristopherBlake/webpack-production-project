@@ -34,15 +34,7 @@ export const NotificationsButton = memo((props: NotificationsButtonProps) => {
   }, []);
 
   const trigger = (
-    <ToggleFeatures
-      feature="isAppRedesigned"
-      on={<Icon Svg={NotificationIcon} clickable onClick={onOpenDrawer} />}
-      off={
-        <ButtonDeprecated onClick={onOpenDrawer} theme={ButtonTheme.CLEAR}>
-          <IconDeprecated Svg={NotificationIconDeprecated} inverted />
-        </ButtonDeprecated>
-      }
-    />
+    <Icon Svg={NotificationIcon} clickable onClick={onOpenDrawer} />
   );
 
   if (isMobile) {
@@ -58,27 +50,13 @@ export const NotificationsButton = memo((props: NotificationsButtonProps) => {
 
   return (
     <div>
-      <ToggleFeatures
-        feature="isAppRedesigned"
-        on={
-          <Popover
-            className={classNames(cls.notificationsButton, {}, [className])}
-            direction="bottom left"
-            trigger={trigger}
-          >
-            <NotificationsList className={cls.notifications} />
-          </Popover>
-        }
-        off={
-          <PopoverDeprecated
-            className={classNames(cls.notificationsButton, {}, [className])}
-            direction="bottom left"
-            trigger={trigger}
-          >
-            <NotificationsList className={cls.notifications} />
-          </PopoverDeprecated>
-        }
-      />
+      <Popover
+                      className={classNames(cls.notificationsButton, {}, [className])}
+                      direction="bottom left"
+                      trigger={trigger}
+                    >
+                      <NotificationsList className={cls.notifications} />
+                    </Popover>
     </div>
   );
 });

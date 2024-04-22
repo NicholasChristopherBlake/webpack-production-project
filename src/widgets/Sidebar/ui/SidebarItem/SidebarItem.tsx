@@ -29,39 +29,21 @@ export const SidebarItem: FC<SidebarItemProps> = memo(
     }
 
     return (
-      <ToggleFeatures
-        feature="isAppRedesigned"
-        on={
-          <AppLink
-            to={item.path}
-            className={classNames(
-              cls.itemRedesigned,
-              { [cls.collapsedRedesigned]: collapsed },
-              [],
-            )}
-            activeClassName={cls.active}
-          >
-            <Icon Svg={item.Icon} />
-            <span className={cls.link}>
-              {/* i18next-extract-disable-next-line */}
-              {t(item.text)}
-            </span>
-          </AppLink>
-        }
-        off={
-          <AppLinkDeprecated
-            theme={AppLinkTheme.SECONDARY}
-            to={item.path}
-            className={classNames(cls.item, { [cls.collapsed]: collapsed }, [])}
-          >
-            <item.Icon className={cls.icon} />
-            <span className={cls.link}>
-              {/* i18next-extract-disable-next-line */}
-              {t(item.text)}
-            </span>
-          </AppLinkDeprecated>
-        }
-      />
+      <AppLink
+                    to={item.path}
+                    className={classNames(
+                      cls.itemRedesigned,
+                      { [cls.collapsedRedesigned]: collapsed },
+                      [],
+                    )}
+                    activeClassName={cls.active}
+                  >
+                    <Icon Svg={item.Icon} />
+                    <span className={cls.link}>
+                      {/* i18next-extract-disable-next-line */}
+                      {t(item.text)}
+                    </span>
+                  </AppLink>
     );
   },
 );

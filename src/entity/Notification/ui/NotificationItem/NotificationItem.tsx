@@ -18,22 +18,9 @@ export const NotificationItem = memo((props: NotificationItemProps) => {
   const { className, item } = props;
 
   const content = (
-    <ToggleFeatures
-      feature="isAppRedesigned"
-      on={
-        <Card className={classNames(cls.notificationItem, {}, [className])}>
-          <Text title={item.title} body={item.description} />
-        </Card>
-      }
-      off={
-        <CardDeprecated
-          theme={CardTheme.OUTLINED}
-          className={classNames(cls.notificationItem, {}, [className])}
-        >
-          <TextDeprecated title={item.title} body={item.description} />
-        </CardDeprecated>
-      }
-    />
+    <Card className={classNames(cls.notificationItem, {}, [className])}>
+                <Text title={item.title} body={item.description} />
+              </Card>
   );
 
   if (item.href) {

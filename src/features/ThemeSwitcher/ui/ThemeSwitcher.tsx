@@ -26,24 +26,7 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = memo(
     }, [dispatch, toggleTheme]);
 
     return (
-      <ToggleFeatures
-        feature="isAppRedesigned"
-        on={<Icon Svg={ThemeIcon} clickable onClick={onToggleHandler} />}
-        off={
-          <Button
-            theme={ButtonTheme.CLEAR}
-            onClick={onToggleHandler}
-            className={classNames('', {}, [className])}
-          >
-            <IconDeprecated
-              inverted
-              Svg={ThemeIconDeprecated}
-              width={40}
-              height={40}
-            />
-          </Button>
-        }
-      />
+      <Icon Svg={ThemeIcon} clickable onClick={onToggleHandler} />
     );
   },
 );

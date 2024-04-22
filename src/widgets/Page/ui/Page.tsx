@@ -60,11 +60,7 @@ export const Page = (props: PageProps) => {
     <main
       ref={wrapperRef}
       className={classNames(
-        toggleFeatures({
-          name: 'isAppRedesigned',
-          on: () => cls.pageRedesigned,
-          off: () => cls.page,
-        }),
+        cls.pageRedesigned,
         {},
         [className],
       )}

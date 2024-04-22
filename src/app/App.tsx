@@ -23,31 +23,15 @@ const App = memo(() => {
   }
 
   return (
-    <ToggleFeatures
-      feature="isAppRedesigned"
-      off={
-        <div className={classNames('app', {}, [])}>
-          <Suspense fallback="">
-            <Navbar />
-            <div className="content-page">
-              <Sidebar />
-              <AppRouter />
-            </div>
-          </Suspense>
-        </div>
-      }
-      on={
-        <div className={classNames('app_redesigned', {}, [])}>
-          <Suspense fallback="">
-            <MainLayout
-              content={<AppRouter />}
-              header={<Navbar />}
-              sidebar={<Sidebar />}
-            />
-          </Suspense>
-        </div>
-      }
-    />
+    <div className={classNames('app_redesigned', {}, [])}>
+                <Suspense fallback="">
+                  <MainLayout
+                    content={<AppRouter />}
+                    header={<Navbar />}
+                    sidebar={<Sidebar />}
+                  />
+                </Suspense>
+              </div>
   );
 });
 

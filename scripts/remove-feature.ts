@@ -125,17 +125,19 @@ const replaceComponent = (node: Node) => {
 
 // call expression - function in AST
 files.forEach((sourceFile) => {
+  // eslint-disable-next-line consistent-return
   sourceFile.forEachDescendant((node) => {
     // check for toggleFeatures helper
+    // return is needed because otherwise there's an error - working with unexisting node
     if (node.isKind(SyntaxKind.CallExpression) && isToggleFunction(node)) {
-      replaceToggleFunction(node);
+      return replaceToggleFunction(node);
     }
     // check for ToggleFeatures helper
     if (
       node.isKind(SyntaxKind.JsxSelfClosingElement) &&
       isToggleComponent(node)
     ) {
-      replaceComponent(node);
+      return replaceComponent(node);
     }
   });
 });
