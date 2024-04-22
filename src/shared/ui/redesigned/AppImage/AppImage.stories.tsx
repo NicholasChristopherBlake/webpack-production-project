@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { AppImage } from './AppImage';
-import { Skeleton } from '../Skeleton';
+import { Skeleton } from '../../deprecated/Skeleton';
 
 const meta: Meta<typeof AppImage> = {
   title: 'shared/AppImage',

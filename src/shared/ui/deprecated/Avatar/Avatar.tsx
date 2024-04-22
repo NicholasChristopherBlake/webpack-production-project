@@ -1,7 +1,7 @@
 import { CSSProperties, FC, useMemo } from 'react';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Avatar.module.scss';
-import { AppImage } from '../AppImage';
+import { AppImage } from '../../redesigned/AppImage';
 import UserIcon from '../../../assets/icons/user-filled-32-32.svg';
 import { Skeleton } from '../Skeleton';
 import { Icon } from '../Icon';

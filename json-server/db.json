@@ -575,7 +575,7 @@
       },
       "avatar": "https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg",
       "jsonSettings": {
-        "theme": "app_light_theme",
+        "theme": "app_dark_theme",
         "isFirstVisit": true,
         "isArticlesPageWasOpened": true
       }

@@ -7,7 +7,7 @@ import {
   DynamicReducerLoader,
   ReducersList,
 } from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
-import { HStack } from '@/shared/ui/deprecated/Stack';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 import {
   addCommentFormActions,
   addCommentFormReducer,

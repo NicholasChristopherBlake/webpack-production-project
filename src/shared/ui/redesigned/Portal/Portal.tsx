@@ -6,10 +6,6 @@ interface PortalProps {
   element?: HTMLElement; // where we teleport
 }
 
-/**
- * Deprecated, use new components from folder redesigned
- * @deprecated
- */
 export const Portal: FC<PortalProps> = (props: PortalProps) => {
   const { children, element = document.body } = props;
   return createPortal(children, element);
