@@ -23,14 +23,14 @@ const App = memo(() => {
 
   return (
     <div className={classNames('app_redesigned', {}, [])}>
-                <Suspense fallback="">
-                  <MainLayout
-                    content={<AppRouter />}
-                    header={<Navbar />}
-                    sidebar={<Sidebar />}
-                  />
-                </Suspense>
-              </div>
+      <Suspense fallback="">
+        <MainLayout
+          content={<AppRouter />}
+          header={<Navbar />}
+          sidebar={<Sidebar />}
+        />
+      </Suspense>
+    </div>
   );
 });
 
