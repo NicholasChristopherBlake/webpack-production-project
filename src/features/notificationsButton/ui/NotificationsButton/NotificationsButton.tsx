@@ -7,7 +7,7 @@ import NotificationIconDeprecated from '@/shared/assets/icons/notification-20-20
 import { useDevice } from '@/shared/lib/hooks/useDevice/useDevice';
 import cls from './NotificationsButton.module.scss';
 
-import { Drawer } from '@/shared/ui/deprecated/Drawer';
+import { Drawer } from '@/shared/ui/redesigned/Drawer';
 import { Icon } from '@/shared/ui/redesigned/Icon';
 import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon';
 import {

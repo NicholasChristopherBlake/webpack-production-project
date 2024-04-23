@@ -76,6 +76,7 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
   [AppRoutes.SETTINGS]: {
     path: getRouteSettings(),
     element: <SettingsPage />,
+    authOnly: true,
   },
 
   // Last

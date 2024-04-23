@@ -67,6 +67,8 @@ export const Navbar: FC<NavbarProps> = memo(({ className }: NavbarProps) => {
     );
   }
 
+  // TODO change for unauthed user
+
   return (
     <header className={classNames(cls.navbar, {}, [className])}>
       <Button

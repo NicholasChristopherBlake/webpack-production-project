@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Drawer } from './Drawer';
-import { Button } from '../Button';
+import { Button } from '../../deprecated/Button';
 
 const meta: Meta<typeof Drawer> = {
   title: 'shared/Drawer',

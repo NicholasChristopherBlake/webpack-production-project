@@ -9,7 +9,6 @@
   pointer-events: none;
   z-index: -1;
   transition: all 0.5s ease;
-  color: var(--primary-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,11 +17,26 @@
 .content {
   padding: 20px;
   border-radius: 12px;
-  background-color: var(--bg-color);
   transform: scale(0.5);
   transition: transform 0.5s ease;
   max-width: 60%;
   cursor: auto;
+}
+
+.modalRedesigned {
+  .content {
+    background-color: var(--light-bg-redesigned);
+  }
+}
+
+.modalDeprecated {
+  .modal {
+    color: var(--primary-color);
+  }
+
+  .content {
+    background-color: var(--bg-color);
+  }
 }
 
 .opened {
