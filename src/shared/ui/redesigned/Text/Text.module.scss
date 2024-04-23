@@ -1,5 +1,6 @@
 .title {
   color: var(--text-redesigned);
+  font-weight: normal; // by default
 }
 
 .body {
@@ -65,5 +66,12 @@
 
   .body {
     font: var(--font-l-redesigned);
+  }
+}
+
+.bold {
+  .title,
+  .body {
+    font-weight: 700;
   }
 }
