@@ -8,6 +8,7 @@ import { AppRouter } from './providers/router';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { PageLoader } from '@/widgets/PageLoader';
 import { MainLayout } from '@/shared/layouts/MainLayout';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 const App = memo(() => {
   const dispatch = useAppDispatch();
@@ -22,15 +23,31 @@ const App = memo(() => {
   }
 
   return (
-    <div className={classNames('app_redesigned', {}, [])}>
-      <Suspense fallback="">
-        <MainLayout
-          content={<AppRouter />}
-          header={<Navbar />}
-          sidebar={<Sidebar />}
-        />
-      </Suspense>
-    </div>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      off={
+        <div className={classNames('app', {}, [])}>
+          <Suspense fallback="">
+            <Navbar />
+            <div className="content-page">
+              <Sidebar />
+              <AppRouter />
+            </div>
+          </Suspense>
+        </div>
+      }
+      on={
+        <div className={classNames('app_redesigned', {}, [])}>
+          <Suspense fallback="">
+            <MainLayout
+              content={<AppRouter />}
+              header={<Navbar />}
+              sidebar={<Sidebar />}
+            />
+          </Suspense>
+        </div>
+      }
+    />
   );
 });
 

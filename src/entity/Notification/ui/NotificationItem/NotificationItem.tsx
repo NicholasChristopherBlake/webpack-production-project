@@ -4,7 +4,11 @@ import { AppLink as AppLinkDeprecated } from '@/shared/ui/deprecated/AppLink';
 import cls from './NotificationItem.module.scss';
 import { Notification } from '../../model/types/notifications';
 import { Card } from '@/shared/ui/redesigned/Card';
+import { Card as CardDeprecated, CardTheme } from '@/shared/ui/deprecated/Card';
 import { Text } from '@/shared/ui/redesigned/Text';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
+
+import { ToggleFeatures } from '@/shared/lib/features';
 
 interface NotificationItemProps {
   className?: string;
@@ -15,9 +19,22 @@ export const NotificationItem = memo((props: NotificationItemProps) => {
   const { className, item } = props;
 
   const content = (
-    <Card className={classNames(cls.notificationItem, {}, [className])}>
-                <Text title={item.title} body={item.description} />
-              </Card>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <Card className={classNames(cls.notificationItem, {}, [className])}>
+          <Text title={item.title} body={item.description} />
+        </Card>
+      }
+      off={
+        <CardDeprecated
+          theme={CardTheme.OUTLINED}
+          className={classNames(cls.notificationItem, {}, [className])}
+        >
+          <TextDeprecated title={item.title} body={item.description} />
+        </CardDeprecated>
+      }
+    />
   );
 
   if (item.href) {
