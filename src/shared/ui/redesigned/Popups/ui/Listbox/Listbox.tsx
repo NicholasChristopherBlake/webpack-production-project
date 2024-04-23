@@ -49,7 +49,13 @@ export function Listbox<T extends string>(props: ListboxProps<T>) {
   return (
     <HStack gap="4">
       {label && (
-        <span className={classNames('', { [cls.labelDisabled]: readonly }, [])}>
+        <span
+          className={classNames(
+            cls.label,
+            { [cls.labelDisabled]: readonly },
+            [],
+          )}
+        >
           {`${label}>`}
         </span>
       )}
