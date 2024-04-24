@@ -1,9 +1,11 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text, TextAlign } from '@/shared/ui/deprecated/Text';
+import { Text as TextDeprecated, TextAlign } from '@/shared/ui/deprecated/Text';
 import cls from './ArticleImageBlockComponent.module.scss';
 import { ArticleImageBlock } from '../../model/types/article';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 interface ArticleImageBlockComponentProps {
   className?: string;
@@ -20,7 +22,13 @@ export const ArticleImageBlockComponent = memo(
         className={classNames(cls.articleImageBlockComponent, {}, [className])}
       >
         <img src={block.src} className={cls.img} alt={block.title} />
-        {block.title && <Text body={block.title} align={TextAlign.CENTER} />}
+        {block.title && (
+          <ToggleFeatures
+            feature="isAppRedesigned"
+            on={<Text body={block.title} align="center" />}
+            off={<TextDeprecated body={block.title} align={TextAlign.CENTER} />}
+          />
+        )}
       </div>
     );
   },

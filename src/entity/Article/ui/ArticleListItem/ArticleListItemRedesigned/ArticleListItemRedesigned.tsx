@@ -26,7 +26,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
 
   const userInfo = (
     <>
-      <Avatar size={32} src={article.user.avatar} />
+      <Avatar size={32} src={article.user.avatar} className={cls.avatar} />
       <Text bold body={article.user.username} />
     </>
   );
@@ -88,15 +88,15 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
       className={classNames(cls.articleListItem, {}, [className, cls[view]])}
       data-testid="ArticleListItem"
     >
-      <Card className={cls.card} border="border-round">
+      <Card className={cls.card} border="border-round" padding="0">
         <AppImage
-          fallback={<Skeleton width={200} height={200} />}
+          fallback={<Skeleton width="100%" height={200} />}
           src={article.img}
           className={cls.img}
           alt={article.title}
         />
         <VStack className={cls.info} gap="4">
-          <Text body={article.title} className={cls.title} />
+          <Text title={article.title} className={cls.title} />
           <VStack gap="4" max className={cls.footer}>
             <HStack justify="between" max>
               <Text body={article.createdAt} className={cls.date} />
