@@ -41,5 +41,10 @@
   "Old": "Старый",
   "User settings": "Настройки пользователя",
   "Interface view": "Вид интерфейса",
-  "Settings": "Настройки"
+  "Settings": "Настройки",
+  "Edit": "Редактировать",
+  "viewsWithCount_zero": "{{count}} просмотров",
+  "viewsWithCount_one": "{{count}} просмотр",
+  "viewsWithCount_few": "{{count}} просмотра",
+  "viewsWithCount_many": "{{count}} просмотров"
 }

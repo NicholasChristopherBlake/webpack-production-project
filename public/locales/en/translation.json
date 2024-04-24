@@ -41,5 +41,8 @@
   "Old": "Old",
   "User settings": "User settings",
   "Interface view": "Interface view",
-  "Settings": "Settings"
+  "Settings": "Settings",
+  "Edit": "Edit",
+  "viewsWithCount_one": "{{count}} view",
+  "viewsWithCount_other": "{{count}} views"
 }
