@@ -15,8 +15,12 @@ const App = memo(() => {
   const inited = useSelector(getUserInited);
 
   useEffect(() => {
-    dispatch(initAuthData());
-  }, [dispatch]);
+    // because of forceUpdate
+    // don't update auth data if it is already inited
+    if (!inited) {
+      dispatch(initAuthData());
+    }
+  }, [dispatch, inited]);
 
   if (!inited) {
     return <PageLoader />;

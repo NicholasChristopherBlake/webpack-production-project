@@ -2,7 +2,6 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './ArticleAdditionalInfo.module.scss';
 import { User, getUserAuthData } from '@/entity/User';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Avatar } from '@/shared/ui/redesigned/Avatar';
@@ -26,10 +25,7 @@ export const ArticleAdditionalInfo = memo(
     const canEdit = authData?.id === author.id;
 
     return (
-      <VStack
-        gap="32"
-        className={classNames(cls.articleAdditionalInfo, {}, [className])}
-      >
+      <VStack gap="32" className={classNames('', {}, [className])}>
         <HStack gap="8">
           <Avatar src={author.avatar} size={32} />
           <Text body={author.username} bold />
