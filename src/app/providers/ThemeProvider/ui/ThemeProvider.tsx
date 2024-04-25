@@ -46,6 +46,11 @@ const ThemeProvider = (props: ThemeProviderProps) => {
     }
   }, [theme]);
 
+  // Could be done like this as well:
+  // useEffect(() => {
+  //   document.body.className = theme;
+  // }, [theme])
+
   return (
     <ThemeContext.Provider value={defaultProps}>
       {children}

@@ -34,10 +34,25 @@ body {
 }
 
 *::-webkit-scrollbar-track {
-  background-color: var(--card-bg); // color of scroll background
+  background-color: var(--light-bg-redesigned); // color of scroll background
 }
 
 *::-webkit-scrollbar-thumb { // scroll item customization
+  background-color: var(--icon-redesigned);
+  border-radius: 20px;
+}
+
+// Scroll for old design
+.app *::-webkit-scrollbar {
+  width: 12px;
+  height: 8px;
+}
+
+.app *::-webkit-scrollbar-track {
+  background-color: var(--card-bg); // color of scroll background
+}
+
+.app *::-webkit-scrollbar-thumb { // scroll item customization
   background-color: var(--inverted-primary-color);
   border-radius: 20px;
   border: 2px solid var(--primary-color);

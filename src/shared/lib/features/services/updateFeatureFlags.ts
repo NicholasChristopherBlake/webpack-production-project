@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { FeatureFlags } from '@/shared/types/featureFlags';
 import { updateFeatureFlagsMutation } from '../api/featureFlagsApi';
-import { getAllFeatureFlags, setFeatureFlags } from '../lib/setGetFeatures';
+import { getAllFeatureFlags } from '../lib/setGetFeatures';
 
 interface UpdateFeatureFlagOptions {
   userId: string;
@@ -13,7 +13,7 @@ export const updateFeatureFlag = createAsyncThunk<
   void,
   UpdateFeatureFlagOptions,
   ThunkConfig<string>
->('user/saveJsonSettings', async ({ userId, newFeatures }, thunkApi) => {
+>('features/updateFeatureFlag', async ({ userId, newFeatures }, thunkApi) => {
   const { rejectWithValue, dispatch } = thunkApi;
 
   const allFeatures = {
@@ -29,10 +29,11 @@ export const updateFeatureFlag = createAsyncThunk<
       }),
     );
 
-    setFeatureFlags(allFeatures); // for forceUpdate
+    // setFeatureFlags(allFeatures); // for forceUpdate
 
     // automatically relod page after updating feature flag
-    // window.location.reload(); we use forceUpdate now
+    // it is better than forceUpdate, because doesn't cause as many bugs
+    window.location.reload();
     return undefined;
   } catch (e) {
     console.log(e);
