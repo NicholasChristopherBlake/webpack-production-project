@@ -1,5 +1,8 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { USER_LOCAL_STORAGE_KEY } from '@/shared/const/localStorage';
+import {
+  LOCAL_STORAGE_LAST_DESIGN_KEY,
+  USER_LOCAL_STORAGE_KEY,
+} from '@/shared/const/localStorage';
 import { User, UserSchema } from '../types/user';
 import { setFeatureFlags } from '@/shared/lib/features';
 import { saveJsonSettings } from '../services/saveJsonSettings';
@@ -14,10 +17,15 @@ const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    setAuthData: (state, action: PayloadAction<User>) => {
-      state.authData = action.payload;
-      setFeatureFlags(action.payload.features);
-      localStorage.setItem(USER_LOCAL_STORAGE_KEY, action.payload.id);
+    // in perfect world reducers should be pure, without side effects like localStorage
+    setAuthData: (state, { payload }: PayloadAction<User>) => {
+      state.authData = payload;
+      setFeatureFlags(payload.features);
+      localStorage.setItem(USER_LOCAL_STORAGE_KEY, payload.id);
+      localStorage.setItem(
+        LOCAL_STORAGE_LAST_DESIGN_KEY,
+        payload.features?.isAppRedesigned ? 'new' : 'old',
+      );
     },
     logout: (state) => {
       state.authData = undefined;

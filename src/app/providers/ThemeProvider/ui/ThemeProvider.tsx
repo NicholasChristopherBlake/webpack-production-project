@@ -2,11 +2,15 @@ import { ReactNode, useEffect, useMemo, useState } from 'react';
 import { ThemeContext } from '@/shared/lib/context/ThemeContext';
 import { Theme } from '@/shared/const/theme';
 import { useJsonSettings } from '@/entity/User';
+import { LOCAL_STORAGE_THEME_KEY } from '@/shared/const/localStorage';
 
 interface ThemeProviderProps {
   children: ReactNode;
   initialTheme?: Theme;
 }
+
+// Last chosen theme of the user on THIS particular device
+const fallbackTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme;
 
 const ThemeProvider = (props: ThemeProviderProps) => {
   const { initialTheme, children } = props;
@@ -14,7 +18,7 @@ const ThemeProvider = (props: ThemeProviderProps) => {
   const [isThemeInited, setIsThemeInited] = useState(false);
 
   const [theme, setTheme] = useState<Theme>(
-    initialTheme || defaultTheme || Theme.LIGHT, // default value is here
+    initialTheme || fallbackTheme || Theme.LIGHT, // default value is here
   );
 
   // might not be the best solution
@@ -34,6 +38,7 @@ const ThemeProvider = (props: ThemeProviderProps) => {
   );
 
   useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_THEME_KEY, theme);
     if (theme === Theme.DARK) {
       document.body.classList.remove(Theme.ORANGE);
       document.body.classList.add(theme);
