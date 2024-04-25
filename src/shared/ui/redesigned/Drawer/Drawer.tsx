@@ -117,10 +117,6 @@ const DrawerAsync = (props: DrawerProps) => {
   return <DrawerContent {...props} />;
 };
 
-/**
- * Deprecated, use new components from folder redesigned
- * @deprecated
- */
 export const Drawer = (props: DrawerProps) => (
   <AnimationProvider>
     <DrawerAsync {...props} />

@@ -6,10 +6,18 @@
   fill: none;
 }
 
-.hovered {
-  fill: var(--primary-color);
-}
-
 .selected {
   cursor: auto;
+}
+
+.starRating {
+  .hovered {
+    fill: var(--primary-color);
+  }
+}
+
+.starRatingRedesigned {
+  .hovered {
+    fill: var(--icon-redesigned);
+  }
 }
