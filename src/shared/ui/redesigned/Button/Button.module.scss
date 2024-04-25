@@ -10,6 +10,8 @@
   display: flex;
   align-items: center;
 
+  // TODO come up with some hover state that looks good
+
   &:hover {
     color: var(--accent-redesigned);
 
@@ -51,6 +53,19 @@
 
   &:hover {
     border: 2px solid var(--accent-redesigned);
+  }
+
+  // TODO add colors for Filled button
+  &.normal {
+    border: 2px solid var(--icon-redesigned);
+  }
+
+  &.success {
+    border: 2px solid var(--save-redesigned);
+  }
+
+  &.error {
+    border: 2px solid var(--cancel-redesigned);
   }
 }
 

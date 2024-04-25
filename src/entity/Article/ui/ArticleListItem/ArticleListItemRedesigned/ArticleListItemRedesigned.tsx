@@ -88,7 +88,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
       className={classNames(cls.articleListItem, {}, [className, cls[view]])}
       data-testid="ArticleListItem"
     >
-      <Card className={cls.card} border="border-round" padding="0">
+      <Card className={cls.card} border="border-semi" padding="0">
         <AppImage
           fallback={<Skeleton width="100%" height={200} />}
           src={article.img}
