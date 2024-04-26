@@ -10,10 +10,12 @@ import { PageLoader } from '@/widgets/PageLoader';
 import { MainLayout } from '@/shared/layouts/MainLayout';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
+import { useAppToolbar } from './lib/useAppToolbar';
 
 const App = memo(() => {
   const dispatch = useAppDispatch();
   const inited = useSelector(getUserInited);
+  const toolbar = useAppToolbar();
 
   useEffect(() => {
     // because of forceUpdate
@@ -58,6 +60,7 @@ const App = memo(() => {
               content={<AppRouter />}
               header={<Navbar />}
               sidebar={<Sidebar />}
+              toolbar={toolbar}
             />
           </Suspense>
         </div>
