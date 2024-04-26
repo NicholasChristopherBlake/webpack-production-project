@@ -4,7 +4,7 @@ import { Button } from './Button';
 import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof Button> = {
-  title: 'shared/Button',
+  title: 'shared/redesigned/Button',
   component: Button,
   args: {
     children: 'Text',

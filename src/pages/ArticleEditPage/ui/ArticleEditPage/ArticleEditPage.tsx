@@ -9,6 +9,10 @@ interface ArticleEditPageProps {
   className?: string;
 }
 
+// TODO создать нормальную страницу редактирования статьи
+// TODO попробовать создать страницу для СОЗДАНИЯ статьи
+// TODO добавить кнопку для перехода на страницу создания статьи (если она будет)
+
 const ArticleEditPage = memo((props: ArticleEditPageProps) => {
   const { className } = props;
   const { t } = useTranslation('article-details');

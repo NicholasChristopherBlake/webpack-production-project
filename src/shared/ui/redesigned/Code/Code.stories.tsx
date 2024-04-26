@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Code } from './Code';
 
 const meta: Meta<typeof Code> = {
-  title: 'shared/Code',
+  title: 'shared/redesigned/Code',
   component: Code,
   args: {},
 };

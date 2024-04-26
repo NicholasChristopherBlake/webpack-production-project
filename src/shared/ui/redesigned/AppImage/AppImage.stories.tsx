@@ -4,7 +4,7 @@ import { AppImage } from './AppImage';
 import { Skeleton } from '../../deprecated/Skeleton';
 
 const meta: Meta<typeof AppImage> = {
-  title: 'shared/AppImage',
+  title: 'shared/redesigned/AppImage',
   component: AppImage,
   args: {},
 };

@@ -4,7 +4,7 @@ import { Popover } from './Popover';
 import { Button } from '../../../Button';
 
 const meta: Meta<typeof Popover> = {
-  title: 'shared/Popups/Popover',
+  title: 'shared/redesigned/Popups/Popover',
   component: Popover,
   args: {
     trigger: <Button>Open</Button>,

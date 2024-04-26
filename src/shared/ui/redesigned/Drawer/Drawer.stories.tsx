@@ -4,7 +4,7 @@ import { Drawer } from './Drawer';
 import { Button } from '../../deprecated/Button';
 
 const meta: Meta<typeof Drawer> = {
-  title: 'shared/Drawer',
+  title: 'shared/redesigned/Drawer',
   component: Drawer,
   args: {
     children: <Button>Drawer Button</Button>,

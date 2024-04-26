@@ -28,6 +28,7 @@ interface EditableProfileCardProps {
   id?: string;
 }
 
+// TODO имя пользователя растянуть
 const reducers: ReducersList = {
   profile: profileReducer,
 };

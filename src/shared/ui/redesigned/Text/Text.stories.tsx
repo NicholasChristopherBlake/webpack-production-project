@@ -4,7 +4,7 @@ import { Text } from './Text';
 import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof Text> = {
-  title: 'shared/Text',
+  title: 'shared/redesigned/Text',
   component: Text,
   args: {
     title: 'Title Title Title',
