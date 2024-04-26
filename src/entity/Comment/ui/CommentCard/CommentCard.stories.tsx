@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { CommentCard } from './CommentCard';
+import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator';
 
 const meta: Meta<typeof CommentCard> = {
   title: 'entities/Comment/CommentCard',
@@ -23,6 +24,14 @@ export default meta;
 type Story = StoryObj<typeof CommentCard>;
 
 export const Primary: Story = {};
+export const PrimaryRedesigned: Story = {
+  decorators: [
+    FeatureFlagsDecorator({
+      isAppRedesigned: true,
+    }),
+  ],
+};
+
 export const isLoading: Story = {
   args: {
     isLoading: true,

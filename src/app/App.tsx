@@ -11,6 +11,7 @@ import { MainLayout } from '@/shared/layouts/MainLayout';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
 import { useAppToolbar } from './lib/useAppToolbar';
+import { withTheme } from './providers/ThemeProvider';
 
 const App = memo(() => {
   const dispatch = useAppDispatch();
@@ -69,4 +70,4 @@ const App = memo(() => {
   );
 });
 
-export default App;
+export default withTheme(App);

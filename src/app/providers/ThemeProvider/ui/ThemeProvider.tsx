@@ -1,7 +1,6 @@
 import { ReactNode, useEffect, useMemo, useState } from 'react';
 import { ThemeContext } from '@/shared/lib/context/ThemeContext';
 import { Theme } from '@/shared/const/theme';
-import { useJsonSettings } from '@/entity/User';
 import { LOCAL_STORAGE_THEME_KEY } from '@/shared/const/localStorage';
 
 interface ThemeProviderProps {
@@ -9,12 +8,14 @@ interface ThemeProviderProps {
   initialTheme?: Theme;
 }
 
+// use initialTheme everywhere instead of defaultTheme
+// don't get theme from jsonSettings here. Use HOC withTheme
+
 // Last chosen theme of the user on THIS particular device
 const fallbackTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme;
 
 const ThemeProvider = (props: ThemeProviderProps) => {
   const { initialTheme, children } = props;
-  const { theme: defaultTheme } = useJsonSettings();
   const [isThemeInited, setIsThemeInited] = useState(false);
 
   const [theme, setTheme] = useState<Theme>(
@@ -23,11 +24,11 @@ const ThemeProvider = (props: ThemeProviderProps) => {
 
   // might not be the best solution
   useEffect(() => {
-    if (!isThemeInited && defaultTheme) {
-      setTheme(defaultTheme);
+    if (!isThemeInited && initialTheme) {
+      setTheme(initialTheme);
       setIsThemeInited(true);
     }
-  }, [defaultTheme, isThemeInited]);
+  }, [initialTheme, isThemeInited]);
 
   const defaultProps = useMemo(
     () => ({
