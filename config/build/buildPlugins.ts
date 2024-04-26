@@ -47,6 +47,11 @@ export function buildPlugins({
       exclude: /node_modules/,
       failOnError: true,
     }));
+    plugins.push(new CopyPlugin({
+      patterns: [
+        { from: './public/favicon.ico' },
+      ],
+    }));
   }
 
   if (isProd) {
@@ -57,6 +62,7 @@ export function buildPlugins({
     plugins.push(new CopyPlugin({
       patterns: [
         { from: paths.locales, to: paths.buildLocales },
+        { from: './public/favicon.ico' },
       ],
     }));
   }
