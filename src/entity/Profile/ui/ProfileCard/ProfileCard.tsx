@@ -56,7 +56,6 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
     );
   }
 
-  // TODO fix paddings between inputs (country and currency select)
   return (
     <ToggleFeatures
       feature="isAppRedesigned"

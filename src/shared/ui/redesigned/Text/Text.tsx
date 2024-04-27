@@ -17,6 +17,7 @@ interface TextProps {
   align?: TextAlign;
   size?: TextSize;
   bold?: boolean;
+  maxContent?: boolean; // I added
 
   'data-testid'?: string;
 }
@@ -46,6 +47,7 @@ export const Text: FC<TextProps> = memo((props: TextProps) => {
     align = 'left',
     size = 'm',
     bold,
+    maxContent = false,
     'data-testid': dataTestId = 'Text',
   } = props;
 
@@ -59,12 +61,22 @@ export const Text: FC<TextProps> = memo((props: TextProps) => {
   return (
     <div className={classNames(cls.text, { [cls.bold]: bold }, adds)}>
       {title && (
-        <HeaderTag className={cls.title} data-testid={`${dataTestId}.Header`}>
+        <HeaderTag
+          className={classNames(
+            cls.title,
+            { [cls.maxContent]: maxContent },
+            [],
+          )}
+          data-testid={`${dataTestId}.Header`}
+        >
           {title}
         </HeaderTag>
       )}
       {body && (
-        <p className={cls.body} data-testid={`${dataTestId}.Paragraph`}>
+        <p
+          className={classNames(cls.body, { [cls.maxContent]: maxContent }, [])}
+          data-testid={`${dataTestId}.Paragraph`}
+        >
           {body}
         </p>
       )}
