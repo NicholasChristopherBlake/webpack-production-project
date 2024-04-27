@@ -2,29 +2,30 @@
   "notifications": [
     {
       "id": "1",
-      "title": "Notification 1",
-      "description": "Some action occurred",
-      "userId": "1"
+      "title": "New article has been published",
+      "description": "Check out our new Article about Biology",
+      "userId": "1",
+      "href": "http://localhost:3000/articles/17"
     },
     {
       "id": "2",
-      "title": "Notification 2",
-      "description": "Some action occurred",
-      "userId": "1",
-      "href": "http://localhost:3000/admin"
+      "title": "Happy New Year!",
+      "description": "We wish you great holidays!",
+      "userId": "1"
     },
     {
       "id": "3",
-      "title": "Notification 3",
-      "description": "Some action occurred",
+      "title": "Old design",
+      "description": "Check out the how the website looked before",
       "userId": "1",
-      "href": "http://localhost:3000/admin"
+      "href": "http://localhost:3000/settings"
     },
     {
       "id": "4",
-      "title": "Notification 4",
-      "description": "Some action occurred",
-      "userId": "1"
+      "title": "Your article has been rated",
+      "description": "You have received new rating on your article",
+      "userId": "1",
+      "href": "http://localhost:3000/articles/1"
     }
   ],
   "articles": [
@@ -582,7 +583,7 @@
       "avatar": "https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg",
       "jsonSettings": {
         "isArticlesPageWasOpened": true,
-        "theme": "app_light_theme"
+        "theme": "app_dark_theme"
       }
     },
     {

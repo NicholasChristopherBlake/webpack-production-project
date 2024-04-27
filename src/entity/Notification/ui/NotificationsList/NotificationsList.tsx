@@ -12,7 +12,6 @@ interface NotificationsListProps {
   className?: string;
 }
 
-// TODO странный hover возникает при наведении на notifications
 export const NotificationsList = memo((props: NotificationsListProps) => {
   const { className } = props;
   const { data, isLoading } = useNotifications(null, {
