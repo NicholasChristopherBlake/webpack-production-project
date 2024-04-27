@@ -13,6 +13,17 @@ import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
 import { useAppToolbar } from './lib/useAppToolbar';
 import { withTheme } from './providers/ThemeProvider';
 
+// TODO изменить тему проекта? сделать интернет магазин?
+// TODO Сделать бэкэнд, добавить websockets, RxJs
+
+// TODO Fix all skeletons
+// TODO Remove jumps in interface
+
+// TODO Change 3rd theme (need normal colors)
+
+// TODO Add Home/About info
+// TODO Add all storybooks that are needed (not all)
+
 const App = memo(() => {
   const dispatch = useAppDispatch();
   const inited = useSelector(getUserInited);

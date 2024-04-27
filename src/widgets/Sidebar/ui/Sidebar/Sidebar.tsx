@@ -16,7 +16,6 @@ interface SidebarProps {
   className?: string;
 }
 
-// TODO при переключении языка изменяется gap между иконками
 export const Sidebar: FC<SidebarProps> = memo(({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(false);
   const sidebarItemsList = useSidebarItems();
