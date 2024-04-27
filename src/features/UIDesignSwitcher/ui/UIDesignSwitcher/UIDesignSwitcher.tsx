@@ -51,10 +51,10 @@ export const UIDesignSwitcher = memo((props: UIDesignSwitcherProps) => {
   };
 
   return (
-    <HStack>
+    <HStack gap="8">
       <Text body={t('Interface view')} />
       {isLoading ? (
-        <Skeleton width={100} height={32} borderRadius="34px" />
+        <Skeleton width={100} height={38} borderRadius="34px" />
       ) : (
         <Listbox
           items={items}

@@ -103,7 +103,7 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
               readonly={readonly}
             />
           </VStack>
-          <VStack gap="16" max>
+          <VStack max gap="16">
             <Input
               value={data?.username}
               label={t('Username')}
