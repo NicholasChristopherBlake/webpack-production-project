@@ -19,10 +19,17 @@ interface DropdownProps {
   items: DropdownItem[];
   trigger?: ReactNode;
   direction?: DropdownDirection;
+  maxContent?: boolean;
 }
 
 export function Dropdown(props: DropdownProps) {
-  const { className, items, trigger, direction = 'bottom right' } = props;
+  const {
+    className,
+    items,
+    trigger,
+    direction = 'bottom right',
+    maxContent = false,
+  } = props;
 
   const menuClasses = [mapDirectionClass[direction], popupCls.menu];
 
@@ -32,7 +39,13 @@ export function Dropdown(props: DropdownProps) {
       className={classNames(cls.dropdown, {}, [className, popupCls.popup])}
     >
       <Menu.Button className={popupCls.trigger}>{trigger}</Menu.Button>
-      <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
+      <Menu.Items
+        className={classNames(
+          cls.menu,
+          { [cls.maxContent]: maxContent },
+          menuClasses,
+        )}
+      >
         {items.map((item) => {
           const content = ({ active }: { active: boolean }) => (
             <button

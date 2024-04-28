@@ -23,6 +23,7 @@ import {
   getRouteSettings,
 } from '@/shared/const/router';
 import { SettingsPage } from '@/pages/SettingsPage';
+import { ArticleCreatePage } from '@/pages/ArticleCreatePage';
 
 export type AppRouteProps = RouteProps & {
   authOnly?: boolean;
@@ -55,7 +56,7 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
   },
   [AppRoutes.ARTICLE_CREATE]: {
     path: getRouteArticleCreate(),
-    element: <ArticleEditPage />,
+    element: <ArticleCreatePage />,
     authOnly: true,
   },
   [AppRoutes.ARTICLE_EDIT]: {

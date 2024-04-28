@@ -17,6 +17,7 @@ interface ArticleAdditionalInfoProps {
 }
 
 // TODO - create additional feature ArticleEditButton
+// TODO - create additional feature ArticleCreateButton, подумать куда ее поместить
 export const ArticleAdditionalInfo = memo(
   (props: ArticleAdditionalInfoProps) => {
     const { className, author, createdAt, views, onEdit } = props;

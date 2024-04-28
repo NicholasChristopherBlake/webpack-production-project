@@ -19,8 +19,6 @@ import { withTheme } from './providers/ThemeProvider';
 // TODO Fix all skeletons
 // TODO Remove jumps in interface
 
-// TODO Change 3rd theme (need normal colors)
-
 // TODO Add Home/About info
 // TODO Add all storybooks that are needed (not all)
 

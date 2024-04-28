@@ -21,6 +21,7 @@ interface ClickableIconProps extends IconBaseProps {
 
 type IconProps = NonClickableIconProps | ClickableIconProps;
 
+// TODO убрать hover при наведении на контур звезд рейтинга
 export const Icon = memo((props: IconProps) => {
   const {
     className,
@@ -46,7 +47,7 @@ export const Icon = memo((props: IconProps) => {
     // here we use props.onClick because we don't have onClick inside NonClickableIcon
     return (
       <button
-        className={cls.button}
+        className={classNames(cls.button, {}, [])}
         type="button"
         onClick={props.onClick}
         style={{ height, width }}

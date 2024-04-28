@@ -13,8 +13,6 @@ interface ArticleListItemSkeletonProps {
   view: ArticleView;
 }
 
-// TODO find correct width and height for GRID skeleton
-
 export const ArticleListItemSkeleton = memo(
   (props: ArticleListItemSkeletonProps) => {
     const { className, view } = props;

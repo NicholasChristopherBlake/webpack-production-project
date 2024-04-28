@@ -4,6 +4,10 @@ import { useParams } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Page } from '@/widgets/Page';
 import cls from './ArticleEditPage.module.scss';
+import { Text } from '@/shared/ui/redesigned/Text';
+import { Card } from '@/shared/ui/redesigned/Card';
+import { ArticleDetails } from '@/entity/Article';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 
 interface ArticleEditPageProps {
   className?: string;
@@ -21,7 +25,12 @@ const ArticleEditPage = memo((props: ArticleEditPageProps) => {
 
   return (
     <Page className={classNames(cls.articleEditPage, {}, [className])}>
-      {isEdit ? t('Editing article with ID') + id : t('Creating a new article')}
+      <VStack max gap="16">
+        {isEdit && <Text title={t('Editing article with ID') + id} />}
+        <Card border="border-semi" padding="24" max className={className}>
+          <ArticleDetails id={id} />
+        </Card>
+      </VStack>
     </Page>
   );
 });

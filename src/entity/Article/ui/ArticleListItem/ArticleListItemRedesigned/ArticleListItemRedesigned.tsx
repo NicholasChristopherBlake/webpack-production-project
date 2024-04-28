@@ -102,7 +102,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
               <Text body={article.createdAt} className={cls.date} />
               {views}
             </HStack>
-            <HStack gap="4">{userInfo}</HStack>
+            <HStack gap="8">{userInfo}</HStack>
           </VStack>
         </VStack>
       </Card>
