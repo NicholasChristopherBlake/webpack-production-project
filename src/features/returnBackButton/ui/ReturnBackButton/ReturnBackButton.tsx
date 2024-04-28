@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './returnBackButton.module.scss';
+import cls from './ReturnBackButton.module.scss';
 import CircleIcon from '@/shared/assets/icons/circle-up.svg';
 import { Icon } from '@/shared/ui/redesigned/Icon';
 
