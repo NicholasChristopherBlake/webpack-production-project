@@ -26,8 +26,6 @@ const reducers: ReducersList = {
   articlesPage: articlesPageReducer,
 };
 
-// TODO добавить кнопку возврата назад к списку
-
 const ArticlesPage: FC<ArticlesPageProps> = (props) => {
   const { className } = props;
   const { t } = useTranslation();

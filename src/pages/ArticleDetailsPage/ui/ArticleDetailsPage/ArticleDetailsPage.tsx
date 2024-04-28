@@ -20,6 +20,7 @@ import { Card } from '@/shared/ui/deprecated/Card';
 import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
 import { DetailsContainer } from '../DetailsContainer/DetailsContainer';
 import { AdditionalInfoContainer } from '../AdditionalInfoContainer/AdditionalInfoContainer';
+import { ReturnBackButton } from '@/features/returnBackButton';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -44,6 +45,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
         feature="isAppRedesigned"
         on={
           <StickyContentLayout
+            left={<ReturnBackButton className={cls.returnBackButton} />}
             content={
               <Page
                 className={classNames(cls.articleDetailsPage, {}, [className])}

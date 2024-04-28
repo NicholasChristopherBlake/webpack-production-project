@@ -8,6 +8,7 @@ type SvgProps = Omit<React.SVGProps<SVGSVGElement>, 'onClick'>;
 interface IconBaseProps extends SvgProps {
   className?: string;
   Svg: React.VFC<React.SVGProps<SVGSVGElement>>;
+  noHover?: boolean;
 }
 
 interface NonClickableIconProps extends IconBaseProps {
@@ -21,13 +22,13 @@ interface ClickableIconProps extends IconBaseProps {
 
 type IconProps = NonClickableIconProps | ClickableIconProps;
 
-// TODO убрать hover при наведении на контур звезд рейтинга
 export const Icon = memo((props: IconProps) => {
   const {
     className,
     Svg,
     width = 32,
     height = 32,
+    noHover,
     clickable,
     ...otherProps
   } = props;
@@ -47,7 +48,7 @@ export const Icon = memo((props: IconProps) => {
     // here we use props.onClick because we don't have onClick inside NonClickableIcon
     return (
       <button
-        className={classNames(cls.button, {}, [])}
+        className={classNames(cls.button, { [cls.noHover]: noHover }, [])}
         type="button"
         onClick={props.onClick}
         style={{ height, width }}

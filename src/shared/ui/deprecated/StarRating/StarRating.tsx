@@ -72,7 +72,7 @@ export const StarRating = memo((props: StarRatingProps) => {
           <ToggleFeatures
             key={starNumber}
             feature="isAppRedesigned"
-            on={<Icon clickable={!isSelected} {...commonProps} />}
+            on={<Icon clickable={!isSelected} noHover {...commonProps} />}
             off={<IconDeprecated {...commonProps} />}
           />
         );
