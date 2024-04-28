@@ -15,7 +15,7 @@ interface ArticleEditPageProps {
 
 // TODO создать нормальную страницу редактирования статьи
 // TODO попробовать создать страницу для СОЗДАНИЯ статьи
-// TODO добавить кнопку для перехода на страницу создания статьи (если она будет)
+// TODO - create additional feature ArticleCreateButton, подумать куда ее поместить
 
 const ArticleEditPage = memo((props: ArticleEditPageProps) => {
   const { className } = props;

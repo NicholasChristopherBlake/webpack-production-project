@@ -29,7 +29,7 @@ export const ArticleRecommendationsList = memo(
     return (
       <VStack
         data-testid="ArticleRecommendationsList"
-        gap="8"
+        gap="16"
         className={classNames('', {}, [className])}
       >
         <ToggleFeatures

@@ -95,7 +95,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
           className={cls.img}
           alt={article.title}
         />
-        <VStack className={cls.info} gap="4">
+        <VStack className={cls.info} gap="4" justify="between">
           <Text title={article.title} className={cls.title} />
           <VStack gap="4" max className={cls.footer}>
             <HStack justify="between" max>
