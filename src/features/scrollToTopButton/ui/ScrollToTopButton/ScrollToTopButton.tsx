@@ -13,7 +13,6 @@ export const ScrollToTopButton = memo((props: ScrollToTopButtonProps) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // TODO показывать кнопку только тогда, когда пользователь проскроллил вниз. сделать хук
   return (
     <Icon
       Svg={CircleIcon}
